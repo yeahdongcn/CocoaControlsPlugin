@@ -15,7 +15,7 @@
     static RSDataCenter *shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shared = [[self alloc] init];
+        shared = [self new];
     });
     return shared;
 }

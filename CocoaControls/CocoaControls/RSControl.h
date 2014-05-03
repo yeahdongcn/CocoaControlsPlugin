@@ -10,16 +10,22 @@
 
 @interface RSControl : NSObject
 
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *stringTitle;
 
-@property (nonatomic, copy) NSString *license;
+@property (nonatomic, copy) NSString *stringLicense;
 
-@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, copy) NSString *stringDate;
 
-@property (nonatomic, copy) NSURL *imageURL;
+@property (nonatomic, copy) NSString *stringImage;
 
-@property (nonatomic) BOOL onCocoaPods;
+@property (nonatomic, copy) NSString *stringLink;
 
-@property (nonatomic) NSUInteger rating;
+@property (nonatomic) BOOL isOnCocoaPods;
+
+@property (nonatomic) CGFloat rating;
+
+@property (nonatomic) NSUInteger apps;
+
+- (instancetype)initWithAssignment:(void (^)(RSControl *))assignment;
 
 @end

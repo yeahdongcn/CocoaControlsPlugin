@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "RSControl.h"
+
 @interface RSDataCenter : NSObject
 
 @end

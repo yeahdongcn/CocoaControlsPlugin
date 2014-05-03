@@ -10,4 +10,15 @@
 
 @implementation RSControl
 
+- (instancetype)initWithAssignment:(void (^)(RSControl *))assignment
+{
+    self = [super init];
+    if (self) {
+        if (assignment) {
+            assignment(self);
+        }
+    }
+    return self;
+}
+
 @end
