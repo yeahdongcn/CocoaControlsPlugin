@@ -1,5 +1,5 @@
 //
-//  RSControl.h
+//  RSCCControl.h
 //  CocoaControls
 //
 //  Created by R0CKSTAR on 14-5-3.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RSCCC : NSObject
+@interface RSCCControl : NSObject
 
 @property (nonatomic, copy) NSString *stringTitle;
 
@@ -26,6 +26,6 @@
 
 @property (nonatomic) NSUInteger apps;
 
-- (instancetype)initWithAssignment:(void (^)(RSCCC *))assignment;
+- (instancetype)initWithAssignment:(void (^)(RSCCControl *))assignment;
 
 @end

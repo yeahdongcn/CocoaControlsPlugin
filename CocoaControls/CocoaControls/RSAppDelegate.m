@@ -12,9 +12,15 @@
 
 @implementation RSAppDelegate
 
+- (void)controlsDidLoad:(NSNotification *)aNotification
+{
+    NSLog(@"%@", aNotification.object);
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controlsDidLoad:) name:RSCCCoreControlsDidLoadNotification object:nil];
 }
 
 @end

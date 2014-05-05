@@ -1,5 +1,5 @@
 //
-//  RSDataCenter.h
+//  RSCCCore.h
 //  CocoaControls
 //
 //  Created by R0CKSTAR on 14-5-3.
@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RSCCC.h"
+#import "RSCCControl.h"
+
+extern NSString *const RSCCCoreControlsDidLoadNotification;
 
 @interface RSCCCore : NSObject
 

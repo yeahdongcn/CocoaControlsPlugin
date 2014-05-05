@@ -1,5 +1,5 @@
 //
-//  RSDataCenter.m
+//  RSCCCore.m
 //  CocoaControls
 //
 //  Created by R0CKSTAR on 14-5-3.
@@ -16,7 +16,9 @@
 
 #import <TFHpple.h>
 
-#import "RSCCC.h"
+#import "RSCCControl.h"
+
+NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.did.load";
 
 @interface RSCCCore ()
 
@@ -46,14 +48,13 @@
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSMutableArray *cs = [@[] mutableCopy];
                 for (TFHppleElement *element in responseObject) {
-                    RSCCC *c = [[RSCCC alloc] initWithAssignment:^(RSCCC *c) {
+                    RSCCControl *c = [[RSCCControl alloc] initWithAssignment:^(RSCCControl *c) {
                         NSArray *spans = [element childrenWithTagName:@"span"];
                         [spans enumerateObjectsUsingBlock:^(TFHppleElement *span, NSUInteger idx, BOOL *stop) {
                             switch (idx) {
                                 case 0: {
                                     
                                 } break;
-                                    
                                 case 1: {
                                     NSArray *components = [span.text componentsSeparatedByString:@" • "];
                                     for (NSString *component in components) {
@@ -73,6 +74,7 @@
                     }];
                     [cs addObject:c];
                 }
+                [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:cs] userInfo:nil];
             });
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         }];

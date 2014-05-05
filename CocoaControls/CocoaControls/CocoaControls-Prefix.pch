@@ -7,5 +7,5 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
     #import "RSCCCore.h"
-    #define Core [RSCCCore sharedCore]
+    #define CORE [RSCCCore sharedCore]
 #endif

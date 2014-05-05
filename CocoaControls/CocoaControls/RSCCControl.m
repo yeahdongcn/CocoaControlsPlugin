@@ -1,16 +1,16 @@
 //
-//  RSControl.m
+//  RSCCControl.m
 //  CocoaControls
 //
 //  Created by R0CKSTAR on 14-5-3.
 //  Copyright (c) 2014年 P.D.Q. All rights reserved.
 //
 
-#import "RSCCC.h"
+#import "RSCCControl.h"
 
-@implementation RSCCC
+@implementation RSCCControl
 
-- (instancetype)initWithAssignment:(void (^)(RSCCC *))assignment
+- (instancetype)initWithAssignment:(void (^)(RSCCControl *))assignment
 {
     self = [super init];
     if (self) {
