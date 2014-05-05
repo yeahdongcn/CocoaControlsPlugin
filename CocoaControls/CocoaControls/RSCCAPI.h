@@ -9,3 +9,5 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *const RSCCAPIRoot;
+
+extern NSString *const RSCCAPIControlsAtPageFormat;

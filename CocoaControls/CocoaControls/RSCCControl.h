@@ -10,21 +10,21 @@
 
 @interface RSCCControl : NSObject
 
-@property (nonatomic, copy) NSString *stringTitle;
+@property (nonatomic, copy) NSString *title;
 
-@property (nonatomic, copy) NSString *stringLicense;
+@property (nonatomic, copy) NSString *license;
 
-@property (nonatomic, copy) NSString *stringDate;
+@property (nonatomic, copy) NSString *date;
 
-@property (nonatomic, copy) NSString *stringImage;
+@property (nonatomic, copy) NSString *image;
 
-@property (nonatomic, copy) NSString *stringLink;
+@property (nonatomic, copy) NSString *link;
 
 @property (nonatomic) BOOL isOnCocoaPods;
 
 @property (nonatomic) CGFloat rating;
 
-@property (nonatomic) NSUInteger apps;
+@property (nonatomic) int appsUsingThisControl;
 
 - (instancetype)initWithAssignment:(void (^)(RSCCControl *))assignment;
 

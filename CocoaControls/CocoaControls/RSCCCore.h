@@ -16,4 +16,6 @@ extern NSString *const RSCCCoreControlsDidLoadNotification;
 
 + (instancetype)sharedCore;
 
+- (void)moreControls;
+
 @end
