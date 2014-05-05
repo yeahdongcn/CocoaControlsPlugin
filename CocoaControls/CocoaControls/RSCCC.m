@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 P.D.Q. All rights reserved.
 //
 
-#import "RSControl.h"
+#import "RSCCC.h"
 
-@implementation RSControl
+@implementation RSCCC
 
-- (instancetype)initWithAssignment:(void (^)(RSControl *))assignment
+- (instancetype)initWithAssignment:(void (^)(RSCCC *))assignment
 {
     self = [super init];
     if (self) {

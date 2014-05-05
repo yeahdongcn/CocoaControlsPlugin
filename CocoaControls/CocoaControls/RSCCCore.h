@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RSControl.h"
+#import "RSCCC.h"
 
-@interface RSDataCenter : NSObject
+@interface RSCCCore : NSObject
+
++ (instancetype)sharedCore;
 
 @end

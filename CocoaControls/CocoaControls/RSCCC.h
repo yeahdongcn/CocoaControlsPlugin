@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RSControl : NSObject
+@interface RSCCC : NSObject
 
 @property (nonatomic, copy) NSString *stringTitle;
 
@@ -26,6 +26,6 @@
 
 @property (nonatomic) NSUInteger apps;
 
-- (instancetype)initWithAssignment:(void (^)(RSControl *))assignment;
+- (instancetype)initWithAssignment:(void (^)(RSCCC *))assignment;
 
 @end

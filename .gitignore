@@ -1,8 +1,6 @@
 
 CocoaControls/Pods/*
 
-CocoaControls/Podfile
-
 CocoaControls/Podfile.lock
 
 CocoaControls/CocoaControls.xcworkspace/*

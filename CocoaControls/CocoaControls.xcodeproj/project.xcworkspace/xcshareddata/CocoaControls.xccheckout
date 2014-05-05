@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0DA30BB4-5281-4798-A541-003AA681DEF3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CocoaControls</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>561FE887-AF05-4044-BD7D-731C2D8F1ABE</key>
+		<string>https://github.com/yeahdongcn/CocoaControlsPlugin.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CocoaControls/CocoaControls.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>561FE887-AF05-4044-BD7D-731C2D8F1ABE</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yeahdongcn/CocoaControlsPlugin.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>561FE887-AF05-4044-BD7D-731C2D8F1ABE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>561FE887-AF05-4044-BD7D-731C2D8F1ABE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CocoaControlsPlugin</string>
+		</dict>
+	</array>
+</dict>
+</plist>
