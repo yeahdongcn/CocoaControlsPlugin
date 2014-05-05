@@ -10,7 +10,16 @@
 
 #import "RSCCCore.h"
 
+@interface RSAppDelegate () <NSTableViewDataSource, NSTableViewDelegate>
+
+@end
+
 @implementation RSAppDelegate
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return 10;
+}
 
 - (void)controlsDidLoad:(NSNotification *)aNotification
 {
