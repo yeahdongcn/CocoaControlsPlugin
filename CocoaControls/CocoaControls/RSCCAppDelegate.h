@@ -1,5 +1,5 @@
 //
-//  RSAppDelegate.h
+//  RSCCAppDelegate.h
 //  CocoaControls
 //
 //  Created by R0CKSTAR on 14-5-2.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RSAppDelegate : NSObject <NSApplicationDelegate>
+@interface RSCCAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 

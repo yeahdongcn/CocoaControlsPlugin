@@ -73,7 +73,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
                                 for (NSString *component in components) {
                                     if ([component rangeOfString:@"CocoaPod"].length > 0) {
                                         c.isOnCocoaPods = YES;
-                                    } else if ([component rangeOfString:@"Licensed"].length > 0) {
+                                    } else if ([component rangeOfString:@"Licensed"].length > 0 || [component rangeOfString:@"License"].length > 0) {
                                         c.license = [component stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                                     } else if ([component rangeOfString:@"App"].length > 0){
                                         c.appsUsingThisControl = [[[component substringToIndex:[component rangeOfString:@"App"].location] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] intValue];
@@ -87,7 +87,9 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
                 }];
                 [cs addObject:c];
             }
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:cs] userInfo:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:cs] userInfo:nil];
+            });
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:nil] userInfo:nil];

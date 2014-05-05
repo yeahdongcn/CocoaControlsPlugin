@@ -11,11 +11,12 @@
 		D0108A541913CCD500912C70 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0108A521913CCD500912C70 /* InfoPlist.strings */; };
 		D0108A561913CCD500912C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0108A551913CCD500912C70 /* main.m */; };
 		D0108A5A1913CCD500912C70 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D0108A581913CCD500912C70 /* Credits.rtf */; };
-		D0108A5D1913CCD500912C70 /* RSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0108A5C1913CCD500912C70 /* RSAppDelegate.m */; };
+		D0108A5D1913CCD500912C70 /* RSCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */; };
 		D0108A601913CCD500912C70 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0108A5E1913CCD500912C70 /* MainMenu.xib */; };
 		D0108A621913CCD500912C70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0108A611913CCD500912C70 /* Images.xcassets */; };
 		D09E9E021914CA25000CD972 /* RSCCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E011914CA25000CD972 /* RSCCControl.m */; };
 		D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E041914CEF8000CD972 /* RSCCCore.m */; };
+		D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E071917C77F000CD972 /* RSCCControlCellView.m */; };
 		D0A2E6F26A5D45B0B116AC49 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E92A450DF424598A6DF0DA3 /* libPods.a */; };
 		D0A99F4519174D3000DB2906 /* RSCCAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A99F4419174D3000DB2906 /* RSCCAPI.m */; };
 		D0A99F4819174E6800DB2906 /* RSCCHTMLSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A99F4719174E6800DB2906 /* RSCCHTMLSerializer.m */; };
@@ -34,14 +35,16 @@
 		D0108A551913CCD500912C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0108A571913CCD500912C70 /* CocoaControls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaControls-Prefix.pch"; sourceTree = "<group>"; };
 		D0108A591913CCD500912C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		D0108A5B1913CCD500912C70 /* RSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAppDelegate.h; sourceTree = "<group>"; };
-		D0108A5C1913CCD500912C70 /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
+		D0108A5B1913CCD500912C70 /* RSCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSCCAppDelegate.h; sourceTree = "<group>"; };
+		D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCCAppDelegate.m; sourceTree = "<group>"; };
 		D0108A5F1913CCD500912C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D0108A611913CCD500912C70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D09E9E001914CA25000CD972 /* RSCCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCControl.h; sourceTree = "<group>"; };
 		D09E9E011914CA25000CD972 /* RSCCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControl.m; sourceTree = "<group>"; };
 		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCCore.h; sourceTree = "<group>"; };
 		D09E9E041914CEF8000CD972 /* RSCCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCCore.m; sourceTree = "<group>"; };
+		D09E9E061917C77F000CD972 /* RSCCControlCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCControlCellView.h; sourceTree = "<group>"; };
+		D09E9E071917C77F000CD972 /* RSCCControlCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControlCellView.m; sourceTree = "<group>"; };
 		D0A99F4319174D3000DB2906 /* RSCCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCAPI.h; sourceTree = "<group>"; };
 		D0A99F4419174D3000DB2906 /* RSCCAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCAPI.m; sourceTree = "<group>"; };
 		D0A99F4619174E6800DB2906 /* RSCCHTMLSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCHTMLSerializer.h; sourceTree = "<group>"; };
@@ -110,11 +113,13 @@
 				D09E9E011914CA25000CD972 /* RSCCControl.m */,
 				D09E9E031914CEF8000CD972 /* RSCCCore.h */,
 				D09E9E041914CEF8000CD972 /* RSCCCore.m */,
-				D0108A5B1913CCD500912C70 /* RSAppDelegate.h */,
-				D0108A5C1913CCD500912C70 /* RSAppDelegate.m */,
+				D0108A5B1913CCD500912C70 /* RSCCAppDelegate.h */,
+				D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */,
 				D0108A5E1913CCD500912C70 /* MainMenu.xib */,
 				D0108A611913CCD500912C70 /* Images.xcassets */,
 				D0108A501913CCD500912C70 /* Supporting Files */,
+				D09E9E061917C77F000CD972 /* RSCCControlCellView.h */,
+				D09E9E071917C77F000CD972 /* RSCCControlCellView.m */,
 			);
 			path = CocoaControls;
 			sourceTree = "<group>";
@@ -235,10 +240,11 @@
 			files = (
 				D0A99F4819174E6800DB2906 /* RSCCHTMLSerializer.m in Sources */,
 				D0108A561913CCD500912C70 /* main.m in Sources */,
+				D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */,
 				D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */,
 				D0A99F4519174D3000DB2906 /* RSCCAPI.m in Sources */,
 				D09E9E021914CA25000CD972 /* RSCCControl.m in Sources */,
-				D0108A5D1913CCD500912C70 /* RSAppDelegate.m in Sources */,
+				D0108A5D1913CCD500912C70 /* RSCCAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
