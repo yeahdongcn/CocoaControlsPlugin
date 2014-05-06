@@ -10,6 +10,8 @@
 
 @interface RSCCControlCellView : NSTableCellView
 
+@property (nonatomic, weak) IBOutlet NSImageView *iconView;
+
 @property (nonatomic, weak) IBOutlet NSTextField *titleField;
 
 @property (nonatomic, weak) IBOutlet NSTextField *dateField;
@@ -17,5 +19,17 @@
 @property (nonatomic, weak) IBOutlet NSTextField *licenseField;
 
 @property (nonatomic, weak) IBOutlet NSButton *cocoaPodsButton;
+
+@property (nonatomic, weak) IBOutlet NSImageView *star0;
+
+@property (nonatomic, weak) IBOutlet NSImageView *star1;
+
+@property (nonatomic, weak) IBOutlet NSImageView *star2;
+
+@property (nonatomic, weak) IBOutlet NSImageView *star3;
+
+@property (nonatomic, weak) IBOutlet NSImageView *star4;
+
+@property (nonatomic, strong) NSArray *stars;
 
 @end

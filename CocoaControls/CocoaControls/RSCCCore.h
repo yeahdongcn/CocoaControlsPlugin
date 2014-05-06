@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#import <AFNetworking.h>
+
 #import "RSCCControl.h"
 
 extern NSString *const RSCCCoreControlsDidLoadNotification;
 
 @interface RSCCCore : NSObject
+
+@property (nonatomic, readonly) AFHTTPRequestOperationManager *imageManager;
 
 + (instancetype)sharedCore;
 

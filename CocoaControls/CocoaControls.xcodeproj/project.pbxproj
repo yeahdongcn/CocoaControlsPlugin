@@ -14,6 +14,7 @@
 		D0108A5D1913CCD500912C70 /* RSCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */; };
 		D0108A601913CCD500912C70 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0108A5E1913CCD500912C70 /* MainMenu.xib */; };
 		D0108A621913CCD500912C70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0108A611913CCD500912C70 /* Images.xcassets */; };
+		D01BB5D71918831D001DA429 /* RSCCImageSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D01BB5D61918831D001DA429 /* RSCCImageSerializer.m */; };
 		D09E9E021914CA25000CD972 /* RSCCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E011914CA25000CD972 /* RSCCControl.m */; };
 		D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E041914CEF8000CD972 /* RSCCCore.m */; };
 		D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E071917C77F000CD972 /* RSCCControlCellView.m */; };
@@ -39,6 +40,8 @@
 		D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCCAppDelegate.m; sourceTree = "<group>"; };
 		D0108A5F1913CCD500912C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D0108A611913CCD500912C70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D01BB5D51918831D001DA429 /* RSCCImageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageSerializer.h; sourceTree = "<group>"; };
+		D01BB5D61918831D001DA429 /* RSCCImageSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageSerializer.m; sourceTree = "<group>"; };
 		D09E9E001914CA25000CD972 /* RSCCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCControl.h; sourceTree = "<group>"; };
 		D09E9E011914CA25000CD972 /* RSCCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControl.m; sourceTree = "<group>"; };
 		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCCore.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 			children = (
 				D0A99F4619174E6800DB2906 /* RSCCHTMLSerializer.h */,
 				D0A99F4719174E6800DB2906 /* RSCCHTMLSerializer.m */,
+				D01BB5D51918831D001DA429 /* RSCCImageSerializer.h */,
+				D01BB5D61918831D001DA429 /* RSCCImageSerializer.m */,
 				D0A99F4319174D3000DB2906 /* RSCCAPI.h */,
 				D0A99F4419174D3000DB2906 /* RSCCAPI.m */,
 				D09E9E001914CA25000CD972 /* RSCCControl.h */,
@@ -238,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01BB5D71918831D001DA429 /* RSCCImageSerializer.m in Sources */,
 				D0A99F4819174E6800DB2906 /* RSCCHTMLSerializer.m in Sources */,
 				D0108A561913CCD500912C70 /* main.m in Sources */,
 				D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */,

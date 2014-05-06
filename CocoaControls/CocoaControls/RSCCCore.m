@@ -12,6 +12,8 @@
 
 #import "RSCCHTMLSerializer.h"
 
+#import "RSCCImageSerializer.h"
+
 #import <AFNetworking.h>
 
 #import <TFHpple.h>
@@ -22,7 +24,9 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
 
 @interface RSCCCore ()
 
-@property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
+@property (nonatomic, strong) AFHTTPRequestOperationManager *requestManager;
+
+@property (nonatomic, strong) AFHTTPRequestOperationManager *imageManager;
 
 @property (nonatomic) int currentPage;
 
@@ -42,7 +46,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
 
 - (void)loadControls
 {
-    [self.manager GET:[NSString stringWithFormat:RSCCAPIControlsAtPageFormat, self.currentPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.requestManager GET:[NSString stringWithFormat:RSCCAPIControlsAtPageFormat, self.currentPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSMutableArray *cs = [@[] mutableCopy];
             for (TFHppleElement *element in responseObject) {
@@ -102,8 +106,11 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
     if (self) {
         self.currentPage = 1;
         
-        self.manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:RSCCAPIRoot]];
-        self.manager.responseSerializer = [RSCCHTMLSerializer serializer];
+        self.requestManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:RSCCAPIRoot]];
+        self.requestManager.responseSerializer = [RSCCHTMLSerializer serializer];
+        
+        self.imageManager = [AFHTTPRequestOperationManager manager];
+        self.imageManager.responseSerializer = [RSCCImageSerializer serializer];
         
         [self loadControls];
     }

@@ -672,7 +672,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="481" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="481" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -718,15 +718,15 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MGX-1I-PbT">
-                                                            <rect key="frame" x="7" y="12" width="70" height="120"/>
+                                                            <rect key="frame" x="10" y="15" width="64" height="114"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="64" id="19d-Xn-QZN"/>
                                                                 <constraint firstAttribute="height" constant="114" id="crY-Vb-ow9"/>
                                                             </constraints>
-                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="e3k-lF-BpD"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="placeholder" id="e3k-lF-BpD"/>
                                                         </imageView>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8V-TM-n33">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j8V-TM-n33">
                                                             <rect key="frame" x="82" y="104" width="338" height="25"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Label" id="IZS-TV-bQb">
@@ -765,26 +765,87 @@
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
                                                         </button>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wqL-Bu-kXp">
+                                                            <rect key="frame" x="84" y="15" width="24" height="24"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="Cbr-Qv-7Yl"/>
+                                                                <constraint firstAttribute="width" constant="24" id="tsU-W1-ECP"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="star-o" id="Am0-bl-MGG"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cFq-nK-wmR">
+                                                            <rect key="frame" x="108" y="15" width="24" height="24"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="dgy-AS-78H"/>
+                                                                <constraint firstAttribute="width" constant="24" id="uBf-9Q-TM1"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="star-o" id="bWc-be-niw"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cec-1S-fy0">
+                                                            <rect key="frame" x="132" y="15" width="24" height="24"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="VOQ-Nd-wGO"/>
+                                                                <constraint firstAttribute="width" constant="24" id="an5-Am-uYV"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="star-o" id="nOs-T3-dw9"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U9n-XN-UCK">
+                                                            <rect key="frame" x="156" y="15" width="24" height="24"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="YhB-z8-16V"/>
+                                                                <constraint firstAttribute="width" constant="24" id="hel-Of-QKI"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="star-o" id="NGe-om-HTE"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qku-8D-4Hs">
+                                                            <rect key="frame" x="180" y="15" width="24" height="24"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="24" id="se8-A2-ngE"/>
+                                                                <constraint firstAttribute="height" constant="24" id="ye1-cj-w1Y"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="star-o" id="PKh-gQ-elU"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="j8V-TM-n33" firstAttribute="leading" secondItem="MGX-1I-PbT" secondAttribute="trailing" constant="10" id="4h8-aY-0aj"/>
                                                         <constraint firstAttribute="trailing" secondItem="CDY-4c-nxY" secondAttribute="trailing" constant="10" id="79K-Q1-Yym"/>
+                                                        <constraint firstItem="wqL-Bu-kXp" firstAttribute="centerY" secondItem="Qku-8D-4Hs" secondAttribute="centerY" id="Liv-bc-mBe"/>
+                                                        <constraint firstItem="U9n-XN-UCK" firstAttribute="leading" secondItem="Cec-1S-fy0" secondAttribute="trailing" id="PgP-QL-JpS"/>
                                                         <constraint firstItem="j8V-TM-n33" firstAttribute="leading" secondItem="0dp-V2-ojY" secondAttribute="leading" id="Stc-6o-JHg"/>
+                                                        <constraint firstItem="wqL-Bu-kXp" firstAttribute="centerY" secondItem="Cec-1S-fy0" secondAttribute="centerY" id="UVR-y7-cy8"/>
                                                         <constraint firstItem="HDj-0i-FOw" firstAttribute="trailing" secondItem="j8V-TM-n33" secondAttribute="trailing" id="Xdc-ws-oyX"/>
+                                                        <constraint firstItem="j8V-TM-n33" firstAttribute="leading" secondItem="wqL-Bu-kXp" secondAttribute="leading" id="YZ5-b4-bFj"/>
                                                         <constraint firstItem="0dp-V2-ojY" firstAttribute="top" secondItem="HDj-0i-FOw" secondAttribute="bottom" constant="5" id="ZL9-lN-EsC"/>
+                                                        <constraint firstItem="MGX-1I-PbT" firstAttribute="bottom" secondItem="wqL-Bu-kXp" secondAttribute="bottom" id="Zt2-p5-Dgj"/>
                                                         <constraint firstItem="MGX-1I-PbT" firstAttribute="leading" secondItem="x0M-VM-O0G" secondAttribute="leading" constant="10" id="aK3-XG-LQv"/>
                                                         <constraint firstItem="MGX-1I-PbT" firstAttribute="top" secondItem="j8V-TM-n33" secondAttribute="top" id="bqN-W9-dTv"/>
+                                                        <constraint firstItem="wqL-Bu-kXp" firstAttribute="centerY" secondItem="U9n-XN-UCK" secondAttribute="centerY" id="cuf-pZ-Gnc"/>
                                                         <constraint firstItem="j8V-TM-n33" firstAttribute="trailing" secondItem="0dp-V2-ojY" secondAttribute="trailing" id="f78-3n-K8I"/>
+                                                        <constraint firstItem="Cec-1S-fy0" firstAttribute="leading" secondItem="cFq-nK-wmR" secondAttribute="trailing" id="fcI-MA-ofY"/>
                                                         <constraint firstItem="j8V-TM-n33" firstAttribute="leading" secondItem="HDj-0i-FOw" secondAttribute="leading" id="jIb-mV-Ngl"/>
                                                         <constraint firstAttribute="centerY" secondItem="MGX-1I-PbT" secondAttribute="centerY" id="l9d-Q6-FPd"/>
+                                                        <constraint firstItem="Qku-8D-4Hs" firstAttribute="leading" secondItem="U9n-XN-UCK" secondAttribute="trailing" id="lY0-ue-rjL"/>
                                                         <constraint firstItem="CDY-4c-nxY" firstAttribute="leading" secondItem="j8V-TM-n33" secondAttribute="trailing" constant="10" id="mlv-gU-bdM"/>
                                                         <constraint firstItem="HDj-0i-FOw" firstAttribute="top" secondItem="j8V-TM-n33" secondAttribute="bottom" constant="5" id="oOz-Ug-n4Y"/>
+                                                        <constraint firstItem="cFq-nK-wmR" firstAttribute="leading" secondItem="wqL-Bu-kXp" secondAttribute="trailing" id="pyJ-5g-iKm"/>
+                                                        <constraint firstItem="wqL-Bu-kXp" firstAttribute="centerY" secondItem="cFq-nK-wmR" secondAttribute="centerY" id="se2-li-O4U"/>
                                                         <constraint firstAttribute="centerY" secondItem="CDY-4c-nxY" secondAttribute="centerY" id="suU-q7-RfW"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="cocoaPodsButton" destination="CDY-4c-nxY" id="jwL-sf-cCz"/>
                                                         <outlet property="dateField" destination="0dp-V2-ojY" id="w48-jX-biJ"/>
+                                                        <outlet property="iconView" destination="MGX-1I-PbT" id="jp9-dg-NQ0"/>
                                                         <outlet property="licenseField" destination="HDj-0i-FOw" id="J6F-ic-rsq"/>
+                                                        <outlet property="star0" destination="wqL-Bu-kXp" id="knG-1X-8t8"/>
+                                                        <outlet property="star1" destination="cFq-nK-wmR" id="OSG-XI-lAt"/>
+                                                        <outlet property="star2" destination="Cec-1S-fy0" id="SQP-WN-63h"/>
+                                                        <outlet property="star3" destination="U9n-XN-UCK" id="A9R-Eo-Hc7"/>
+                                                        <outlet property="star4" destination="Qku-8D-4Hs" id="Rz4-qe-kca"/>
                                                         <outlet property="titleField" destination="j8V-TM-n33" id="KXU-Cq-eBh"/>
                                                     </connections>
                                                 </tableCellView>
@@ -842,5 +903,7 @@
     </objects>
     <resources>
         <image name="CocoaPods" width="70" height="70"/>
+        <image name="placeholder" width="128" height="227"/>
+        <image name="star-o" width="48" height="48"/>
     </resources>
 </document>
