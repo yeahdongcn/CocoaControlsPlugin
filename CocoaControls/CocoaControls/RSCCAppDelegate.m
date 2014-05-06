@@ -82,7 +82,7 @@
         [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [cellView.imageButton setImage:responseObject];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"%@", error);
+            [cellView.imageButton setImage:nil];
         }];
         for (int i = 0; i < (int)c.rating; i++) {
             NSImageView *iv = cellView.stars[i];
