@@ -79,9 +79,8 @@
                            cellView.star2,
                            cellView.star3,
                            cellView.star4];
-        
         [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            cellView.iconView.image = responseObject;
+            [cellView.imageButton setImage:responseObject];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@", error);
         }];

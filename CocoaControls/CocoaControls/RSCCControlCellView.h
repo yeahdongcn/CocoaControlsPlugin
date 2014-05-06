@@ -8,9 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class RSCCControlCellViewBackgroundView;
+
 @interface RSCCControlCellView : NSTableCellView
 
-@property (nonatomic, weak) IBOutlet NSImageView *iconView;
+@property (nonatomic, weak) IBOutlet RSCCControlCellViewBackgroundView *backgroundView;
+
+@property (nonatomic, weak) IBOutlet NSButton *imageButton;
 
 @property (nonatomic, weak) IBOutlet NSTextField *titleField;
 
