@@ -8,9 +8,10 @@
 
 #import "RSCCCore.h"
 
-#import "RSCCHTMLSerializer.h"
+#import "RSCCHTMLResponseSerializer.h"
 
-#import "RSCCImageSerializer.h"
+#import "RSCCImageRequestSerializer.h"
+#import "RSCCImageResponseSerializer.h"
 
 #import <TFHpple.h>
 
@@ -101,10 +102,11 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
     self = [super init];
     if (self) {
         self.requestManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:RSCCAPIRoot]];
-        self.requestManager.responseSerializer = [RSCCHTMLSerializer serializer];
+        self.requestManager.responseSerializer = [RSCCHTMLResponseSerializer serializer];
         
         self.imageManager = [AFHTTPRequestOperationManager manager];
-        self.imageManager.responseSerializer = [RSCCImageSerializer serializer];
+        self.imageManager.requestSerializer = [RSCCImageRequestSerializer serializer];
+        self.imageManager.responseSerializer = [RSCCImageResponseSerializer serializer];
         
         [self refreshControls];
     }

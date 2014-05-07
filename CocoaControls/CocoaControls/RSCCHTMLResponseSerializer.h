@@ -1,5 +1,5 @@
 //
-//  RSCCA.h
+//  RSCCHTMLResponseSerializer.h
 //  CocoaControls
 //
 //  Created by R0CKSTAR on 5/5/14.
@@ -8,6 +8,6 @@
 
 #import <AFURLResponseSerialization.h>
 
-@interface RSCCHTMLSerializer : AFHTTPResponseSerializer
+@interface RSCCHTMLResponseSerializer : AFHTTPResponseSerializer
 
 @end

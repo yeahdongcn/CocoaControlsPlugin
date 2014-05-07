@@ -1,16 +1,16 @@
 //
-//  RSCCA.m
+//  RSCCHTMLResponseSerializer.m
 //  CocoaControls
 //
 //  Created by R0CKSTAR on 5/5/14.
 //  Copyright (c) 2014 P.D.Q. All rights reserved.
 //
 
-#import "RSCCHTMLSerializer.h"
+#import "RSCCHTMLResponseSerializer.h"
 
 #import <TFHpple.h>
 
-@implementation RSCCHTMLSerializer
+@implementation RSCCHTMLResponseSerializer
 
 - (id)responseObjectForResponse:(NSURLResponse *)response
                            data:(NSData *)data

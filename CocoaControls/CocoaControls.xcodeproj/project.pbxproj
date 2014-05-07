@@ -14,13 +14,14 @@
 		D0108A5D1913CCD500912C70 /* RSCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */; };
 		D0108A601913CCD500912C70 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0108A5E1913CCD500912C70 /* MainMenu.xib */; };
 		D0108A621913CCD500912C70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0108A611913CCD500912C70 /* Images.xcassets */; };
-		D01BB5D71918831D001DA429 /* RSCCImageSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D01BB5D61918831D001DA429 /* RSCCImageSerializer.m */; };
+		D01BB5D71918831D001DA429 /* RSCCImageResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */; };
+		D053F848191A096A00B1A7BA /* RSCCImageRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */; };
 		D09E9E021914CA25000CD972 /* RSCCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E011914CA25000CD972 /* RSCCControl.m */; };
 		D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E041914CEF8000CD972 /* RSCCCore.m */; };
 		D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E071917C77F000CD972 /* RSCCControlCellView.m */; };
 		D0A2E6F26A5D45B0B116AC49 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E92A450DF424598A6DF0DA3 /* libPods.a */; };
 		D0A99F4519174D3000DB2906 /* RSCCAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A99F4419174D3000DB2906 /* RSCCAPI.m */; };
-		D0A99F4819174E6800DB2906 /* RSCCHTMLSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A99F4719174E6800DB2906 /* RSCCHTMLSerializer.m */; };
+		D0A99F4819174E6800DB2906 /* RSCCHTMLResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +41,10 @@
 		D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCCAppDelegate.m; sourceTree = "<group>"; };
 		D0108A5F1913CCD500912C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D0108A611913CCD500912C70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D01BB5D51918831D001DA429 /* RSCCImageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageSerializer.h; sourceTree = "<group>"; };
-		D01BB5D61918831D001DA429 /* RSCCImageSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageSerializer.m; sourceTree = "<group>"; };
+		D01BB5D51918831D001DA429 /* RSCCImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageResponseSerializer.h; sourceTree = "<group>"; };
+		D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageResponseSerializer.m; sourceTree = "<group>"; };
+		D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageRequestSerializer.h; sourceTree = "<group>"; };
+		D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageRequestSerializer.m; sourceTree = "<group>"; };
 		D09E9E001914CA25000CD972 /* RSCCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCControl.h; sourceTree = "<group>"; };
 		D09E9E011914CA25000CD972 /* RSCCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControl.m; sourceTree = "<group>"; };
 		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCCore.h; sourceTree = "<group>"; };
@@ -50,8 +53,8 @@
 		D09E9E071917C77F000CD972 /* RSCCControlCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControlCellView.m; sourceTree = "<group>"; };
 		D0A99F4319174D3000DB2906 /* RSCCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCAPI.h; sourceTree = "<group>"; };
 		D0A99F4419174D3000DB2906 /* RSCCAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCAPI.m; sourceTree = "<group>"; };
-		D0A99F4619174E6800DB2906 /* RSCCHTMLSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCHTMLSerializer.h; sourceTree = "<group>"; };
-		D0A99F4719174E6800DB2906 /* RSCCHTMLSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCHTMLSerializer.m; sourceTree = "<group>"; };
+		D0A99F4619174E6800DB2906 /* RSCCHTMLResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCHTMLResponseSerializer.h; sourceTree = "<group>"; };
+		D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCHTMLResponseSerializer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +111,12 @@
 		D0108A4F1913CCD500912C70 /* CocoaControls */ = {
 			isa = PBXGroup;
 			children = (
-				D0A99F4619174E6800DB2906 /* RSCCHTMLSerializer.h */,
-				D0A99F4719174E6800DB2906 /* RSCCHTMLSerializer.m */,
-				D01BB5D51918831D001DA429 /* RSCCImageSerializer.h */,
-				D01BB5D61918831D001DA429 /* RSCCImageSerializer.m */,
+				D0A99F4619174E6800DB2906 /* RSCCHTMLResponseSerializer.h */,
+				D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */,
+				D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */,
+				D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */,
+				D01BB5D51918831D001DA429 /* RSCCImageResponseSerializer.h */,
+				D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */,
 				D0A99F4319174D3000DB2906 /* RSCCAPI.h */,
 				D0A99F4419174D3000DB2906 /* RSCCAPI.m */,
 				D09E9E001914CA25000CD972 /* RSCCControl.h */,
@@ -243,9 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D01BB5D71918831D001DA429 /* RSCCImageSerializer.m in Sources */,
-				D0A99F4819174E6800DB2906 /* RSCCHTMLSerializer.m in Sources */,
+				D01BB5D71918831D001DA429 /* RSCCImageResponseSerializer.m in Sources */,
+				D0A99F4819174E6800DB2906 /* RSCCHTMLResponseSerializer.m in Sources */,
 				D0108A561913CCD500912C70 /* main.m in Sources */,
+				D053F848191A096A00B1A7BA /* RSCCImageRequestSerializer.m in Sources */,
 				D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */,
 				D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */,
 				D0A99F4519174D3000DB2906 /* RSCCAPI.m in Sources */,
