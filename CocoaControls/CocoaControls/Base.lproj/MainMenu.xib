@@ -16,6 +16,7 @@
                 <outlet property="imagePanel" destination="9Hc-6j-fFR" id="FLz-WW-gS1"/>
                 <outlet property="imageView" destination="r1V-gG-agp" id="9lP-iV-Ba2"/>
                 <outlet property="progressIndicator" destination="6yv-CO-h6v" id="QOc-oL-voE"/>
+                <outlet property="searchField" destination="k0s-vL-UDr" id="m9A-uL-08v"/>
                 <outlet property="tableView" destination="Y3X-9f-vG9" id="7Om-44-m01"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -682,7 +683,7 @@
                     <searchField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k0s-vL-UDr">
                         <rect key="frame" x="10" y="424" width="461" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="C6R-xR-UhN">
+                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="C6R-xR-UhN">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

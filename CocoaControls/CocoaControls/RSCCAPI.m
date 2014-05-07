@@ -11,3 +11,5 @@
 NSString *const RSCCAPIRoot = @"https://www.cocoacontrols.com";
 
 NSString *const RSCCAPIControlsAtPageFormat = @"controls?page=%d";
+
+NSString *const RSCCAPISearchFormat = @"search?utf8=✓&q=%@";

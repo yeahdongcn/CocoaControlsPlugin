@@ -29,4 +29,6 @@ extern NSString *const RSCCCorePodDidLoadNotification;
 
 - (void)podForControl:(RSCCControl *)control;
 
+- (void)searchControlsWithKey:(NSString *)key;
+
 @end

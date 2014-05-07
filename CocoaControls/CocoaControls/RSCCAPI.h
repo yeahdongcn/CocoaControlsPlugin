@@ -11,3 +11,5 @@
 extern NSString *const RSCCAPIRoot;
 
 extern NSString *const RSCCAPIControlsAtPageFormat;
+
+extern NSString *const RSCCAPISearchFormat;

@@ -12,9 +12,13 @@
 
 #import "RSCCControlCellView.h"
 
-@interface RSCCAppDelegate () <NSTableViewDataSource, NSTableViewDelegate>
+@interface RSCCAppDelegate () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 
 @property (nonatomic, strong) NSMutableArray *controls;
+
+@property (assign) IBOutlet NSWindow *window;
+
+@property (nonatomic, weak) IBOutlet NSSearchField *searchField;
 
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 
@@ -27,6 +31,22 @@
 @end
 
 @implementation RSCCAppDelegate
+
+- (void)RSCC_handleSearch:(NSSearchField *)searchField
+{
+    [self.controls removeAllObjects];
+    
+    [self.tableView reloadData];
+    
+    [self.progressIndicator startAnimation:self];
+    
+    NSString *key = searchField.stringValue;
+    if ([key isEqualToString:@""]) {
+        [CORE refreshControls];
+    } else {
+        [CORE searchControlsWithKey:key];
+    }
+}
 
 - (void)RSCC_handlePodDidLoad:(NSNotification *)aNotification
 {
@@ -91,6 +111,9 @@
     
     [self.progressIndicator setDisplayedWhenStopped:NO];
     [self.progressIndicator startAnimation:self];
+
+    [self.searchField setTarget:self];
+    [self.searchField setAction:@selector(RSCC_handleSearch:)];
 }
 
 #pragma mark - NSTableViewDataSource
