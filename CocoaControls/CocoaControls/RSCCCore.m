@@ -153,6 +153,14 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
         if ([elements count] > 0) {
             TFHppleElement *pod = elements[0];
             control.pod = [pod attributes][@"value"];
+        }
+        elements = [responseObject searchWithXPathQuery:@"//*[@id=\"get_source_link\"]"];
+        if ([elements count] > 0) {
+            TFHppleElement *github = elements[0];
+            control.github = [NSString stringWithFormat:@"%@.git", [github attributes][@"href"]];
+        }
+        
+        if (control.pod || control.github) {
             [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCorePodDidLoadNotification object:control userInfo:nil];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

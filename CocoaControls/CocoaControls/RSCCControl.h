@@ -22,6 +22,8 @@
 
 @property (nonatomic, copy) NSString *pod;
 
+@property (nonatomic, copy) NSString *github;
+
 @property (nonatomic) BOOL isOnCocoaPods;
 
 @property (nonatomic) CGFloat rating;
