@@ -687,14 +687,14 @@
         <window title="CocoaControls" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="481" height="456"/>
+            <rect key="contentRect" x="335" y="390" width="598" height="456"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="481" height="456"/>
+                <rect key="frame" x="0.0" y="0.0" width="598" height="456"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <searchField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k0s-vL-UDr">
-                        <rect key="frame" x="10" y="424" width="461" height="22"/>
+                        <rect key="frame" x="10" y="424" width="578" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="C6R-xR-UhN">
                             <font key="font" size="16" name="HelveticaNeue"/>
@@ -703,20 +703,20 @@
                         </searchFieldCell>
                     </searchField>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="156" horizontalPageScroll="10" verticalLineScroll="156" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-y5-jB9">
-                        <rect key="frame" x="-1" y="40" width="483" height="374"/>
+                        <rect key="frame" x="-1" y="40" width="600" height="374"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="aAZ-vE-Utc">
-                            <rect key="frame" x="1" y="1" width="481" height="372"/>
+                            <rect key="frame" x="1" y="1" width="598" height="372"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="154" viewBased="YES" id="Y3X-9f-vG9">
-                                    <rect key="frame" x="0.0" y="0.0" width="481" height="372"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="372"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="ControlCell" width="478" minWidth="40" maxWidth="1000" id="GmM-Ys-jcS">
+                                        <tableColumn identifier="ControlCell" width="595" minWidth="40" maxWidth="1000" id="GmM-Ys-jcS">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -730,11 +730,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="x0M-VM-O0G" customClass="RSCCControlCellView">
-                                                    <rect key="frame" x="1" y="1" width="478" height="160"/>
+                                                    <rect key="frame" x="1" y="1" width="595" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="hJD-m9-jfB" customClass="RSCCControlCellViewBackgroundView">
-                                                            <rect key="frame" x="10" y="10" width="458" height="140"/>
+                                                            <rect key="frame" x="10" y="10" width="575" height="140"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         </customView>
                                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="NW7-jp-f5J">
@@ -750,7 +750,7 @@
                                                             </buttonCell>
                                                         </button>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j8V-TM-n33">
-                                                            <rect key="frame" x="92" y="112" width="318" height="25"/>
+                                                            <rect key="frame" x="92" y="112" width="385" height="25"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Label" id="IZS-TV-bQb">
                                                                 <font key="font" size="20" name="HelveticaNeue-Bold"/>
@@ -759,7 +759,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HDj-0i-FOw">
-                                                            <rect key="frame" x="92" y="84" width="318" height="23"/>
+                                                            <rect key="frame" x="92" y="84" width="385" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Label" id="eFz-FP-jaf">
                                                                 <font key="font" size="16" name="HelveticaNeue"/>
@@ -768,7 +768,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0dp-V2-ojY">
-                                                            <rect key="frame" x="92" y="56" width="318" height="23"/>
+                                                            <rect key="frame" x="92" y="56" width="385" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Label" id="kM8-68-93g">
                                                                 <font key="font" size="16" name="HelveticaNeue"/>
@@ -777,13 +777,25 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="CDY-4c-nxY">
-                                                            <rect key="frame" x="418" y="60" width="40" height="40"/>
+                                                            <rect key="frame" x="485" y="60" width="40" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="Cq3-1Y-IYy"/>
                                                                 <constraint firstAttribute="width" constant="40" id="ylJ-ap-Uce"/>
                                                             </constraints>
-                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="CocoaPods" imagePosition="overlaps" alignment="left" imageScaling="axesIndependently" inset="2" id="V1M-Xp-Qpy">
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="cocoapods" imagePosition="overlaps" alignment="left" imageScaling="axesIndependently" inset="2" id="V1M-Xp-Qpy">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                        </button>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="PLp-zU-jK5">
+                                                            <rect key="frame" x="535" y="60" width="40" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="fuJ-d6-sDT"/>
+                                                                <constraint firstAttribute="height" constant="40" id="yNW-9E-Uqz"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="github" imagePosition="overlaps" alignment="left" imageScaling="axesIndependently" inset="2" id="uo3-Nc-Ufy">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
@@ -835,8 +847,9 @@
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="CDY-4c-nxY" secondAttribute="trailing" constant="20" id="79K-Q1-Yym"/>
+                                                        <constraint firstItem="PLp-zU-jK5" firstAttribute="leading" secondItem="CDY-4c-nxY" secondAttribute="trailing" constant="10" id="5Ue-JQ-NOY"/>
                                                         <constraint firstItem="NW7-jp-f5J" firstAttribute="bottom" secondItem="wqL-Bu-kXp" secondAttribute="bottom" id="9jy-MH-FNw"/>
+                                                        <constraint firstItem="CDY-4c-nxY" firstAttribute="centerY" secondItem="PLp-zU-jK5" secondAttribute="centerY" id="B29-VF-2yt"/>
                                                         <constraint firstItem="CDY-4c-nxY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qku-8D-4Hs" secondAttribute="trailing" constant="10" id="I6a-wi-041"/>
                                                         <constraint firstAttribute="trailing" secondItem="hJD-m9-jfB" secondAttribute="trailing" constant="10" id="Jll-vx-ZiJ"/>
                                                         <constraint firstItem="wqL-Bu-kXp" firstAttribute="centerY" secondItem="Qku-8D-4Hs" secondAttribute="centerY" id="Liv-bc-mBe"/>
@@ -860,6 +873,7 @@
                                                         <constraint firstItem="CDY-4c-nxY" firstAttribute="leading" secondItem="j8V-TM-n33" secondAttribute="trailing" constant="10" id="mlv-gU-bdM"/>
                                                         <constraint firstItem="HDj-0i-FOw" firstAttribute="top" secondItem="j8V-TM-n33" secondAttribute="bottom" constant="5" id="oOz-Ug-n4Y"/>
                                                         <constraint firstItem="cFq-nK-wmR" firstAttribute="leading" secondItem="wqL-Bu-kXp" secondAttribute="trailing" id="pyJ-5g-iKm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="PLp-zU-jK5" secondAttribute="trailing" constant="20" id="rwR-Ec-22J"/>
                                                         <constraint firstAttribute="bottom" secondItem="hJD-m9-jfB" secondAttribute="bottom" constant="10" id="sb1-Gj-t73"/>
                                                         <constraint firstItem="wqL-Bu-kXp" firstAttribute="centerY" secondItem="cFq-nK-wmR" secondAttribute="centerY" id="se2-li-O4U"/>
                                                         <constraint firstAttribute="centerY" secondItem="CDY-4c-nxY" secondAttribute="centerY" id="suU-q7-RfW"/>
@@ -899,7 +913,7 @@
                         </scroller>
                     </scrollView>
                     <progressIndicator maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="6yv-CO-h6v">
-                        <rect key="frame" x="451" y="10" width="20" height="20"/>
+                        <rect key="frame" x="568" y="10" width="20" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="8Cm-8x-dj4"/>
@@ -1123,8 +1137,9 @@
         </customView>
     </objects>
     <resources>
-        <image name="CocoaPods" width="70" height="70"/>
+        <image name="cocoapods" width="80" height="80"/>
         <image name="filter" width="48" height="48"/>
+        <image name="github" width="80" height="80"/>
         <image name="placeholder" width="128" height="227"/>
         <image name="star-o" width="48" height="48"/>
     </resources>
