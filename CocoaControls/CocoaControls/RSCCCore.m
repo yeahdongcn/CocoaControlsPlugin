@@ -30,17 +30,7 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
 
 @implementation RSCCCore
 
-+ (instancetype)sharedCore
-{
-    static RSCCCore *sharedCore = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedCore = [self new];
-    });
-    return sharedCore;
-}
-
-- (void)parseControlsWithDoc:(TFHpple *)doc
+- (void)RSCC_parseControlsWithDoc:(TFHpple *)doc
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableArray *cs = [@[] mutableCopy];
@@ -93,13 +83,13 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
     });
 }
 
-- (void)loadControls
+- (void)RSCC_loadControlsWithURLString:(NSString *)URLString
 {
     [self.requestManager.operationQueue cancelAllOperations];
     [self.imageManager.operationQueue cancelAllOperations];
     
-    [self.requestManager GET:[NSString stringWithFormat:RSCCAPIControlsAtPageFormat, self.page] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self parseControlsWithDoc:responseObject];
+    [self.requestManager GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self RSCC_parseControlsWithDoc:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if ([error code] != NSURLErrorCancelled) {
             [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:nil] userInfo:@{@"page": @(self.page)}];
@@ -119,28 +109,45 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
         self.imageManager.responseSerializer = [RSCCImageResponseSerializer serializer];
         
         [self refreshControls];
-        
-        [self searchControlsWithKey:@"aa"];
     }
     return self;
+}
+
++ (instancetype)sharedCore
+{
+    static RSCCCore *sharedCore = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedCore = [self new];
+    });
+    return sharedCore;
 }
 
 - (void)refreshControls
 {
     self.page = 1;
     
-    [self loadControls];
+    [self RSCC_loadControlsWithURLString:[NSString stringWithFormat:RSCCAPIControlsAtPageFormat, self.page]];
 }
 
 - (void)moreControls
 {
     self.page += 1;
     
-    [self loadControls];
+    [self RSCC_loadControlsWithURLString:[NSString stringWithFormat:RSCCAPIControlsAtPageFormat, self.page]];
+}
+
+- (void)searchControlsWithKey:(NSString *)key
+{
+    self.page = 0;
+    
+    [self RSCC_loadControlsWithURLString:[[NSString stringWithFormat:RSCCAPISearchFormat, key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
 - (void)podForControl:(RSCCControl *)control
 {
+    [self.requestManager.operationQueue cancelAllOperations];
+    
     [self.requestManager GET:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, control.link] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *elements  = [responseObject searchWithXPathQuery:@"//*[@id=\"pod\"]"];
         if ([elements count] > 0) {
@@ -149,22 +156,8 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
             [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCorePodDidLoadNotification object:control userInfo:nil];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCorePodDidLoadNotification object:control userInfo:nil];
-    }];
-}
-
-- (void)searchControlsWithKey:(NSString *)key
-{
-    self.page = 0;
-    
-    [self.requestManager.operationQueue cancelAllOperations];
-    [self.imageManager.operationQueue cancelAllOperations];
-    
-    [self.requestManager GET:[[NSString stringWithFormat:RSCCAPISearchFormat, key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self parseControlsWithDoc:responseObject];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if ([error code] != NSURLErrorCancelled) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:nil] userInfo:@{@"page": @(self.page)}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCorePodDidLoadNotification object:control userInfo:nil];
         }
     }];
 }
