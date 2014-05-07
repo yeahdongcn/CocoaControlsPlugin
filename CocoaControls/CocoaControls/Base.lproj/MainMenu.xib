@@ -16,13 +16,25 @@
                 <outlet property="filterButton" destination="YoV-Xs-9o6" id="EK2-ZA-24z"/>
                 <outlet property="imagePanel" destination="9Hc-6j-fFR" id="FLz-WW-gS1"/>
                 <outlet property="imageView" destination="r1V-gG-agp" id="9lP-iV-Ba2"/>
+                <outlet property="popover" destination="vPO-lU-j9t" id="RMl-al-PTH"/>
                 <outlet property="progressIndicator" destination="6yv-CO-h6v" id="QOc-oL-voE"/>
                 <outlet property="searchField" destination="k0s-vL-UDr" id="m9A-uL-08v"/>
+                <outlet property="sortButton" destination="BBO-ke-oAG" id="aEy-73-8eU"/>
                 <outlet property="tableView" destination="Y3X-9f-vG9" id="7Om-44-m01"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <viewController id="qMl-zb-WaL" userLabel="Popover View Controller">
+            <connections>
+                <outlet property="view" destination="UeS-NA-a8p" id="d75-lh-crv"/>
+            </connections>
+        </viewController>
+        <popover id="vPO-lU-j9t">
+            <connections>
+                <outlet property="contentViewController" destination="qMl-zb-WaL" id="9db-S8-x5b"/>
+            </connections>
+        </popover>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="CocoaControls" id="1Xt-HY-uBw">
@@ -676,7 +688,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="481" height="456"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="481" height="456"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -685,7 +697,7 @@
                         <rect key="frame" x="10" y="424" width="461" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="C6R-xR-UhN">
-                            <font key="font" metaFont="system"/>
+                            <font key="font" size="16" name="HelveticaNeue"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </searchFieldCell>
@@ -902,7 +914,7 @@
                             <constraint firstAttribute="height" constant="20" id="ceb-kH-eW1"/>
                         </constraints>
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="filter" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="DIP-eV-YFs">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
@@ -926,7 +938,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="90" y="125" width="320" height="568"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <value key="minSize" type="size" width="320" height="568"/>
             <value key="maxSize" type="size" width="320" height="568"/>
             <view key="contentView" id="1HX-dz-jVT">
@@ -941,6 +953,174 @@
                 </subviews>
             </view>
         </window>
+        <customView id="UeS-NA-a8p">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="176"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BBO-ke-oAG">
+                    <rect key="frame" x="157" y="140" width="130" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="6jd-LW-Fgo"/>
+                        <constraint firstAttribute="width" constant="130" id="E9N-Ys-YCO"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="inline" title="Apps" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Kbo-gV-r8Q" id="lCc-h4-Pqj">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="16" name="HelveticaNeue-Bold"/>
+                        <menu key="menu" title="OtherViews" id="mpf-2R-m7I">
+                            <items>
+                                <menuItem title="Date" id="3W9-EY-P5l"/>
+                                <menuItem title="Rating" id="j7b-fu-hPk"/>
+                                <menuItem title="Apps" state="on" id="Kbo-gV-r8Q"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fTh-1u-elD">
+                    <rect key="frame" x="8" y="142" width="41" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sort:" id="1kN-h9-UTf">
+                        <font key="font" size="16" name="HelveticaNeue-Bold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-NQ-FX4">
+                    <rect key="frame" x="157" y="96" width="130" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="inline" title="All" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="mlX-mk-mAs" id="LTx-kq-Inl">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="16" name="HelveticaNeue-Bold"/>
+                        <menu key="menu" title="OtherViews" id="Q6T-aS-92Z">
+                            <items>
+                                <menuItem title="All" state="on" id="mlX-mk-mAs"/>
+                                <menuItem title="iOS" id="pKM-cR-gvB"/>
+                                <menuItem title="OS X" id="xH4-xC-Rng"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mbl-WO-sru">
+                    <rect key="frame" x="8" y="98" width="74" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Platform:" id="sL1-W1-I4e">
+                        <font key="font" size="16" name="HelveticaNeue-Bold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="azf-Pf-Ila">
+                    <rect key="frame" x="157" y="52" width="130" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="inline" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XWB-aD-Aij">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="16" name="HelveticaNeue-Bold"/>
+                        <menu key="menu" title="OtherViews" id="OLf-Tf-57q">
+                            <items>
+                                <menuItem title="Yes" id="k5U-Hm-YCA"/>
+                                <menuItem title="No" id="Wja-Va-0z5"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-42-4Ne">
+                    <rect key="frame" x="8" y="54" width="141" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Filter CocoaPods:" id="TW2-DO-WXm">
+                        <font key="font" size="16" name="HelveticaNeue-Bold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fnA-K4-mDc">
+                    <rect key="frame" x="157" y="8" width="130" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="inline" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kaa-hG-yzZ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="16" name="HelveticaNeue-Bold"/>
+                        <menu key="menu" title="OtherViews" id="ifx-cY-VqB">
+                            <items>
+                                <menuItem title="All" id="Gg3-m3-Pld"/>
+                                <menuItem title="Apache 2.0" id="mdh-mQ-h85"/>
+                                <menuItem title="BSD" id="aR7-Be-ZCp"/>
+                                <menuItem title="CC BY 3.0" id="mFQ-eR-1Mz">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="CC BY-SA 3.0" id="sa4-h0-AOe">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Commercial" id="ZKL-wo-BgL">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Custom" id="4hY-Rm-7ke">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Eclipse Public License" id="Rqw-Ce-NbX">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="GPL" id="TB9-yF-1iT">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="ISC" id="UV3-QJ-uJX">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="LGPL" id="xEh-Ij-zeG">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="MIT" id="LMB-LO-hKw">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="MPL" id="Pzd-vg-mIA">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Public Domain" id="cIu-6a-sD4">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Unspecified" id="Vyk-Yx-s4R">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="zlib" id="Drr-I6-m3y">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sFx-mE-QXY">
+                    <rect key="frame" x="8" y="10" width="68" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="License:" id="Kl7-Ge-dWD">
+                        <font key="font" size="16" name="HelveticaNeue-Bold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Mbl-WO-sru" firstAttribute="top" secondItem="fTh-1u-elD" secondAttribute="bottom" constant="20" id="5aR-XP-ROO"/>
+                <constraint firstItem="BBO-ke-oAG" firstAttribute="height" secondItem="GJO-NQ-FX4" secondAttribute="height" id="95d-x4-u1d"/>
+                <constraint firstItem="azf-Pf-Ila" firstAttribute="centerY" secondItem="FG4-42-4Ne" secondAttribute="centerY" id="A5r-lT-AMB"/>
+                <constraint firstItem="BBO-ke-oAG" firstAttribute="width" secondItem="azf-Pf-Ila" secondAttribute="width" id="Aja-cp-HVT"/>
+                <constraint firstItem="GJO-NQ-FX4" firstAttribute="leading" secondItem="BBO-ke-oAG" secondAttribute="leading" id="EvM-fh-gmk"/>
+                <constraint firstItem="fTh-1u-elD" firstAttribute="leading" secondItem="UeS-NA-a8p" secondAttribute="leading" constant="10" id="FXa-dY-e1v"/>
+                <constraint firstItem="fnA-K4-mDc" firstAttribute="leading" secondItem="azf-Pf-Ila" secondAttribute="leading" id="Gti-wW-ryR"/>
+                <constraint firstItem="BBO-ke-oAG" firstAttribute="width" secondItem="GJO-NQ-FX4" secondAttribute="width" id="Jn1-xv-dNk"/>
+                <constraint firstItem="fTh-1u-elD" firstAttribute="top" secondItem="UeS-NA-a8p" secondAttribute="top" constant="10" id="LtL-Mu-tLY"/>
+                <constraint firstItem="fTh-1u-elD" firstAttribute="centerY" secondItem="BBO-ke-oAG" secondAttribute="centerY" id="MxH-Yb-XQ1"/>
+                <constraint firstItem="sFx-mE-QXY" firstAttribute="top" secondItem="FG4-42-4Ne" secondAttribute="bottom" constant="20" id="Vzq-r1-vvU"/>
+                <constraint firstItem="BBO-ke-oAG" firstAttribute="width" secondItem="fnA-K4-mDc" secondAttribute="width" id="WBl-FQ-2QD"/>
+                <constraint firstItem="BBO-ke-oAG" firstAttribute="height" secondItem="azf-Pf-Ila" secondAttribute="height" id="WtT-8j-jOo"/>
+                <constraint firstItem="FG4-42-4Ne" firstAttribute="leading" secondItem="Mbl-WO-sru" secondAttribute="leading" id="Wuu-ba-Uuy"/>
+                <constraint firstItem="azf-Pf-Ila" firstAttribute="leading" secondItem="FG4-42-4Ne" secondAttribute="trailing" constant="10" id="XEH-rI-y4t"/>
+                <constraint firstItem="GJO-NQ-FX4" firstAttribute="leading" secondItem="azf-Pf-Ila" secondAttribute="leading" id="Zoz-lA-IFq"/>
+                <constraint firstItem="BBO-ke-oAG" firstAttribute="height" secondItem="fnA-K4-mDc" secondAttribute="height" id="fQ2-Ax-Vsx"/>
+                <constraint firstItem="fTh-1u-elD" firstAttribute="leading" secondItem="Mbl-WO-sru" secondAttribute="leading" id="fb2-Ev-ILd"/>
+                <constraint firstItem="FG4-42-4Ne" firstAttribute="top" secondItem="Mbl-WO-sru" secondAttribute="bottom" constant="20" id="iDv-OH-kzk"/>
+                <constraint firstItem="FG4-42-4Ne" firstAttribute="leading" secondItem="sFx-mE-QXY" secondAttribute="leading" id="joa-Iw-i45"/>
+                <constraint firstItem="GJO-NQ-FX4" firstAttribute="centerY" secondItem="Mbl-WO-sru" secondAttribute="centerY" id="n7e-u6-Fxa"/>
+                <constraint firstItem="fnA-K4-mDc" firstAttribute="centerY" secondItem="sFx-mE-QXY" secondAttribute="centerY" id="rcT-HH-epq"/>
+            </constraints>
+        </customView>
     </objects>
     <resources>
         <image name="CocoaPods" width="70" height="70"/>

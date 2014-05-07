@@ -30,6 +30,8 @@
 
 @property (nonatomic, weak) IBOutlet NSButton *filterButton;
 
+@property (nonatomic, weak) IBOutlet NSPopover *popover;
+
 @end
 
 @implementation RSCCAppDelegate
@@ -60,7 +62,7 @@
 
 - (void)RSCC_handleButtonClick:(NSButton *)sender
 {
-    if (sender.tag > RSCCControlCellViewCocoaPodsButtonTagBase) {
+    if (sender.tag >= RSCCControlCellViewCocoaPodsButtonTagBase) {
         NSInteger row = sender.tag - RSCCControlCellViewCocoaPodsButtonTagBase;
         RSCCControl *c = self.controls[row];
         if (c.pod) {
@@ -69,7 +71,7 @@
             [CORE podForControl:c];
             [self.progressIndicator startAnimation:self];
         }
-    } else if (sender.tag > RSCCControlCellViewImageButtonTagBase){
+    } else if (sender.tag >= RSCCControlCellViewImageButtonTagBase){
         NSInteger row = sender.tag - RSCCControlCellViewImageButtonTagBase;
         RSCCControl *c = self.controls[row];
         [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -78,6 +80,13 @@
         }];
         [self.imagePanel orderFront:self];
     } else {
+        if (self.filterButton.intValue == 1) {
+            [self.popover showRelativeToRect:[self.filterButton bounds]
+                                      ofView:self.filterButton
+                               preferredEdge:NSMaxYEdge];
+        } else {
+            [self.popover close];
+        }
     }
 }
 
