@@ -16,9 +16,8 @@
                            data:(NSData *)data
                           error:(NSError *__autoreleasing *)error
 {
-    TFHpple *doc       = [[TFHpple alloc] initWithHTMLData:data];
-    NSArray *elements  = [doc searchWithXPathQuery:@"//div[@class='control-grid-item']"];
-    return   elements;
+    TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
+    return   doc;
 }
 
 @end

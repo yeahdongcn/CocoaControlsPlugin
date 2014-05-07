@@ -15,6 +15,7 @@
 #import <TFHpple.h>
 
 NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.did.load";
+NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.load";
 
 @interface RSCCCore ()
 
@@ -43,7 +44,8 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
     [self.requestManager GET:[NSString stringWithFormat:RSCCAPIControlsAtPageFormat, self.currentPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSMutableArray *cs = [@[] mutableCopy];
-            for (TFHppleElement *element in responseObject) {
+            NSArray *elements  = [responseObject searchWithXPathQuery:@"//div[@class='control-grid-item']"];
+            for (TFHppleElement *element in elements) {
                 RSCCControl *c = [[RSCCControl alloc] initWithAssignment:^(RSCCControl *c) {
                     TFHppleElement *img = [[element firstChildWithTagName:@"a"] firstChildWithTagName:@"img"];
                     c.image = [img attributes][@"src"];
@@ -98,17 +100,22 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
 {
     self = [super init];
     if (self) {
-        self.currentPage = 1;
-        
         self.requestManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:RSCCAPIRoot]];
         self.requestManager.responseSerializer = [RSCCHTMLSerializer serializer];
         
         self.imageManager = [AFHTTPRequestOperationManager manager];
         self.imageManager.responseSerializer = [RSCCImageSerializer serializer];
         
-        [self loadControls];
+        [self refreshControls];
     }
     return self;
+}
+
+- (void)refreshControls
+{
+    self.currentPage = 1;
+    
+    [self loadControls];
 }
 
 - (void)moreControls
@@ -116,6 +123,20 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
     self.currentPage += 1;
     
     [self loadControls];
+}
+
+- (void)podForControl:(RSCCControl *)control
+{
+    [self.requestManager GET:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, control.link] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *elements  = [responseObject searchWithXPathQuery:@"//*[@id=\"pod\"]"];
+        if ([elements count] > 0) {
+            TFHppleElement *pod = elements[0];
+            control.pod = [pod attributes][@"value"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCorePodDidLoadNotification object:control userInfo:nil];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCorePodDidLoadNotification object:control userInfo:nil];
+    }];
 }
 
 @end

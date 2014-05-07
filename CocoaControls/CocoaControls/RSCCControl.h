@@ -20,6 +20,8 @@
 
 @property (nonatomic, copy) NSString *link;
 
+@property (nonatomic, copy) NSString *pod;
+
 @property (nonatomic) BOOL isOnCocoaPods;
 
 @property (nonatomic) CGFloat rating;

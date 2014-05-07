@@ -15,6 +15,7 @@
 #import "RSCCControl.h"
 
 extern NSString *const RSCCCoreControlsDidLoadNotification;
+extern NSString *const RSCCCorePodDidLoadNotification;
 
 @interface RSCCCore : NSObject
 
@@ -22,6 +23,10 @@ extern NSString *const RSCCCoreControlsDidLoadNotification;
 
 + (instancetype)sharedCore;
 
+- (void)refreshControls;
+
 - (void)moreControls;
+
+- (void)podForControl:(RSCCControl *)control;
 
 @end

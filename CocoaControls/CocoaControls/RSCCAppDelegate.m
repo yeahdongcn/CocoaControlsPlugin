@@ -28,15 +28,27 @@
 
 @implementation RSCCAppDelegate
 
+- (void)RSCC_handlePodDidLoad:(NSNotification *)aNotification
+{
+    [self.progressIndicator stopAnimation:self];
+    
+    RSCCControl *c = aNotification.object;
+    NSLog(@"%@", c.pod);
+}
+
 - (void)RSCC_handleButtonClick:(NSButton *)sender
 {
-    NSInteger row = NSNotFound;
     if (sender.tag > RSCCControlCellViewCocoaPodsButtonTagBase) {
-        row = sender.tag - RSCCControlCellViewCocoaPodsButtonTagBase;
+        NSInteger row = sender.tag - RSCCControlCellViewCocoaPodsButtonTagBase;
+        RSCCControl *c = self.controls[row];
+        if (c.pod) {
+            [self RSCC_handlePodDidLoad:[[NSNotification alloc] initWithName:RSCCCorePodDidLoadNotification object:c userInfo:nil]];
+        } else {
+            [CORE podForControl:c];
+            [self.progressIndicator startAnimation:self];
+        }
     } else {
-        row = sender.tag - RSCCControlCellViewImageButtonTagBase;
-    }
-    if (row != NSNotFound) {
+        NSInteger row = sender.tag - RSCCControlCellViewImageButtonTagBase;
         RSCCControl *c = self.controls[row];
         [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             self.imageView.image = responseObject;
@@ -50,7 +62,6 @@
 {
     RSCCControl *c = self.controls[self.tableView.clickedRow];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, c.link]]];
-    NSLog(@"%ld", self.tableView.clickedRow);
 }
 
 - (void)RSCC_handleControlsDidLoad:(NSNotification *)aNotification
@@ -74,6 +85,7 @@
 {
     // Insert code here to initialize your application
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handleControlsDidLoad:) name:RSCCCoreControlsDidLoadNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handlePodDidLoad:) name:RSCCCorePodDidLoadNotification object:nil];
     
     [self.tableView setDoubleAction:@selector(RSCC_handleCellDoubleClick:)];
     
