@@ -10,6 +10,8 @@
 
 #import <AFNetworking.h>
 
+#import "RSCCAPI.h"
+
 #import "RSCCControl.h"
 
 extern NSString *const RSCCCoreControlsDidLoadNotification;

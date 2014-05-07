@@ -8,6 +8,6 @@
 
 #import "RSCCAPI.h"
 
-NSString *const RSCCAPIRoot = @"https://www.cocoacontrols.com/";
+NSString *const RSCCAPIRoot = @"https://www.cocoacontrols.com";
 
 NSString *const RSCCAPIControlsAtPageFormat = @"controls?page=%d";

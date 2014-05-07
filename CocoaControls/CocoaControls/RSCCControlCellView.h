@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern int const RSCCControlCellViewImageButtonTagBase;
+extern int const RSCCControlCellViewCocoaPodsButtonTagBase;
+
 @class RSCCControlCellViewBackgroundView;
 
 @interface RSCCControlCellView : NSTableCellView

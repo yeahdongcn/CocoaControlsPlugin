@@ -17,11 +17,15 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     CGContextRef context = (CGContextRef) [[NSGraphicsContext currentContext] graphicsPort];
-    CGContextSetRGBFillColor(context, 0.93f, 0.93f, 0.93f, 0.8f);
+    NSUInteger hexRGBA = 0xeeeeeeee;
+    CGContextSetRGBFillColor(context, ((hexRGBA & 0xFF000000) >> 24), ((hexRGBA & 0x00FF0000) >> 16), ((hexRGBA & 0x0000FF00) >> 8), (hexRGBA & 0x000000FF) / 255.0f);
     CGContextFillRect(context, NSRectToCGRect(dirtyRect));
 }
 
 @end
+
+int const RSCCControlCellViewImageButtonTagBase     = 1000;
+int const RSCCControlCellViewCocoaPodsButtonTagBase = 2000;
 
 @implementation RSCCControlCellView
 

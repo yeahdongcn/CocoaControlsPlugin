@@ -20,12 +20,36 @@
 
 @property (nonatomic, weak) IBOutlet NSProgressIndicator *progressIndicator;
 
+@property (nonatomic, weak) IBOutlet NSPanel *imagePanel;
+
+@property (nonatomic, weak) IBOutlet NSImageView *imageView;
+
 @end
 
 @implementation RSCCAppDelegate
 
-- (void)RSCC_handleDoubleClick:(id)sender
+- (void)RSCC_handleButtonClick:(NSButton *)sender
 {
+    NSInteger row = NSNotFound;
+    if (sender.tag > RSCCControlCellViewCocoaPodsButtonTagBase) {
+        row = sender.tag - RSCCControlCellViewCocoaPodsButtonTagBase;
+    } else {
+        row = sender.tag - RSCCControlCellViewImageButtonTagBase;
+    }
+    if (row != NSNotFound) {
+        RSCCControl *c = self.controls[row];
+        [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            self.imageView.image = responseObject;
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        }];
+        [self.imagePanel orderFront:self];
+    }
+}
+
+- (void)RSCC_handleCellDoubleClick:(id)sender
+{
+    RSCCControl *c = self.controls[self.tableView.clickedRow];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, c.link]]];
     NSLog(@"%ld", self.tableView.clickedRow);
 }
 
@@ -51,7 +75,7 @@
     // Insert code here to initialize your application
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handleControlsDidLoad:) name:RSCCCoreControlsDidLoadNotification object:nil];
     
-    [self.tableView setDoubleAction:@selector(RSCC_handleDoubleClick:)];
+    [self.tableView setDoubleAction:@selector(RSCC_handleCellDoubleClick:)];
     
     [self.progressIndicator setDisplayedWhenStopped:NO];
     [self.progressIndicator startAnimation:self];
@@ -69,6 +93,17 @@
     NSString *identifier = tableColumn.identifier;
     if ([identifier isEqualToString:@"ControlCell"]) {
         RSCCControlCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
+        cellView.imageButton.tag = RSCCControlCellViewImageButtonTagBase + row;
+        cellView.cocoaPodsButton.tag = RSCCControlCellViewCocoaPodsButtonTagBase + row;
+        if ([cellView.imageButton target] == nil) {
+            [cellView.imageButton setTarget:self];
+            [cellView.imageButton setAction:@selector(RSCC_handleButtonClick:)];
+        }
+        if ([cellView.cocoaPodsButton target] == nil) {
+            [cellView.cocoaPodsButton setTarget:self];
+            [cellView.cocoaPodsButton setAction:@selector(RSCC_handleButtonClick:)];
+        }
+        
         RSCCControl *c = self.controls[row];
         cellView.titleField.stringValue = c.title;
         cellView.licenseField.stringValue = c.license;
@@ -82,7 +117,7 @@
         [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [cellView.imageButton setImage:responseObject];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [cellView.imageButton setImage:nil];
+            [cellView.imageButton setImage:[NSImage imageNamed:@"placeholder"]];
         }];
         for (int i = 0; i < (int)c.rating; i++) {
             NSImageView *iv = cellView.stars[i];

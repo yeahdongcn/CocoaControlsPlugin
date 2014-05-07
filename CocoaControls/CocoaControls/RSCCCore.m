@@ -8,17 +8,11 @@
 
 #import "RSCCCore.h"
 
-#import "RSCCAPI.h"
-
 #import "RSCCHTMLSerializer.h"
 
 #import "RSCCImageSerializer.h"
 
-#import <AFNetworking.h>
-
 #import <TFHpple.h>
-
-#import "RSCCControl.h"
 
 NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.did.load";
 
