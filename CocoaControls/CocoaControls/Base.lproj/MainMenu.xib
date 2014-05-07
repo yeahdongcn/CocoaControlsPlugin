@@ -892,17 +892,31 @@
                             <constraint firstAttribute="height" constant="20" id="Rj8-rw-kW7"/>
                         </constraints>
                     </progressIndicator>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="YoV-Xs-9o6">
+                        <rect key="frame" x="10" y="10" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="GP0-2N-RlO"/>
+                            <constraint firstAttribute="height" constant="20" id="ceb-kH-eW1"/>
+                        </constraints>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="filter" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="DIP-eV-YFs">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="k0s-vL-UDr" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="10" id="Bjs-aE-StI"/>
                     <constraint firstAttribute="bottom" secondItem="1S2-y5-jB9" secondAttribute="bottom" constant="40" id="Cnv-Gc-t3k"/>
                     <constraint firstItem="1S2-y5-jB9" firstAttribute="top" secondItem="k0s-vL-UDr" secondAttribute="bottom" constant="10" id="NJh-2Q-LyM"/>
+                    <constraint firstAttribute="bottom" secondItem="YoV-Xs-9o6" secondAttribute="bottom" constant="10" id="axU-CR-Ke5"/>
                     <constraint firstAttribute="bottom" secondItem="6yv-CO-h6v" secondAttribute="bottom" constant="10" id="eA1-8q-fPW"/>
                     <constraint firstAttribute="trailing" secondItem="1S2-y5-jB9" secondAttribute="trailing" constant="-1" id="fhd-rE-aBa"/>
                     <constraint firstAttribute="trailing" secondItem="6yv-CO-h6v" secondAttribute="trailing" constant="10" id="gWn-S7-jIX"/>
                     <constraint firstAttribute="trailing" secondItem="k0s-vL-UDr" secondAttribute="trailing" constant="10" id="kA2-EE-zNf"/>
                     <constraint firstItem="k0s-vL-UDr" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="10" id="lTZ-Bz-EhO"/>
                     <constraint firstItem="1S2-y5-jB9" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="-1" id="n4d-Wy-PnS"/>
+                    <constraint firstItem="YoV-Xs-9o6" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="10" id="qv6-YA-5EN"/>
                 </constraints>
             </view>
         </window>
@@ -929,6 +943,7 @@
     </objects>
     <resources>
         <image name="CocoaPods" width="70" height="70"/>
+        <image name="filter" width="48" height="48"/>
         <image name="placeholder" width="128" height="227"/>
         <image name="star-o" width="48" height="48"/>
     </resources>
