@@ -28,6 +28,8 @@
 
 @property (nonatomic, weak) IBOutlet NSImageView *imageView;
 
+@property (nonatomic, weak) IBOutlet NSButton *filterButton;
+
 @end
 
 @implementation RSCCAppDelegate
@@ -67,7 +69,7 @@
             [CORE podForControl:c];
             [self.progressIndicator startAnimation:self];
         }
-    } else {
+    } else if (sender.tag > RSCCControlCellViewImageButtonTagBase){
         NSInteger row = sender.tag - RSCCControlCellViewImageButtonTagBase;
         RSCCControl *c = self.controls[row];
         [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -75,6 +77,7 @@
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         }];
         [self.imagePanel orderFront:self];
+    } else {
     }
 }
 
@@ -114,6 +117,9 @@
 
     [self.searchField setTarget:self];
     [self.searchField setAction:@selector(RSCC_handleSearch:)];
+    
+    [self.filterButton setTarget:self];
+    [self.filterButton setAction:@selector(RSCC_handleButtonClick:)];
 }
 
 #pragma mark - NSTableViewDataSource

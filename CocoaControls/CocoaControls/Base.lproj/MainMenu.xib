@@ -13,6 +13,7 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="RSCCAppDelegate">
             <connections>
+                <outlet property="filterButton" destination="YoV-Xs-9o6" id="EK2-ZA-24z"/>
                 <outlet property="imagePanel" destination="9Hc-6j-fFR" id="FLz-WW-gS1"/>
                 <outlet property="imageView" destination="r1V-gG-agp" id="9lP-iV-Ba2"/>
                 <outlet property="progressIndicator" destination="6yv-CO-h6v" id="QOc-oL-voE"/>
@@ -921,7 +922,6 @@
                 </constraints>
             </view>
         </window>
-        <collectionViewItem id="sIh-uX-a2A"/>
         <window title="Preview" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="9Hc-6j-fFR" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
