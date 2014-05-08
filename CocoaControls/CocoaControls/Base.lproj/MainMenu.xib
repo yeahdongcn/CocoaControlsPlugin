@@ -688,7 +688,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="598" height="456"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="598" height="456"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -795,7 +795,7 @@
                                                                 <constraint firstAttribute="width" constant="40" id="fuJ-d6-sDT"/>
                                                                 <constraint firstAttribute="height" constant="40" id="yNW-9E-Uqz"/>
                                                             </constraints>
-                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="github" imagePosition="overlaps" alignment="left" imageScaling="axesIndependently" inset="2" id="uo3-Nc-Ufy">
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="desktop-button" imagePosition="overlaps" alignment="left" imageScaling="axesIndependently" inset="2" id="uo3-Nc-Ufy">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
@@ -880,6 +880,7 @@
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="backgroundView" destination="hJD-m9-jfB" id="eAp-SO-sRZ"/>
+                                                        <outlet property="cloneButton" destination="PLp-zU-jK5" id="2fh-Rx-0wW"/>
                                                         <outlet property="cocoaPodsButton" destination="CDY-4c-nxY" id="jwL-sf-cCz"/>
                                                         <outlet property="dateField" destination="0dp-V2-ojY" id="w48-jX-biJ"/>
                                                         <outlet property="imageButton" destination="NW7-jp-f5J" id="19r-PN-vU6"/>
@@ -952,7 +953,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="90" y="125" width="320" height="568"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="320" height="568"/>
             <value key="maxSize" type="size" width="320" height="568"/>
             <view key="contentView" id="1HX-dz-jVT">
@@ -1138,8 +1139,8 @@
     </objects>
     <resources>
         <image name="cocoapods" width="80" height="80"/>
+        <image name="desktop-button" width="80" height="80"/>
         <image name="filter" width="48" height="48"/>
-        <image name="github" width="80" height="80"/>
         <image name="placeholder" width="128" height="227"/>
         <image name="star-o" width="48" height="48"/>
     </resources>

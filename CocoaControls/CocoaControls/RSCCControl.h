@@ -22,7 +22,7 @@
 
 @property (nonatomic, copy) NSString *pod;
 
-@property (nonatomic, copy) NSString *github;
+@property (nonatomic, copy) NSString *source;
 
 @property (nonatomic) BOOL isOnCocoaPods;
 

@@ -23,7 +23,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"[title:%@] [license:%@] [date:%@] [image:%@] [link:%@ CocoaPods:%d] [rating:%f] [Apps using this Control:%d]", self.title, self.license, self.date, self.image, self.link, self.isOnCocoaPods, self.rating, self.appsUsingThisControl];
+    return [NSString stringWithFormat:@"[Title : %@] [License : %@] [Date : %@] [Image : %@] [Link : %@] [CocoaPods : %d] [Rating : %f] [Apps using this Control : %d] [Pod : %@] [Source : %@]", self.title, self.license, self.date, self.image, self.link, self.isOnCocoaPods, self.rating, self.appsUsingThisControl, self.pod, self.source];
 }
 
 @end

@@ -26,6 +26,7 @@
 
 int const RSCCControlCellViewImageButtonTagBase     = 1000;
 int const RSCCControlCellViewCocoaPodsButtonTagBase = 2000;
+int const RSCCControlCellViewCloneButtonTagBase     = 3000;
 
 @implementation RSCCControlCellView
 

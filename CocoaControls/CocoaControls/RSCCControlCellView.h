@@ -10,6 +10,7 @@
 
 extern int const RSCCControlCellViewImageButtonTagBase;
 extern int const RSCCControlCellViewCocoaPodsButtonTagBase;
+extern int const RSCCControlCellViewCloneButtonTagBase;
 
 @class RSCCControlCellViewBackgroundView;
 
@@ -26,6 +27,8 @@ extern int const RSCCControlCellViewCocoaPodsButtonTagBase;
 @property (nonatomic, weak) IBOutlet NSTextField *licenseField;
 
 @property (nonatomic, weak) IBOutlet NSButton *cocoaPodsButton;
+
+@property (nonatomic, weak) IBOutlet NSButton *cloneButton;
 
 @property (nonatomic, weak) IBOutlet NSImageView *star0;
 

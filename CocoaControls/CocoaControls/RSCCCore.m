@@ -16,7 +16,7 @@
 #import <TFHpple.h>
 
 NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.did.load";
-NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.load";
+NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.detail.did.load";
 
 @interface RSCCCore ()
 
@@ -78,7 +78,7 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
             [cs addObject:c];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:cs] userInfo:@{@"page": @(self.page)}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:cs] userInfo:@{@"page" : @(self.page)}];
         });
     });
 }
@@ -92,7 +92,7 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
         [self RSCC_parseControlsWithDoc:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if ([error code] != NSURLErrorCancelled) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:nil] userInfo:@{@"page": @(self.page)}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:nil] userInfo:@{@"page" : @(self.page)}];
         }
     }];
 }
@@ -144,7 +144,7 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
     [self RSCC_loadControlsWithURLString:[[NSString stringWithFormat:RSCCAPISearchFormat, key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
-- (void)podForControl:(RSCCControl *)control
+- (void)detailForControl:(RSCCControl *)control withSender:(NSButton *)sender
 {
     [self.requestManager.operationQueue cancelAllOperations];
     
@@ -154,18 +154,20 @@ NSString *const RSCCCorePodDidLoadNotification = @"com.pdq.core.control.pod.did.
             TFHppleElement *pod = elements[0];
             control.pod = [pod attributes][@"value"];
         }
+        
         elements = [responseObject searchWithXPathQuery:@"//*[@id=\"get_source_link\"]"];
         if ([elements count] > 0) {
-            TFHppleElement *github = elements[0];
-            control.github = [NSString stringWithFormat:@"%@.git", [github attributes][@"href"]];
+            TFHppleElement *source = elements[0];
+            // TODO: Parse source
+            control.source = [NSString stringWithFormat:@"%@.git", [source attributes][@"href"]];
         }
         
-        if (control.pod || control.github) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCorePodDidLoadNotification object:control userInfo:nil];
+        if (control.pod || control.source) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreDetailDidLoadNotification object:control userInfo:@{@"sender" : sender}];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if ([error code] != NSURLErrorCancelled) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCorePodDidLoadNotification object:control userInfo:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreDetailDidLoadNotification object:control userInfo:@{@"sender" : sender}];
         }
     }];
 }

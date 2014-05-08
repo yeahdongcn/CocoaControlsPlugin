@@ -52,23 +52,36 @@
     }
 }
 
-- (void)RSCC_handlePodDidLoad:(NSNotification *)aNotification
+- (void)RSCC_handleDetailDidLoad:(NSNotification *)aNotification
 {
     [self.progressIndicator stopAnimation:self];
     
     RSCCControl *c = aNotification.object;
-    NSLog(@"%@", c.pod);
+    if ([(NSButton *)[aNotification userInfo][@"sender"] tag] >= RSCCControlCellViewCloneButtonTagBase) {
+        NSLog(@"Source : %@", c.source);
+    } else {
+        NSLog(@"Pod : %@", c.pod);
+    }
 }
 
 - (void)RSCC_handleButtonClick:(NSButton *)sender
 {
-    if (sender.tag >= RSCCControlCellViewCocoaPodsButtonTagBase) {
+    if (sender.tag >= RSCCControlCellViewCloneButtonTagBase) {
+        NSInteger row = sender.tag - RSCCControlCellViewCloneButtonTagBase;
+        RSCCControl *c = self.controls[row];
+        if (c.source) {
+            [self RSCC_handleDetailDidLoad:[[NSNotification alloc] initWithName:RSCCCoreDetailDidLoadNotification object:c userInfo:@{@"sender" : sender}]];
+        } else {
+            [CORE detailForControl:c withSender:sender];
+            [self.progressIndicator startAnimation:self];
+        }
+    } else if (sender.tag >= RSCCControlCellViewCocoaPodsButtonTagBase) {
         NSInteger row = sender.tag - RSCCControlCellViewCocoaPodsButtonTagBase;
         RSCCControl *c = self.controls[row];
         if (c.pod) {
-            [self RSCC_handlePodDidLoad:[[NSNotification alloc] initWithName:RSCCCorePodDidLoadNotification object:c userInfo:nil]];
+            [self RSCC_handleDetailDidLoad:[[NSNotification alloc] initWithName:RSCCCoreDetailDidLoadNotification object:c userInfo:@{@"sender" : sender}]];
         } else {
-            [CORE podForControl:c];
+            [CORE detailForControl:c withSender:sender];
             [self.progressIndicator startAnimation:self];
         }
     } else if (sender.tag >= RSCCControlCellViewImageButtonTagBase){
@@ -117,13 +130,13 @@
 {
     // Insert code here to initialize your application
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handleControlsDidLoad:) name:RSCCCoreControlsDidLoadNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handlePodDidLoad:) name:RSCCCorePodDidLoadNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handleDetailDidLoad:) name:RSCCCoreDetailDidLoadNotification object:nil];
     
     [self.tableView setDoubleAction:@selector(RSCC_handleCellDoubleClick:)];
     
     [self.progressIndicator setDisplayedWhenStopped:NO];
     [self.progressIndicator startAnimation:self];
-
+    
     [self.searchField setTarget:self];
     [self.searchField setAction:@selector(RSCC_handleSearch:)];
     
@@ -145,6 +158,7 @@
         RSCCControlCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         cellView.imageButton.tag = RSCCControlCellViewImageButtonTagBase + row;
         cellView.cocoaPodsButton.tag = RSCCControlCellViewCocoaPodsButtonTagBase + row;
+        cellView.cloneButton.tag = RSCCControlCellViewCloneButtonTagBase + row;
         if ([cellView.imageButton target] == nil) {
             [cellView.imageButton setTarget:self];
             [cellView.imageButton setAction:@selector(RSCC_handleButtonClick:)];
@@ -152,6 +166,10 @@
         if ([cellView.cocoaPodsButton target] == nil) {
             [cellView.cocoaPodsButton setTarget:self];
             [cellView.cocoaPodsButton setAction:@selector(RSCC_handleButtonClick:)];
+        }
+        if ([cellView.cloneButton target] == nil) {
+            [cellView.cloneButton setTarget:self];
+            [cellView.cloneButton setAction:@selector(RSCC_handleButtonClick:)];
         }
         
         RSCCControl *c = self.controls[row];

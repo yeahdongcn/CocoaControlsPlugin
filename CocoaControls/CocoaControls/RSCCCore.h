@@ -15,7 +15,7 @@
 #import "RSCCControl.h"
 
 extern NSString *const RSCCCoreControlsDidLoadNotification;
-extern NSString *const RSCCCorePodDidLoadNotification;
+extern NSString *const RSCCCoreDetailDidLoadNotification;
 
 @interface RSCCCore : NSObject
 
@@ -27,7 +27,7 @@ extern NSString *const RSCCCorePodDidLoadNotification;
 
 - (void)moreControls;
 
-- (void)podForControl:(RSCCControl *)control;
+- (void)detailForControl:(RSCCControl *)control withSender:(NSButton *)sender;
 
 - (void)searchControlsWithKey:(NSString *)key;
 
