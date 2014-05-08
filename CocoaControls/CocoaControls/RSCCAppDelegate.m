@@ -356,6 +356,8 @@ static NSString *const RSCCADLicenseDefault         = @"All";
    didStartRefreshingEdge:(ITPullToRefreshEdge)edge
 {
     if (edge & ITPullToRefreshEdgeTop) {
+        self.searchField.stringValue = @"";
+        
         [self.controls removeAllObjects];
         
         [self.tableView reloadData];
@@ -363,7 +365,8 @@ static NSString *const RSCCADLicenseDefault         = @"All";
         [self.progressIndicator startAnimation:self];
         
         [CORE refreshControls];
-    } else {
+    } else if ([self.searchField.stringValue length] == 0) {
+        
         [self.progressIndicator startAnimation:self];
         
         [CORE moreControls];
