@@ -164,13 +164,7 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
         elements = [responseObject searchWithXPathQuery:@"//*[@id=\"get_source_link\"]"];
         if ([elements count] > 0) {
             TFHppleElement *source = elements[0];
-            NSString *href = [source attributes][@"href"];
-            if ([href rangeOfString:@"github"].length > 0
-                || [href rangeOfString:@"bitbucket"].length > 0) {
-                control.source = [NSString stringWithFormat:@"%@.git", href];
-            } else {
-                control.source = href;
-            }
+            control.source = [source attributes][@"href"];
         }
         
         if (control.pod || control.source) {

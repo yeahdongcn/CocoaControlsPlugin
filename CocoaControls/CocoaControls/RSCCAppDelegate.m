@@ -140,8 +140,17 @@
     
     RSCCControl *c = aNotification.object;
     if ([(NSButton *)[aNotification userInfo][@"sender"] tag] >= RSCCControlCellViewCloneButtonTagBase) {
-        NSLog(@"Source : %@", c.source);
+        if ([c.source rangeOfString:@"github"].length > 0
+            || [c.source rangeOfString:@"bitbucket"].length > 0) {
+            BOOL isOK = [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"github-mac://openRepo/%@", c.source]]];
+            if (!isOK) {
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:c.source]];
+            }
+        } else {
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:c.source]];
+        }
     } else {
+        // TODO: Handle pod
         NSLog(@"Pod : %@", c.pod);
     }
 }
@@ -323,6 +332,8 @@ static NSString *const RSCCADLicenseDefault         = @"All";
     
     [self.licenseButton setTarget:self];
     [self.licenseButton setAction:@selector(RSCC_handleLicenseButtonClicked:)];
+    
+    [self.searchField becomeFirstResponder];
 }
 
 #pragma mark - NSTableViewDataSource
