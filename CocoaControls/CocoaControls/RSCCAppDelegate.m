@@ -14,7 +14,19 @@
 
 @interface RSCCAppDelegate () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 
+#pragma mark - Data
+
 @property (nonatomic, strong) NSMutableArray *controls;
+
+@property (nonatomic, copy) NSString *sort;
+
+@property (nonatomic, copy) NSString *platform;
+
+@property (nonatomic, copy) NSString *filterCocoaPods;
+
+@property (nonatomic, copy) NSString *license;
+
+#pragma mark - Controls
 
 @property (assign) IBOutlet NSWindow *window;
 
@@ -150,7 +162,7 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, c.link]]];
 }
 
-#pragma mark - Getter
+#pragma mark - Getters
 
 - (NSMutableArray *)controls
 {
@@ -160,7 +172,53 @@
     return _controls;
 }
 
+#pragma mark - Default values for the getters below
+
+static NSString *const RSCCADSortDefault            = @"Date";
+static NSString *const RSCCADPlatformDefault        = @"All";
+static NSString *const RSCCADFilterCocoaPodsDefault = @"No";
+static NSString *const RSCCADLicenseDefault         = @"All";
+
+- (NSString *)sort
+{
+    if (!_sort) {
+        _sort = RSCCADSortDefault;
+    }
+    return _sort;
+}
+
+- (NSString *)platform
+{
+    if (!_platform) {
+        _platform = RSCCADPlatformDefault;
+    }
+    return _platform;
+}
+
+- (NSString *)filterCocoaPods
+{
+    if (!_filterCocoaPods) {
+        _filterCocoaPods = RSCCADFilterCocoaPodsDefault;
+    }
+    return _filterCocoaPods;
+}
+
+- (NSString *)license
+{
+    if (!_license) {
+        _license = RSCCADLicenseDefault;
+    }
+    return _license;
+}
+
 #pragma mark - NSApplication
+
+- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
+{
+    [self.window makeKeyAndOrderFront:self];
+    
+    return NO;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
