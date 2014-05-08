@@ -719,7 +719,7 @@
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="ControlCell" width="595" minWidth="40" maxWidth="1000" id="GmM-Ys-jcS">
+                                        <tableColumn identifier="ControlCell" width="595" minWidth="40" maxWidth="2000" id="GmM-Ys-jcS">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
