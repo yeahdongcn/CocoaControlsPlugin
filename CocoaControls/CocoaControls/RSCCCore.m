@@ -108,6 +108,8 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
         self.imageManager.requestSerializer = [RSCCImageRequestSerializer serializer];
         self.imageManager.responseSerializer = [RSCCImageResponseSerializer serializer];
         
+        self.filter = nil;
+        
         [self refreshControls];
     }
     return self;
@@ -127,14 +129,18 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
 {
     self.page = 1;
     
-    [self RSCC_loadControlsWithURLString:[NSString stringWithFormat:RSCCAPIControlsAtPageFormat, self.page]];
+    NSString *URLString = self.filter ? [NSString stringWithFormat:@"%@&%@", self.filter, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]] : [NSString stringWithFormat:@"%@?%@", RSCCAPIAllPlatform, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]];
+    
+    [self RSCC_loadControlsWithURLString:URLString];
 }
 
 - (void)moreControls
 {
     self.page += 1;
     
-    [self RSCC_loadControlsWithURLString:[NSString stringWithFormat:RSCCAPIControlsAtPageFormat, self.page]];
+    NSString *URLString = self.filter ? [NSString stringWithFormat:@"%@&%@", self.filter, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]] : [NSString stringWithFormat:@"%@?%@", RSCCAPIAllPlatform, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]];
+    
+    [self RSCC_loadControlsWithURLString:URLString];
 }
 
 - (void)searchControlsWithKey:(NSString *)key
@@ -158,8 +164,13 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
         elements = [responseObject searchWithXPathQuery:@"//*[@id=\"get_source_link\"]"];
         if ([elements count] > 0) {
             TFHppleElement *source = elements[0];
-            // TODO: Parse source
-            control.source = [NSString stringWithFormat:@"%@.git", [source attributes][@"href"]];
+            NSString *href = [source attributes][@"href"];
+            if ([href rangeOfString:@"github"].length > 0
+                || [href rangeOfString:@"bitbucket"].length > 0) {
+                control.source = [NSString stringWithFormat:@"%@.git", href];
+            } else {
+                control.source = href;
+            }
         }
         
         if (control.pod || control.source) {

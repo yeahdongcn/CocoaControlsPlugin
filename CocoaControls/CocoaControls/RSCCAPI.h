@@ -10,6 +10,16 @@
 
 extern NSString *const RSCCAPIRoot;
 
-extern NSString *const RSCCAPIControlsAtPageFormat;
-
 extern NSString *const RSCCAPISearchFormat;
+
+extern NSString *const RSCCAPIAllPlatform;
+
+extern NSString *const RSCCAPISinglePlatformFormat;
+
+extern NSString *const RSCCAPISortFormat;
+
+extern NSString *const RSCCAPICocoaPodsFormat;
+
+extern NSString *const RSCCAPILicenseFormat;
+
+extern NSString *const RSCCAPIPageFormat;

@@ -10,6 +10,16 @@
 
 NSString *const RSCCAPIRoot = @"https://www.cocoacontrols.com";
 
-NSString *const RSCCAPIControlsAtPageFormat = @"controls?page=%d";
-
 NSString *const RSCCAPISearchFormat = @"search?utf8=✓&q=%@";
+
+NSString *const RSCCAPIAllPlatform = @"controls";
+
+NSString *const RSCCAPISinglePlatformFormat = @"platforms/%@/controls";
+
+NSString *const RSCCAPISortFormat = @"sort=%@";
+
+NSString *const RSCCAPICocoaPodsFormat = @"cocoapods=%@";
+
+NSString *const RSCCAPILicenseFormat = @"license=%@";
+
+NSString *const RSCCAPIPageFormat = @"page=%d";

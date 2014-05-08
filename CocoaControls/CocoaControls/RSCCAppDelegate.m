@@ -26,6 +26,14 @@
 
 @property (nonatomic, copy) NSString *license;
 
+@property (nonatomic, copy) NSString *oldSort;
+
+@property (nonatomic, copy) NSString *oldPlatform;
+
+@property (nonatomic, copy) NSString *oldFilterCocoaPods;
+
+@property (nonatomic, copy) NSString *oldLicense;
+
 #pragma mark - Controls
 
 @property (assign) IBOutlet NSWindow *window;
@@ -55,6 +63,47 @@
 @end
 
 @implementation RSCCAppDelegate
+
+- (void)RSCC_handleFilterDidChange
+{
+    [self.controls removeAllObjects];
+    
+    [self.tableView reloadData];
+    
+    [self.progressIndicator startAnimation:self];
+    
+    NSMutableString *mutableFilter = [@"" mutableCopy];
+    if ([self.platform isEqualToString:RSCCADPlatformDefault]) {
+        [mutableFilter appendString:RSCCAPIAllPlatform];
+        [mutableFilter appendString:@"?"];
+    } else {
+        [mutableFilter appendString:[NSString stringWithFormat:RSCCAPISinglePlatformFormat, [self.platform lowercaseString]]];
+        [mutableFilter appendString:@"?"];
+    }
+    if (![self.sort isEqualToString:RSCCADSortDefault]) {
+        [mutableFilter appendString:[NSString stringWithFormat:RSCCAPISortFormat, [self.sort lowercaseString]]];
+        [mutableFilter appendString:@"&"];
+    }
+    if (![self.filterCocoaPods isEqualToString:RSCCADFilterCocoaPodsDefault]) {
+        [mutableFilter appendString:[NSString stringWithFormat:RSCCAPICocoaPodsFormat, @"t"]];
+        [mutableFilter appendString:@"&"];
+    }
+    if (![self.license isEqualToString:RSCCADLicenseDefault]) {
+        [mutableFilter appendString:[NSString stringWithFormat:RSCCAPILicenseFormat, [self.license stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+        [mutableFilter appendString:@"&"];
+    }
+    NSString *lastCharacter = [mutableFilter substringWithRange:NSMakeRange(mutableFilter.length - 1, 1)];
+    NSString *filter;
+    if ([lastCharacter isEqualToString:@"&"]) {
+        filter = [mutableFilter substringWithRange:NSMakeRange(0, mutableFilter.length - 1)];
+    } else {
+        filter = [NSString stringWithString:mutableFilter];
+    }
+    
+    [CORE setFilter:filter];
+    
+    [CORE refreshControls];
+}
 
 #pragma mark - Search handler
 
@@ -101,18 +150,31 @@
 
 - (void)RSCC_handleSortButtonClicked:(NSButton *)sender
 {
+    self.sort = sender.title;
 }
 
 - (void)RSCC_handlePlatformButtonClicked:(NSButton *)sender
 {
+    if (![self.platform isEqualToString:sender.title]) {
+        self.sort = RSCCADSortDefault;
+        self.filterCocoaPods = RSCCADFilterCocoaPodsDefault;
+        self.license = RSCCADLicenseDefault;
+        
+        self.sortButton.title = self.sort;
+        self.filterCocoaPodsButton.title = self.filterCocoaPods;
+        self.licenseButton.title = self.license;
+    }
+    self.platform = sender.title;
 }
 
 - (void)RSCC_handleFilterCocoaPodsButtonClicked:(NSButton *)sender
 {
+    self.filterCocoaPods = sender.title;
 }
 
 - (void)RSCC_handleLicenseButtonClicked:(NSButton *)sender
 {
+    self.license = sender.title;
 }
 
 #pragma mark - CellView and button click event handlers
@@ -147,11 +209,24 @@
         [self.imagePanel orderFront:self];
     } else {
         if (self.filterButton.intValue == 1) {
+            self.oldSort = self.sort;
+            self.oldPlatform = self.platform;
+            self.oldFilterCocoaPods = self.filterCocoaPods;
+            self.oldLicense = self.license;
             [self.popover showRelativeToRect:[self.filterButton bounds]
                                       ofView:self.filterButton
                                preferredEdge:NSMaxYEdge];
         } else {
             [self.popover close];
+            
+            if (![self.sort isEqualToString:self.oldSort]
+                || ![self.platform isEqualToString:self.oldPlatform]
+                || ![self.filterCocoaPods isEqualToString:self.oldFilterCocoaPods]
+                || ![self.license isEqualToString:self.oldLicense]) {
+                [self RSCC_handleFilterDidChange];
+            }
+            
+            self.oldSort = self.oldPlatform = self.oldFilterCocoaPods = self.oldLicense = nil;
         }
     }
 }
@@ -172,7 +247,7 @@
     return _controls;
 }
 
-#pragma mark - Default values for the getters below
+#pragma mark - Getters for assigning default value
 
 static NSString *const RSCCADSortDefault            = @"Date";
 static NSString *const RSCCADPlatformDefault        = @"All";

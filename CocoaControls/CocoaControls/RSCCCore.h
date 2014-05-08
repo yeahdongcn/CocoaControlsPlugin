@@ -19,6 +19,8 @@ extern NSString *const RSCCCoreDetailDidLoadNotification;
 
 @interface RSCCCore : NSObject
 
+@property (nonatomic, copy) NSString *filter;
+
 @property (nonatomic, readonly) AFHTTPRequestOperationManager *imageManager;
 
 + (instancetype)sharedCore;
