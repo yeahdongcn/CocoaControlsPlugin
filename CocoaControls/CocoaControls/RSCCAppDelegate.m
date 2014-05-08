@@ -32,9 +32,19 @@
 
 @property (nonatomic, weak) IBOutlet NSPopover *popover;
 
+@property (nonatomic, weak) IBOutlet NSButton *sortButton;
+
+@property (nonatomic, weak) IBOutlet NSButton *platformButton;
+
+@property (nonatomic, weak) IBOutlet NSButton *filterCocoaPodsButton;
+
+@property (nonatomic, weak) IBOutlet NSButton *licenseButton;
+
 @end
 
 @implementation RSCCAppDelegate
+
+#pragma mark - Search handler
 
 - (void)RSCC_handleSearch:(NSSearchField *)searchField
 {
@@ -52,6 +62,17 @@
     }
 }
 
+#pragma mark - CORE notification handlers
+
+- (void)RSCC_handleControlsDidLoad:(NSNotification *)aNotification
+{
+    [self.progressIndicator stopAnimation:self];
+    
+    [self.controls addObjectsFromArray:aNotification.object];
+    
+    [self.tableView reloadData];
+}
+
 - (void)RSCC_handleDetailDidLoad:(NSNotification *)aNotification
 {
     [self.progressIndicator stopAnimation:self];
@@ -63,6 +84,26 @@
         NSLog(@"Pod : %@", c.pod);
     }
 }
+
+#pragma mark - Popover buttons click event handlers
+
+- (void)RSCC_handleSortButtonClicked:(NSButton *)sender
+{
+}
+
+- (void)RSCC_handlePlatformButtonClicked:(NSButton *)sender
+{
+}
+
+- (void)RSCC_handleFilterCocoaPodsButtonClicked:(NSButton *)sender
+{
+}
+
+- (void)RSCC_handleLicenseButtonClicked:(NSButton *)sender
+{
+}
+
+#pragma mark - CellView and button click event handlers
 
 - (void)RSCC_handleButtonClick:(NSButton *)sender
 {
@@ -109,14 +150,7 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, c.link]]];
 }
 
-- (void)RSCC_handleControlsDidLoad:(NSNotification *)aNotification
-{
-    [self.progressIndicator stopAnimation:self];
-    
-    [self.controls addObjectsFromArray:aNotification.object];
-    
-    [self.tableView reloadData];
-}
+#pragma mark - Getter
 
 - (NSMutableArray *)controls
 {
@@ -125,6 +159,8 @@
     }
     return _controls;
 }
+
+#pragma mark - NSApplication
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -142,6 +178,18 @@
     
     [self.filterButton setTarget:self];
     [self.filterButton setAction:@selector(RSCC_handleButtonClick:)];
+    
+    [self.sortButton setTarget:self];
+    [self.sortButton setAction:@selector(RSCC_handleSortButtonClicked:)];
+    
+    [self.platformButton setTarget:self];
+    [self.platformButton setAction:@selector(RSCC_handlePlatformButtonClicked:)];
+    
+    [self.filterCocoaPodsButton setTarget:self];
+    [self.filterCocoaPodsButton setAction:@selector(RSCC_handleFilterCocoaPodsButtonClicked:)];
+    
+    [self.licenseButton setTarget:self];
+    [self.licenseButton setAction:@selector(RSCC_handleLicenseButtonClicked:)];
 }
 
 #pragma mark - NSTableViewDataSource

@@ -14,8 +14,11 @@
         <customObject id="Voe-Tx-rLC" customClass="RSCCAppDelegate">
             <connections>
                 <outlet property="filterButton" destination="YoV-Xs-9o6" id="EK2-ZA-24z"/>
+                <outlet property="filterCocoaPodsButton" destination="azf-Pf-Ila" id="IyB-uU-a8M"/>
                 <outlet property="imagePanel" destination="9Hc-6j-fFR" id="FLz-WW-gS1"/>
                 <outlet property="imageView" destination="r1V-gG-agp" id="9lP-iV-Ba2"/>
+                <outlet property="licenseButton" destination="fnA-K4-mDc" id="0RY-pm-WXz"/>
+                <outlet property="platformButton" destination="GJO-NQ-FX4" id="OfG-vQ-PZl"/>
                 <outlet property="popover" destination="vPO-lU-j9t" id="RMl-al-PTH"/>
                 <outlet property="progressIndicator" destination="6yv-CO-h6v" id="QOc-oL-voE"/>
                 <outlet property="searchField" destination="k0s-vL-UDr" id="m9A-uL-08v"/>
@@ -1050,7 +1053,7 @@
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fnA-K4-mDc">
                     <rect key="frame" x="157" y="8" width="130" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="inline" title="No" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Gg3-m3-Pld" id="Kaa-hG-yzZ">
+                    <popUpButtonCell key="cell" type="inline" title="All" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Gg3-m3-Pld" id="Kaa-hG-yzZ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="16" name="HelveticaNeue-Bold"/>
                         <menu key="menu" title="OtherViews" id="ifx-cY-VqB">
