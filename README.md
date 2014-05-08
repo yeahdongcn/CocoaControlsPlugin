@@ -1,6 +1,5 @@
-CocoaControlsPlugin
+CocoaControlsPlugin (WIP)
 ===================
-##WIP
 ##TODO
 * Refresh and load more controls
 * Integrate Pods
