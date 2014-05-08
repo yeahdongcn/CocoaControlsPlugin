@@ -12,7 +12,9 @@
 
 #import "RSCCControlCellView.h"
 
-@interface RSCCAppDelegate () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
+#import <ITPullToRefreshScrollView.h>
+
+@interface RSCCAppDelegate () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate, ITPullToRefreshScrollViewDelegate>
 
 #pragma mark - Data
 
@@ -34,31 +36,35 @@
 
 @property (nonatomic, copy) NSString *oldLicense;
 
+@property (nonatomic, assign) ITPullToRefreshEdge edge;
+
 #pragma mark - Controls
 
 @property (assign) IBOutlet NSWindow *window;
 
-@property (nonatomic, weak) IBOutlet NSSearchField *searchField;
+@property (assign) IBOutlet ITPullToRefreshScrollView *scrollView;
 
-@property (nonatomic, weak) IBOutlet NSTableView *tableView;
+@property (assign) IBOutlet NSSearchField *searchField;
 
-@property (nonatomic, weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (assign) IBOutlet NSTableView *tableView;
 
-@property (nonatomic, weak) IBOutlet NSPanel *imagePanel;
+@property (assign) IBOutlet NSProgressIndicator *progressIndicator;
 
-@property (nonatomic, weak) IBOutlet NSImageView *imageView;
+@property (assign) IBOutlet NSPanel *imagePanel;
 
-@property (nonatomic, weak) IBOutlet NSButton *filterButton;
+@property (assign) IBOutlet NSImageView *imageView;
 
-@property (nonatomic, weak) IBOutlet NSPopover *popover;
+@property (assign) IBOutlet NSButton *filterButton;
 
-@property (nonatomic, weak) IBOutlet NSButton *sortButton;
+@property (assign) IBOutlet NSPopover *popover;
 
-@property (nonatomic, weak) IBOutlet NSButton *platformButton;
+@property (assign) IBOutlet NSButton *sortButton;
 
-@property (nonatomic, weak) IBOutlet NSButton *filterCocoaPodsButton;
+@property (assign) IBOutlet NSButton *platformButton;
 
-@property (nonatomic, weak) IBOutlet NSButton *licenseButton;
+@property (assign) IBOutlet NSButton *filterCocoaPodsButton;
+
+@property (assign) IBOutlet NSButton *licenseButton;
 
 @end
 
@@ -132,6 +138,11 @@
     [self.controls addObjectsFromArray:aNotification.object];
     
     [self.tableView reloadData];
+    
+    if (self.edge & ITPullToRefreshEdgeTop || self.edge & ITPullToRefreshEdgeBottom) {
+        [self.scrollView stopRefreshingEdge:self.edge];
+        self.edge = ITPullToRefreshEdgeNone;
+    }
 }
 
 - (void)RSCC_handleDetailDidLoad:(NSNotification *)aNotification
@@ -334,6 +345,30 @@ static NSString *const RSCCADLicenseDefault         = @"All";
     [self.licenseButton setAction:@selector(RSCC_handleLicenseButtonClicked:)];
     
     [self.searchField becomeFirstResponder];
+    
+    self.scrollView.refreshableEdges = ITPullToRefreshEdgeTop | ITPullToRefreshEdgeBottom;
+    self.scrollView.delegate = self;
+}
+
+#pragma mark - ITPullToRefreshScrollViewDelegate
+
+- (void)pullToRefreshView:(ITPullToRefreshScrollView *)scrollView
+   didStartRefreshingEdge:(ITPullToRefreshEdge)edge
+{
+    if (edge & ITPullToRefreshEdgeTop) {
+        [self.controls removeAllObjects];
+        
+        [self.tableView reloadData];
+        
+        [self.progressIndicator startAnimation:self];
+        
+        [CORE refreshControls];
+    } else {
+        [self.progressIndicator startAnimation:self];
+        
+        [CORE moreControls];
+    }
+    self.edge = edge;
 }
 
 #pragma mark - NSTableViewDataSource
@@ -374,6 +409,7 @@ static NSString *const RSCCADLicenseDefault         = @"All";
                            cellView.star2,
                            cellView.star3,
                            cellView.star4];
+        [cellView.imageButton setImage:[NSImage imageNamed:@"placeholder"]];
         [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [cellView.imageButton setImage:responseObject];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

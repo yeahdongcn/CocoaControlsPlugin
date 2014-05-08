@@ -21,6 +21,7 @@
                 <outlet property="platformButton" destination="GJO-NQ-FX4" id="OfG-vQ-PZl"/>
                 <outlet property="popover" destination="vPO-lU-j9t" id="RMl-al-PTH"/>
                 <outlet property="progressIndicator" destination="6yv-CO-h6v" id="QOc-oL-voE"/>
+                <outlet property="scrollView" destination="1S2-y5-jB9" id="NgG-bH-E4b"/>
                 <outlet property="searchField" destination="k0s-vL-UDr" id="m9A-uL-08v"/>
                 <outlet property="sortButton" destination="BBO-ke-oAG" id="aEy-73-8eU"/>
                 <outlet property="tableView" destination="Y3X-9f-vG9" id="7Om-44-m01"/>
@@ -705,7 +706,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </searchFieldCell>
                     </searchField>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="156" horizontalPageScroll="10" verticalLineScroll="156" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-y5-jB9">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="156" horizontalPageScroll="10" verticalLineScroll="156" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-y5-jB9" customClass="ITPullToRefreshScrollView">
                         <rect key="frame" x="-1" y="40" width="600" height="374"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="aAZ-vE-Utc">
