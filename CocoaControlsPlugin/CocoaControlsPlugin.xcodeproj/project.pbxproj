@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0DA0AD2191B859300221981 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DA0AD1191B859300221981 /* AppKit.framework */; };
+		D0DA0AD4191B859300221981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DA0AD3191B859300221981 /* Foundation.framework */; };
+		D0DA0ADA191B859300221981 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0DA0AD8191B859300221981 /* InfoPlist.strings */; };
+		D0DA0ADD191B859300221981 /* RSCCPCocoaControlsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaControlsPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0DA0AD1191B859300221981 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D0DA0AD3191B859300221981 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D0DA0AD7191B859300221981 /* CocoaControlsPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaControlsPlugin-Info.plist"; sourceTree = "<group>"; };
+		D0DA0AD9191B859300221981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D0DA0ADB191B859300221981 /* RSCCPCocoaControlsPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSCCPCocoaControlsPlugin.h; sourceTree = "<group>"; };
+		D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCCPCocoaControlsPlugin.m; sourceTree = "<group>"; };
+		D0DA0ADE191B859300221981 /* CocoaControlsPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaControlsPlugin-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0DA0ACB191B859300221981 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0DA0AD2191B859300221981 /* AppKit.framework in Frameworks */,
+				D0DA0AD4191B859300221981 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0DA0AC5191B859300221981 = {
+			isa = PBXGroup;
+			children = (
+				D0DA0AD5191B859300221981 /* CocoaControlsPlugin */,
+				D0DA0AD0191B859300221981 /* Frameworks */,
+				D0DA0ACF191B859300221981 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0DA0ACF191B859300221981 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0DA0AD0191B859300221981 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0DA0AD1191B859300221981 /* AppKit.framework */,
+				D0DA0AD3191B859300221981 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0DA0AD5191B859300221981 /* CocoaControlsPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				D0DA0ADB191B859300221981 /* RSCCPCocoaControlsPlugin.h */,
+				D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */,
+				D0DA0AD6191B859300221981 /* Supporting Files */,
+			);
+			path = CocoaControlsPlugin;
+			sourceTree = "<group>";
+		};
+		D0DA0AD6191B859300221981 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0DA0AD7191B859300221981 /* CocoaControlsPlugin-Info.plist */,
+				D0DA0AD8191B859300221981 /* InfoPlist.strings */,
+				D0DA0ADE191B859300221981 /* CocoaControlsPlugin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0DA0ACD191B859300221981 /* CocoaControlsPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0DA0AE1191B859300221981 /* Build configuration list for PBXNativeTarget "CocoaControlsPlugin" */;
+			buildPhases = (
+				D0DA0ACA191B859300221981 /* Sources */,
+				D0DA0ACB191B859300221981 /* Frameworks */,
+				D0DA0ACC191B859300221981 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaControlsPlugin;
+			productName = CocoaControlsPlugin;
+			productReference = D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0DA0AC6191B859300221981 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RSCCP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = P.D.Q.;
+			};
+			buildConfigurationList = D0DA0AC9191B859300221981 /* Build configuration list for PBXProject "CocoaControlsPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D0DA0AC5191B859300221981;
+			productRefGroup = D0DA0ACF191B859300221981 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0DA0ACD191B859300221981 /* CocoaControlsPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0DA0ACC191B859300221981 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0DA0ADA191B859300221981 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0DA0ACA191B859300221981 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0DA0ADD191B859300221981 /* RSCCPCocoaControlsPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D0DA0AD8191B859300221981 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0DA0AD9191B859300221981 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0DA0ADF191B859300221981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D0DA0AE0191B859300221981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D0DA0AE2191B859300221981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaControlsPlugin/CocoaControlsPlugin-Prefix.pch";
+				INFOPLIST_FILE = "CocoaControlsPlugin/CocoaControlsPlugin-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		D0DA0AE3191B859300221981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaControlsPlugin/CocoaControlsPlugin-Prefix.pch";
+				INFOPLIST_FILE = "CocoaControlsPlugin/CocoaControlsPlugin-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0DA0AC9191B859300221981 /* Build configuration list for PBXProject "CocoaControlsPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0DA0ADF191B859300221981 /* Debug */,
+				D0DA0AE0191B859300221981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0DA0AE1191B859300221981 /* Build configuration list for PBXNativeTarget "CocoaControlsPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0DA0AE2191B859300221981 /* Debug */,
+				D0DA0AE3191B859300221981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0DA0AC6191B859300221981 /* Project object */;
+}
