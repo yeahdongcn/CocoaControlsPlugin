@@ -161,8 +161,8 @@
             [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:c.source]];
         }
     } else {
-        // TODO: Handle pod
-        NSLog(@"Pod : %@", c.pod);
+        [[NSPasteboard generalPasteboard] clearContents];
+        [[NSPasteboard generalPasteboard] setString:c.pod forType:NSStringPboardType];
     }
 }
 
