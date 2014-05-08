@@ -979,14 +979,14 @@
                         <constraint firstAttribute="height" constant="27" id="6jd-LW-Fgo"/>
                         <constraint firstAttribute="width" constant="130" id="E9N-Ys-YCO"/>
                     </constraints>
-                    <popUpButtonCell key="cell" type="inline" title="Apps" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Kbo-gV-r8Q" id="lCc-h4-Pqj">
+                    <popUpButtonCell key="cell" type="inline" title="Date" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="3W9-EY-P5l" id="lCc-h4-Pqj">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="16" name="HelveticaNeue-Bold"/>
                         <menu key="menu" title="OtherViews" id="mpf-2R-m7I">
                             <items>
-                                <menuItem title="Date" id="3W9-EY-P5l"/>
+                                <menuItem title="Date" state="on" id="3W9-EY-P5l"/>
                                 <menuItem title="Rating" id="j7b-fu-hPk"/>
-                                <menuItem title="Apps" state="on" id="Kbo-gV-r8Q"/>
+                                <menuItem title="Apps" id="Kbo-gV-r8Q"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -1027,13 +1027,13 @@
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="azf-Pf-Ila">
                     <rect key="frame" x="157" y="52" width="130" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="inline" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XWB-aD-Aij">
+                    <popUpButtonCell key="cell" type="inline" title="No" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Wja-Va-0z5" id="XWB-aD-Aij">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="16" name="HelveticaNeue-Bold"/>
                         <menu key="menu" title="OtherViews" id="OLf-Tf-57q">
                             <items>
                                 <menuItem title="Yes" id="k5U-Hm-YCA"/>
-                                <menuItem title="No" id="Wja-Va-0z5"/>
+                                <menuItem title="No" state="on" id="Wja-Va-0z5"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -1050,12 +1050,12 @@
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fnA-K4-mDc">
                     <rect key="frame" x="157" y="8" width="130" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="inline" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kaa-hG-yzZ">
+                    <popUpButtonCell key="cell" type="inline" title="No" bezelStyle="inline" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Gg3-m3-Pld" id="Kaa-hG-yzZ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="16" name="HelveticaNeue-Bold"/>
                         <menu key="menu" title="OtherViews" id="ifx-cY-VqB">
                             <items>
-                                <menuItem title="All" id="Gg3-m3-Pld"/>
+                                <menuItem title="All" state="on" id="Gg3-m3-Pld"/>
                                 <menuItem title="Apache 2.0" id="mdh-mQ-h85"/>
                                 <menuItem title="BSD" id="aR7-Be-ZCp"/>
                                 <menuItem title="CC BY 3.0" id="mFQ-eR-1Mz">
