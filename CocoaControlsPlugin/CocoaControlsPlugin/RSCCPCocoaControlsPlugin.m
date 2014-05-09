@@ -107,9 +107,8 @@ static void NotificationReceivedCallback(CFNotificationCenterRef center,
         if (!self.keyWindow) {
             self.keyWindow = NSApplication.sharedApplication.keyWindow;
         }
-        return YES;
     }
-    return NO;
+    return YES;
 }
 
 @end
