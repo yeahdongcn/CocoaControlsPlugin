@@ -1,0 +1,38 @@
+platform :<#ios#>, "<#6.0#>"
+
+pod "<#PodName#>"
+
+target :<#TargetName#>Tests, :exclusive => true do
+  # pod 'Kiwi'
+end
+- (void)createPodfile
+{
+    CCPProject *project = [CCPProject projectForKeyWindow];
+    if (project) {
+    NSString *podFilePath = project.podfilePath;
+    
+	if (![project hasPodfile]) {
+		NSError *error = nil;
+		[[NSFileManager defaultManager] copyItemAtPath:[self.bundle pathForResource:@"DefaultPodfile" ofType:@""] toPath:podFilePath error:&error];
+		if (error) {
+			[[NSAlert alertWithError:error] runModal];
+		}
+	}
+
+        NSFileHandle* fileHandle = [NSFileHandle fileHandleForWritingAtPath:podFilePath];
+        @try {
+            [fileHandle seekToEndOfFile];
+            [fileHandle writeData:[[[NSPasteboard generalPasteboard] stringForType:NSPasteboardTypeString] dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+        @catch (NSException *e) {
+            NSLog(@"%@", e);
+        }
+        [fileHandle closeFile];
+    
+    [[[NSApplication sharedApplication] delegate] application:[NSApplication sharedApplication]
+                                                     openFile:podFilePath];
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Open an Xcode project or workspace first." defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        [alert runModal];
+    }
+}

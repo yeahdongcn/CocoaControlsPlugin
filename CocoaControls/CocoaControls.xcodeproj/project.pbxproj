@@ -24,6 +24,23 @@
 		D0A99F4819174E6800DB2906 /* RSCCHTMLResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D03568CB191C6F1300BE89BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0DA0ACD191B859300221981;
+			remoteInfo = CocoaControlsPlugin;
+		};
+		D06B230B191C619B0097B523 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0DA0ACE191B859300221981;
+			remoteInfo = CocoaControlsPlugin;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		8E92A450DF424598A6DF0DA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76BFD5363424CE69E6B75A5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -45,6 +62,7 @@
 		D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageResponseSerializer.m; sourceTree = "<group>"; };
 		D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageRequestSerializer.h; sourceTree = "<group>"; };
 		D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageRequestSerializer.m; sourceTree = "<group>"; };
+		D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaControlsPlugin.xcodeproj; path = ../../CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj; sourceTree = "<group>"; };
 		D09E9E001914CA25000CD972 /* RSCCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCControl.h; sourceTree = "<group>"; };
 		D09E9E011914CA25000CD972 /* RSCCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControl.m; sourceTree = "<group>"; };
 		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCCore.h; sourceTree = "<group>"; };
@@ -111,6 +129,7 @@
 		D0108A4F1913CCD500912C70 /* CocoaControls */ = {
 			isa = PBXGroup;
 			children = (
+				D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */,
 				D0A99F4619174E6800DB2906 /* RSCCHTMLResponseSerializer.h */,
 				D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */,
 				D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */,
@@ -146,6 +165,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D06B2308191C619B0097B523 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D06B230C191C619B0097B523 /* CocoaControlsPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,10 +185,12 @@
 				D0108A431913CCD500912C70 /* Frameworks */,
 				D0108A441913CCD500912C70 /* Resources */,
 				D947634BDD8049989B0E2DE9 /* Copy Pods Resources */,
+				D03568CE191C6F2400BE89BA /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D03568CC191C6F1300BE89BA /* PBXTargetDependency */,
 			);
 			name = CocoaControls;
 			productName = CocoaControls;
@@ -189,12 +218,28 @@
 			mainGroup = D0108A3D1913CCD500912C70;
 			productRefGroup = D0108A471913CCD500912C70 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D06B2308191C619B0097B523 /* Products */;
+					ProjectRef = D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D0108A451913CCD500912C70 /* CocoaControls */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D06B230C191C619B0097B523 /* CocoaControlsPlugin.xcplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CocoaControlsPlugin.xcplugin;
+			remoteRef = D06B230B191C619B0097B523 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D0108A441913CCD500912C70 /* Resources */ = {
@@ -211,6 +256,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		D03568CE191C6F2400BE89BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "target_name=$TARGET_NAME\ncp -r \"$TARGET_BUILD_DIR/$TARGET_NAME.app\" \"$TARGET_BUILD_DIR/${target_name}Plugin.xcplugin/\"";
+		};
 		D947634BDD8049989B0E2DE9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +319,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D03568CC191C6F1300BE89BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaControlsPlugin;
+			targetProxy = D03568CB191C6F1300BE89BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D0108A521913CCD500912C70 /* InfoPlist.strings */ = {

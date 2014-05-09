@@ -14,6 +14,8 @@
 
 #import <ITPullToRefreshScrollView.h>
 
+#import <CoreFoundation/CFNotificationCenter.h>
+
 @interface RSCCAppDelegate () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate, ITPullToRefreshScrollViewDelegate>
 
 #pragma mark - Data
@@ -163,6 +165,7 @@
     } else {
         [[NSPasteboard generalPasteboard] clearContents];
         [[NSPasteboard generalPasteboard] setString:c.pod forType:NSStringPboardType];
+        CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter() , CFSTR("com.pdq.rscccocoapods"), NULL, NULL, YES);
     }
 }
 
