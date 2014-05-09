@@ -144,11 +144,11 @@
 				D09E9E041914CEF8000CD972 /* RSCCCore.m */,
 				D0108A5B1913CCD500912C70 /* RSCCAppDelegate.h */,
 				D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */,
+				D09E9E061917C77F000CD972 /* RSCCControlCellView.h */,
+				D09E9E071917C77F000CD972 /* RSCCControlCellView.m */,
 				D0108A5E1913CCD500912C70 /* MainMenu.xib */,
 				D0108A611913CCD500912C70 /* Images.xcassets */,
 				D0108A501913CCD500912C70 /* Supporting Files */,
-				D09E9E061917C77F000CD972 /* RSCCControlCellView.h */,
-				D09E9E071917C77F000CD972 /* RSCCControlCellView.m */,
 			);
 			path = CocoaControls;
 			sourceTree = "<group>";
