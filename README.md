@@ -1,12 +1,13 @@
 CocoaControls.app and Xcode plugin
 ===================
 
-![screenshot](https://raw.githubusercontent.com/yeahdongcn/CocoaControlsPlugin/master/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/yeahdongcn/CocoaControlsPlugin/master/app_screenshot.png)
+![screenshot](https://raw.githubusercontent.com/yeahdongcn/CocoaControlsPlugin/master/plugin_screenshot.png)
 
 ##TODO
-* `Refresh and load more controls` `Done`
-* `Integrate Pods` `Done`
-* `Add refresh button and load more button at the bottom (for those people using mouse)`
+* Refresh and load more controls -- Done
+* Integrate Pods -- Done
+* Add refresh button and load more button at the bottom (for those people using mouse)
 
 ##Requirements
 
@@ -27,10 +28,10 @@ To uninstall, just remove the plugin from `~/Library/Application Support/Develop
 All the commands are laid at the bottom of the menu `View`.
 
 * Use the menu `Cocoa Controls` to open `CocoaControls.app` immediately.
-* `Tap` on the `left image view` to open the image in a new window.
-* `Tap` on the `CocoaPods button` to integrate pod.
-* `Tap` on the `computer button` to clone the source.
-* `Double tap` on the `cell view` to open the control in browser.
+* `Click` on the `left image view` to open the image in a new window.
+* `Click` on the `pod button` to integrate pod.
+* `Click` on the `computer button` to clone the source.
+* `Double click` on the `cell view` to open the control in browser.
 
 ##Thanks
 
