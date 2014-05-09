@@ -84,10 +84,6 @@ static void NotificationReceivedCallback(CFNotificationCenterRef center,
         // reference to plugin's bundle, for resource acccess
         self.bundle = plugin;
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.keyWindow = NSApplication.sharedApplication.keyWindow;
-        });
-        
         CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, &NotificationReceivedCallback, CFSTR("com.pdq.rscccocoapods"), NULL, CFNotificationSuspensionBehaviorCoalesce);
         
         NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"View"];
@@ -107,7 +103,13 @@ static void NotificationReceivedCallback(CFNotificationCenterRef center,
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
-    return [CCPProject projectForKeyWindow] != nil;
+    if ([CCPProject projectForKeyWindow]) {
+        if (!self.keyWindow) {
+            self.keyWindow = NSApplication.sharedApplication.keyWindow;
+        }
+        return YES;
+    }
+    return NO;
 }
 
 @end
