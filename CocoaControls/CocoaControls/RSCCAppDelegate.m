@@ -68,6 +68,8 @@
 
 @property (assign) IBOutlet NSButton *licenseButton;
 
+@property (assign) IBOutlet NSTextField *label;
+
 @end
 
 @implementation RSCCAppDelegate
@@ -163,6 +165,10 @@
             [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:c.source]];
         }
     } else {
+        self.label.stringValue = @"Pod info has been copied to clipboard.";
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.label.stringValue = @"";
+        });
         [[NSPasteboard generalPasteboard] clearContents];
         [[NSPasteboard generalPasteboard] setString:c.pod forType:NSStringPboardType];
         CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter() , CFSTR("com.pdq.rscccocoapods"), NULL, NULL, YES);
