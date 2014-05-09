@@ -42,6 +42,16 @@ All the commands are laid at the bottom of the menu `View`.
 
 Thanks [cocoapods-xcode-plugin](https://github.com/kattrali/cocoapods-xcode-plugin) from [Delisa Mason](https://github.com/kattrali) for the source to create/edit podfile.
 
+##Credits
+
+Star icons are taken from [Font Awesome](http://fontawesome.io/) and converted to png using [font-awesome-to-png](https://github.com/odyniec/font-awesome-to-png).
+
+Filter icon is take from [Anton Volodin](https://dribbble.com/cuzmich) [Icon](https://dribbble.com/shots/444019-Icons?list=users&offset=0).
+
+CocoaPods logo is taken from [CocoaPods](http://cocoapods.org/).
+
+Desktop icon is take from [Github](https://github.com).
+
 ##License
 
     The MIT License (MIT)
