@@ -4,8 +4,8 @@ CocoaControlsPlugin (WIP)
 ![screenshot](https://raw.githubusercontent.com/yeahdongcn/CocoaControlsPlugin/master/screenshot.png)
 
 ##TODO
-* `Refresh and load more controls` -- `Done`
-* `Integrate Pods` -- `Done`
+* `Refresh and load more controls` `Done`
+* `Integrate Pods` `Done`
 * `Add refresh button and load more button at the bottom (for those people using mouse)`
 
 ##Requirements
@@ -26,7 +26,7 @@ To uninstall, just remove the plugin from `~/Library/Application Support/Develop
 All the commands are laid at the bottom of the menu `View`.
 
 * Use the menu `Cocoa Controls` to open `CocoaControls.app` immediately.
-* 
+
 ##Thanks
 
 Thanks [cocoapods-xcode-plugin](https://github.com/kattrali/cocoapods-xcode-plugin) from [Delisa Mason](https://github.com/kattrali) for the source to create/edit pod file.
