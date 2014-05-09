@@ -1,8 +1,13 @@
 CocoaControls.app and Xcode plugin
 ===================
+OS X native application with Xcode plugin for browsing, searching, integrating, cloning controls in [Cocoa Controls](http://cocoacontrols.com/). 
 
-![screenshot](https://raw.githubusercontent.com/yeahdongcn/CocoaControlsPlugin/master/app_screenshot.png)
+#### Plugin screenshot
 ![screenshot](https://raw.githubusercontent.com/yeahdongcn/CocoaControlsPlugin/master/plugin_screenshot.png)
+
+#### App screenshot
+![screenshot](https://raw.githubusercontent.com/yeahdongcn/CocoaControlsPlugin/master/app_screenshot.png)
+
 
 ##TODO
 * Refresh and load more controls -- Done
