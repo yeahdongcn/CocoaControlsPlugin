@@ -40,7 +40,7 @@ All the commands are laid at the bottom of the menu `View`.
 
 ##Thanks
 
-Thanks [cocoapods-xcode-plugin](https://github.com/kattrali/cocoapods-xcode-plugin) from [Delisa Mason](https://github.com/kattrali) for the source to create/edit pod file.
+Thanks [cocoapods-xcode-plugin](https://github.com/kattrali/cocoapods-xcode-plugin) from [Delisa Mason](https://github.com/kattrali) for the source to create/edit podfile.
 
 ##License
 
