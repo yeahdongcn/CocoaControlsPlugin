@@ -16,6 +16,7 @@ Xcode 5.0+ on OS X 10.9+.
 
 #### Build from Source
 
+* Install pods.
 * Build the Xcode project. The plug-in will automatically be installed in `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`. 
 * Relaunch Xcode.
 
