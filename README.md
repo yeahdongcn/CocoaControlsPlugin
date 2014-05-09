@@ -1,4 +1,4 @@
-CocoaControlsPlugin (WIP)
+CocoaControls.app and Xcode plugin
 ===================
 
 ![screenshot](https://raw.githubusercontent.com/yeahdongcn/CocoaControlsPlugin/master/screenshot.png)
