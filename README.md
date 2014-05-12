@@ -1,5 +1,8 @@
 CocoaControls.app and Xcode plugin
 ===================
+[![Total views](https://sourcegraph.com/api/repos/github.com/yeahdongcn/RSImageOptimPlugin/counters/views.png)](https://sourcegraph.com/github.com/yeahdongcn/RSImageOptimPlugin)
+[![Views in the last 24 hours](https://sourcegraph.com/api/repos/github.com/yeahdongcn/RSImageOptimPlugin/counters/views-24h.png)](https://sourcegraph.com/github.com/yeahdongcn/RSImageOptimPlugin)
+
 OS X native application with Xcode plugin for browsing, searching, integrating, cloning controls in [Cocoa Controls](http://cocoacontrols.com/). 
 
 #### Plugin screenshot
