@@ -12,6 +12,9 @@ extern int const RSCCControlCellViewImageButtonTagBase;
 extern int const RSCCControlCellViewCocoaPodsButtonTagBase;
 extern int const RSCCControlCellViewCloneButtonTagBase;
 
+extern CGFloat const kCocoaPodsButtonWidthConstant;
+extern CGFloat const kButtonsGapConstant;
+
 @class RSCCControlCellViewBackgroundView;
 
 @interface RSCCControlCellView : NSTableCellView
@@ -41,5 +44,9 @@ extern int const RSCCControlCellViewCloneButtonTagBase;
 @property (assign) IBOutlet NSImageView *star4;
 
 @property (nonatomic, strong) NSArray *stars;
+
+@property (assign) IBOutlet NSLayoutConstraint *cocoaPodsButtonWidth;
+
+@property (assign) IBOutlet NSLayoutConstraint *buttonsGap;
 
 @end

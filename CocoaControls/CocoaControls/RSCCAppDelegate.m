@@ -415,7 +415,13 @@ static NSString *const RSCCADLicenseDefault         = @"All";
         cellView.titleField.stringValue = c.title;
         cellView.licenseField.stringValue = c.license;
         cellView.dateField.stringValue = c.date;
-        [cellView.cocoaPodsButton setHidden:!c.isOnCocoaPods];
+        if (c.isOnCocoaPods) {
+            cellView.cocoaPodsButtonWidth.constant = kCocoaPodsButtonWidthConstant;
+            cellView.buttonsGap.constant = kButtonsGapConstant;
+        } else {
+            cellView.cocoaPodsButtonWidth.constant = 0;
+            cellView.buttonsGap.constant = 0;
+        }
         cellView.stars = @[cellView.star0,
                            cellView.star1,
                            cellView.star2,

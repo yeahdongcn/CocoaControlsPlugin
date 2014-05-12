@@ -885,8 +885,10 @@
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="backgroundView" destination="hJD-m9-jfB" id="eAp-SO-sRZ"/>
+                                                        <outlet property="buttonsGap" destination="5Ue-JQ-NOY" id="rMo-uE-oav"/>
                                                         <outlet property="cloneButton" destination="PLp-zU-jK5" id="2fh-Rx-0wW"/>
                                                         <outlet property="cocoaPodsButton" destination="CDY-4c-nxY" id="jwL-sf-cCz"/>
+                                                        <outlet property="cocoaPodsButtonWidth" destination="ylJ-ap-Uce" id="0H8-ic-sCR"/>
                                                         <outlet property="dateField" destination="0dp-V2-ojY" id="w48-jX-biJ"/>
                                                         <outlet property="imageButton" destination="NW7-jp-f5J" id="19r-PN-vU6"/>
                                                         <outlet property="licenseField" destination="HDj-0i-FOw" id="J6F-ic-rsq"/>
@@ -939,7 +941,7 @@
                         </buttonCell>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="snX-hj-79h">
-                        <rect key="frame" x="556" y="12" width="4" height="17"/>
+                        <rect key="frame" x="556" y="13" width="4" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="rBn-lf-s0g">
                             <font key="font" size="11" name="HelveticaNeue"/>
