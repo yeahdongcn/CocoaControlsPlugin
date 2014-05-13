@@ -92,15 +92,6 @@
  */
 - (CGFloat)edgeViewHeight;
 
-/**
- *  Override this method to draw a custom background.
- *  You can also just override `drawRect:` and to all the drawing on your own.
- *
- *  @param The rect which should be drawn on
- */
-- (void)drawBackgroundInRect:(NSRect)dirtyRect;
-
-
 @property ITPullToRefreshEdge edgeViewEdge;
 
 @end
