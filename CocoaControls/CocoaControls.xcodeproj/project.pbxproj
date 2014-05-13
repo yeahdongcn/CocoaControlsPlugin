@@ -180,8 +180,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0108A771913CCD500912C70 /* Build configuration list for PBXNativeTarget "CocoaControls" */;
 			buildPhases = (
-				D0C0DBA71921BC2900D46E04 /* ShellScript */,
 				E3C44B8F592D4DBA8D8DAF66 /* Check Pods Manifest.lock */,
+				D0C0DBA71921BC2900D46E04 /* ShellScript */,
 				D0108A421913CCD500912C70 /* Sources */,
 				D0108A431913CCD500912C70 /* Frameworks */,
 				D0108A441913CCD500912C70 /* Resources */,
