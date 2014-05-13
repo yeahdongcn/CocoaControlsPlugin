@@ -13,8 +13,8 @@ OS X native application with Xcode plugin for browsing, searching, integrating, 
 
 
 ##TODO
-* Refresh and load more controls -- Done
-* Integrate Pods -- Done
+* ~~Refresh and load more controls~~
+* ~~Integrate Pods~~
 * Add refresh button and load more button at the bottom (for those people using mouse)
 
 ##Requirements
