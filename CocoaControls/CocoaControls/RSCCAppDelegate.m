@@ -361,6 +361,11 @@ static NSString *const RSCCADLicenseDefault         = @"All";
 
 #pragma mark - ITPullToRefreshScrollViewDelegate
 
+- (void)pullToRefreshView:(ITPullToRefreshScrollView *)scrollView didReachRefreshingEdge:(ITPullToRefreshEdge)edge
+{
+    NSLog(@"%d", (int)edge);
+}
+
 - (void)pullToRefreshView:(ITPullToRefreshScrollView *)scrollView
    didStartRefreshingEdge:(ITPullToRefreshEdge)edge
 {

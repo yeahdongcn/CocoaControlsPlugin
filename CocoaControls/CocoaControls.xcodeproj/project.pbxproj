@@ -180,6 +180,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0108A771913CCD500912C70 /* Build configuration list for PBXNativeTarget "CocoaControls" */;
 			buildPhases = (
+				D0C0DBA71921BC2900D46E04 /* ShellScript */,
 				E3C44B8F592D4DBA8D8DAF66 /* Check Pods Manifest.lock */,
 				D0108A421913CCD500912C70 /* Sources */,
 				D0108A431913CCD500912C70 /* Frameworks */,
@@ -268,6 +269,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "target_name=$TARGET_NAME\ncp -r \"$TARGET_BUILD_DIR/$TARGET_NAME.app\" \"$TARGET_BUILD_DIR/${target_name}Plugin.xcplugin/\"";
+		};
+		D0C0DBA71921BC2900D46E04 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pre-build.sh\"";
 		};
 		D947634BDD8049989B0E2DE9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
