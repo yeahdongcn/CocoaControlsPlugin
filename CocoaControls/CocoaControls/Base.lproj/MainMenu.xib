@@ -19,9 +19,13 @@
                 <outlet property="imageView" destination="r1V-gG-agp" id="9lP-iV-Ba2"/>
                 <outlet property="label" destination="snX-hj-79h" id="Zeg-8e-CHw"/>
                 <outlet property="licenseButton" destination="fnA-K4-mDc" id="0RY-pm-WXz"/>
+                <outlet property="moreButton" destination="RzP-AX-gc7" id="L06-mx-YLk"/>
+                <outlet property="morePopover" destination="ECx-mo-cmt" id="dS0-ub-xSC"/>
                 <outlet property="platformButton" destination="GJO-NQ-FX4" id="OfG-vQ-PZl"/>
                 <outlet property="popover" destination="vPO-lU-j9t" id="RMl-al-PTH"/>
                 <outlet property="progressIndicator" destination="6yv-CO-h6v" id="QOc-oL-voE"/>
+                <outlet property="refreshButton" destination="Msx-wO-eQf" id="oli-WZ-sjM"/>
+                <outlet property="refreshPopover" destination="OKr-B4-90D" id="VSW-eb-ktm"/>
                 <outlet property="scrollView" destination="1S2-y5-jB9" id="NgG-bH-E4b"/>
                 <outlet property="searchField" destination="k0s-vL-UDr" id="m9A-uL-08v"/>
                 <outlet property="sortButton" destination="BBO-ke-oAG" id="aEy-73-8eU"/>
@@ -38,6 +42,26 @@
         <popover id="vPO-lU-j9t">
             <connections>
                 <outlet property="contentViewController" destination="qMl-zb-WaL" id="9db-S8-x5b"/>
+            </connections>
+        </popover>
+        <viewController id="ggC-pI-ezC" userLabel="Popover View Controller">
+            <connections>
+                <outlet property="view" destination="Msx-wO-eQf" id="oFr-IH-igj"/>
+            </connections>
+        </viewController>
+        <popover id="OKr-B4-90D">
+            <connections>
+                <outlet property="contentViewController" destination="ggC-pI-ezC" id="pR0-Se-8O9"/>
+            </connections>
+        </popover>
+        <viewController id="iRp-Rh-CDc" userLabel="Popover View Controller">
+            <connections>
+                <outlet property="view" destination="RzP-AX-gc7" id="R2A-ii-L6y"/>
+            </connections>
+        </viewController>
+        <popover id="ECx-mo-cmt">
+            <connections>
+                <outlet property="contentViewController" destination="iRp-Rh-CDc" id="shx-GJ-gHo"/>
             </connections>
         </popover>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
@@ -693,7 +717,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="598" height="456"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="598" height="456"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -971,7 +995,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="90" y="125" width="320" height="568"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <value key="minSize" type="size" width="320" height="568"/>
             <value key="maxSize" type="size" width="320" height="568"/>
             <view key="contentView" id="1HX-dz-jVT">
@@ -1154,12 +1178,30 @@
                 <constraint firstItem="fnA-K4-mDc" firstAttribute="centerY" secondItem="sFx-mE-QXY" secondAttribute="centerY" id="rcT-HH-epq"/>
             </constraints>
         </customView>
+        <button focusRingType="none" id="Msx-wO-eQf">
+            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="up" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="ZaH-RM-bwq">
+                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" metaFont="system"/>
+            </buttonCell>
+        </button>
+        <button focusRingType="none" id="RzP-AX-gc7">
+            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="down" imagePosition="overlaps" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="iEg-cc-xqG">
+                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" size="15" name="HelveticaNeue"/>
+            </buttonCell>
+        </button>
     </objects>
     <resources>
         <image name="cocoapods" width="80" height="80"/>
         <image name="desktop-button" width="80" height="80"/>
+        <image name="down" width="48" height="48"/>
         <image name="filter" width="48" height="48"/>
         <image name="placeholder" width="128" height="227"/>
         <image name="star-o" width="48" height="48"/>
+        <image name="up" width="48" height="48"/>
     </resources>
 </document>

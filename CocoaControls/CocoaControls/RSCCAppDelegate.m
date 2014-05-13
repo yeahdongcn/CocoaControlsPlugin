@@ -70,9 +70,55 @@
 
 @property (assign) IBOutlet NSTextField *label;
 
+@property (assign) IBOutlet NSPopover *refreshPopover;
+
+@property (assign) IBOutlet NSPopover *morePopover;
+
+@property (assign) IBOutlet NSButton *refreshButton;
+
+@property (assign) IBOutlet NSButton *moreButton;
+
 @end
 
 @implementation RSCCAppDelegate
+
+#pragma mark - Refresh & more actions
+
+- (void)RSCC_refresh
+{
+    self.searchField.stringValue = @"";
+    
+    [self.controls removeAllObjects];
+    
+    [self.tableView reloadData];
+    
+    [self.progressIndicator startAnimation:self];
+    
+    [CORE refreshControls];
+}
+
+- (void)RSCC_more
+{
+    [self.progressIndicator startAnimation:self];
+    
+    [CORE moreControls];
+}
+
+#pragma mark - Refresh & more button click event handler
+
+- (void)RSCC_handleRefreshButtonClicked:(NSButton *)sender
+{
+    [self RSCC_refresh];
+    [self.refreshPopover close];
+}
+
+- (void)RSCC_handleMoreButtonClicked:(NSButton *)sender
+{
+    [self RSCC_more];
+    [self.morePopover close];
+}
+
+#pragma mark - Filter changed handler
 
 - (void)RSCC_handleFilterDidChange
 {
@@ -231,6 +277,7 @@
     } else if (sender.tag >= RSCCControlCellViewImageButtonTagBase){
         NSInteger row = sender.tag - RSCCControlCellViewImageButtonTagBase;
         RSCCControl *c = self.controls[row];
+        self.imageView.image = nil;
         [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             self.imageView.image = responseObject;
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -353,6 +400,12 @@ static NSString *const RSCCADLicenseDefault         = @"All";
     [self.licenseButton setTarget:self];
     [self.licenseButton setAction:@selector(RSCC_handleLicenseButtonClicked:)];
     
+    [self.refreshButton setTarget:self];
+    [self.refreshButton setAction:@selector(RSCC_handleRefreshButtonClicked:)];
+    
+    [self.moreButton setTarget:self];
+    [self.moreButton setAction:@selector(RSCC_handleMoreButtonClicked:)];
+    
     [self.searchField becomeFirstResponder];
     
     self.scrollView.refreshableEdges = ITPullToRefreshEdgeTop | ITPullToRefreshEdgeBottom;
@@ -363,27 +416,41 @@ static NSString *const RSCCADLicenseDefault         = @"All";
 
 - (void)pullToRefreshView:(ITPullToRefreshScrollView *)scrollView didReachRefreshingEdge:(ITPullToRefreshEdge)edge
 {
-    NSLog(@"%d", (int)edge);
+    switch (edge) {
+        case ITPullToRefreshEdgeNone:
+            if (self.refreshPopover.isShown) {
+                [self.refreshPopover close];
+            }
+            if (self.morePopover.isShown) {
+                [self.morePopover close];
+            }
+            break;
+        case ITPullToRefreshEdgeTop:
+            if (!self.refreshPopover.isShown && [self.controls count] > 0) {
+                [self.refreshPopover showRelativeToRect:CGRectMake(self.tableView.bounds.size.width - 2, 0, 2, 2)
+                                                 ofView:self.tableView
+                                          preferredEdge:NSMaxYEdge];
+            }
+            break;
+        case ITPullToRefreshEdgeBottom:
+            if (!self.morePopover.isShown) {
+                [self.morePopover showRelativeToRect:CGRectMake(self.tableView.bounds.size.width - 2, self.tableView.bounds.size.height - 2, 2, 2)
+                                              ofView:self.tableView
+                                       preferredEdge:NSMaxYEdge];
+            }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)pullToRefreshView:(ITPullToRefreshScrollView *)scrollView
    didStartRefreshingEdge:(ITPullToRefreshEdge)edge
 {
     if (edge & ITPullToRefreshEdgeTop) {
-        self.searchField.stringValue = @"";
-        
-        [self.controls removeAllObjects];
-        
-        [self.tableView reloadData];
-        
-        [self.progressIndicator startAnimation:self];
-        
-        [CORE refreshControls];
+        [self RSCC_refresh];
     } else if ([self.searchField.stringValue length] == 0) {
-        
-        [self.progressIndicator startAnimation:self];
-        
-        [CORE moreControls];
+        [self RSCC_more];
     }
     self.edge = edge;
 }
