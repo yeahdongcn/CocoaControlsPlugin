@@ -185,9 +185,18 @@
 {
     [self.progressIndicator stopAnimation:self];
     
-    [self.controls addObjectsFromArray:aNotification.object];
+    NSArray *controls = aNotification.object;
+    [self.controls addObjectsFromArray:controls];
     
-    [self.tableView reloadData];
+    if ([self.controls count] - [controls count] == 0) {
+        [self.tableView reloadData];
+    } else {
+        [self.tableView beginUpdates];
+        NSRange range = NSMakeRange([self.controls count] - [controls count], [controls count]);
+        [self.tableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range]
+                              withAnimation:NSTableViewAnimationSlideDown];
+        [self.tableView endUpdates];
+    }
     
     if (self.edge & ITPullToRefreshEdgeTop || self.edge & ITPullToRefreshEdgeBottom) {
         [self.scrollView stopRefreshingEdge:self.edge];
