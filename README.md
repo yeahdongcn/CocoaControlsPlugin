@@ -55,7 +55,7 @@ CocoaPods logo is taken from [CocoaPods](http://cocoapods.org/).
 
 Desktop icon is taken from [Github](https://github.com).
 
-Mouse scroller helper icons are taken from [Abdus](https://dribbble.com/iamabdus).
+Mouse scroller helper icons are taken from [Budi Tanrim](https://dribbble.com/buditanrim)'s [budicon tester](https://dribbble.com/shots/1182482-budicon-tester?list=users&offset=21).
 
 All data is taken from [Cocoa Controls](http://cocoacontrols.com/).
 
