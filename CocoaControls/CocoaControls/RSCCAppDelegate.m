@@ -440,7 +440,7 @@ static NSString *const RSCCADLicenseDefault         = @"All";
             }
             break;
         case ITPullToRefreshEdgeTop:
-            if (!self.refreshPopover.isShown && [self.controls count] > 0) {
+            if (!self.refreshPopover.isShown) {
                 [self.refreshPopover showRelativeToRect:CGRectMake(self.tableView.bounds.size.width - 2, 0, 2, 2)
                                                  ofView:self.tableView
                                           preferredEdge:NSMaxYEdge];
