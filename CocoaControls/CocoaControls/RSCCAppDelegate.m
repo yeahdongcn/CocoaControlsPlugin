@@ -263,6 +263,8 @@
 
 #pragma mark - CellView and button click event handlers
 
+static int const RSCCADPreviewImageViewTagBase = 10000;
+
 - (void)RSCC_handleButtonClick:(NSButton *)sender
 {
     if (sender.tag >= RSCCControlCellViewCloneButtonTagBase) {
@@ -285,13 +287,16 @@
         }
     } else if (sender.tag >= RSCCControlCellViewImageButtonTagBase){
         NSInteger row = sender.tag - RSCCControlCellViewImageButtonTagBase;
-        RSCCControl *c = self.controls[row];
-        self.imageView.image = nil;
-        [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            self.imageView.image = responseObject;
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        }];
-        [self.imagePanel orderFront:self];
+        if (self.imageView.tag != (RSCCADPreviewImageViewTagBase + row)) {
+            RSCCControl *c = self.controls[row];
+            self.imageView.tag = RSCCADPreviewImageViewTagBase + row;
+            self.imageView.image = nil;
+            [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                self.imageView.image = responseObject;
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            }];
+            [self.imagePanel orderFront:self];
+        }
     } else {
         if (self.filterButton.intValue == 1) {
             self.oldSort = self.sort;
