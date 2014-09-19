@@ -1,5 +1,5 @@
 platform :osx, '10.9'
 
-pod 'AFNetworking', '~> 2.2.3'
+pod 'AFNetworking', '~> 2.4.1'
 pod 'hpple', '~> 0.2.0'
 pod 'ITPullToRefreshScrollView', '~> 0.0.1'
