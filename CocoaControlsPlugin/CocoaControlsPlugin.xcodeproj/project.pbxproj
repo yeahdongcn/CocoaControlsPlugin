@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D078F69B191C5B820018B62E /* CCPProject.m in Sources */ = {isa = PBXBuildFile; fileRef = D078F691191C5B820018B62E /* CCPProject.m */; };
 		D078F69E191C5B820018B62E /* CCPWorkspaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D078F697191C5B820018B62E /* CCPWorkspaceManager.m */; };
-		D078F6A1191C5C660018B62E /* DefaultPodfile in Resources */ = {isa = PBXBuildFile; fileRef = D078F6A0191C5C660018B62E /* DefaultPodfile */; };
 		D0DA0AD2191B859300221981 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DA0AD1191B859300221981 /* AppKit.framework */; };
 		D0DA0AD4191B859300221981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DA0AD3191B859300221981 /* Foundation.framework */; };
 		D0DA0ADA191B859300221981 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0DA0AD8191B859300221981 /* InfoPlist.strings */; };
@@ -21,7 +20,6 @@
 		D078F691191C5B820018B62E /* CCPProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPProject.m; sourceTree = "<group>"; };
 		D078F696191C5B820018B62E /* CCPWorkspaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPWorkspaceManager.h; sourceTree = "<group>"; };
 		D078F697191C5B820018B62E /* CCPWorkspaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPWorkspaceManager.m; sourceTree = "<group>"; };
-		D078F6A0191C5C660018B62E /* DefaultPodfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DefaultPodfile; sourceTree = "<group>"; };
 		D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaControlsPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DA0AD1191B859300221981 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D0DA0AD3191B859300221981 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,7 +94,6 @@
 		D0DA0AD6191B859300221981 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D078F6A0191C5C660018B62E /* DefaultPodfile */,
 				D0DA0AD7191B859300221981 /* CocoaControlsPlugin-Info.plist */,
 				D0DA0AD8191B859300221981 /* InfoPlist.strings */,
 				D0DA0ADE191B859300221981 /* CocoaControlsPlugin-Prefix.pch */,
@@ -156,7 +153,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D078F6A1191C5C660018B62E /* DefaultPodfile in Resources */,
 				D0DA0ADA191B859300221981 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
