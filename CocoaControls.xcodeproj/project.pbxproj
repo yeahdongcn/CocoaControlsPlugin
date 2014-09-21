@@ -51,23 +51,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D03568CB191C6F1300BE89BA /* PBXContainerItemProxy */ = {
+		D0079D1919CF237F009A7BB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0DA0ACD191B859300221981;
-			remoteInfo = CocoaControlsPlugin;
-		};
-		D06B230B191C619B0097B523 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */;
+			containerPortal = D0079D1519CF237F009A7BB9 /* CocoaControlsPlugin.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D0DA0ACE191B859300221981;
+			remoteInfo = CocoaControlsPlugin;
+		};
+		D0079D1D19CF238B009A7BB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0079D1519CF237F009A7BB9 /* CocoaControlsPlugin.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0DA0ACD191B859300221981;
 			remoteInfo = CocoaControlsPlugin;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0079D1519CF237F009A7BB9 /* CocoaControlsPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaControlsPlugin.xcodeproj; path = CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D0108A461913CCD500912C70 /* CocoaControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0108A491913CCD500912C70 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D0108A4C1913CCD500912C70 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -86,7 +87,6 @@
 		D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageResponseSerializer.m; sourceTree = "<group>"; };
 		D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageRequestSerializer.h; sourceTree = "<group>"; };
 		D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageRequestSerializer.m; sourceTree = "<group>"; };
-		D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaControlsPlugin.xcodeproj; path = ../../CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj; sourceTree = "<group>"; };
 		D084BD8919CF1F5200E3E2EE /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		D084BD8A19CF1F5200E3E2EE /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		D084BD8B19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -160,6 +160,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0079D1619CF237F009A7BB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0079D1A19CF237F009A7BB9 /* CocoaControlsPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D0108A3D1913CCD500912C70 = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +208,7 @@
 		D0108A4F1913CCD500912C70 /* CocoaControls */ = {
 			isa = PBXGroup;
 			children = (
-				D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */,
+				D0079D1519CF237F009A7BB9 /* CocoaControlsPlugin.xcodeproj */,
 				D0A99F4619174E6800DB2906 /* RSCCHTMLResponseSerializer.h */,
 				D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */,
 				D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */,
@@ -237,14 +245,6 @@
 				D0108A581913CCD500912C70 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D06B2308191C619B0097B523 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D06B230C191C619B0097B523 /* CocoaControlsPlugin.xcplugin */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D084BD8719CF1F5200E3E2EE /* AFNetworking */ = {
@@ -418,7 +418,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D03568CC191C6F1300BE89BA /* PBXTargetDependency */,
+				D0079D1E19CF238B009A7BB9 /* PBXTargetDependency */,
 			);
 			name = CocoaControls;
 			productName = CocoaControls;
@@ -448,8 +448,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D06B2308191C619B0097B523 /* Products */;
-					ProjectRef = D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */;
+					ProductGroup = D0079D1619CF237F009A7BB9 /* Products */;
+					ProjectRef = D0079D1519CF237F009A7BB9 /* CocoaControlsPlugin.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -460,11 +460,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D06B230C191C619B0097B523 /* CocoaControlsPlugin.xcplugin */ = {
+		D0079D1A19CF237F009A7BB9 /* CocoaControlsPlugin.xcplugin */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CocoaControlsPlugin.xcplugin;
-			remoteRef = D06B230B191C619B0097B523 /* PBXContainerItemProxy */;
+			remoteRef = D0079D1919CF237F009A7BB9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -545,10 +545,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D03568CC191C6F1300BE89BA /* PBXTargetDependency */ = {
+		D0079D1E19CF238B009A7BB9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CocoaControlsPlugin;
-			targetProxy = D03568CB191C6F1300BE89BA /* PBXContainerItemProxy */;
+			targetProxy = D0079D1D19CF238B009A7BB9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
