@@ -1,14 +1,6 @@
 
-CocoaControls/Pods/*
-
-CocoaControls/Podfile.lock
-
-CocoaControls/CocoaControls.xcworkspace/*
-
-CocoaControls/CocoaControls.xcodeproj/xcuserdata/*
-
-CocoaControls/CocoaControls.xcodeproj/project.xcworkspace/xcuserdata/*
-
 CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj/project.xcworkspace/xcuserdata/*
 
 CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj/xcuserdata/*
+
+CocoaControls.xcodeproj/project.xcworkspace/xcuserdata/*
