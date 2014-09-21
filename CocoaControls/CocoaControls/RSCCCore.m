@@ -13,7 +13,7 @@
 #import "RSCCImageRequestSerializer.h"
 #import "RSCCImageResponseSerializer.h"
 
-#import <TFHpple.h>
+#import "TFHpple.h"
 
 NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.did.load";
 NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.detail.did.load";

@@ -12,7 +12,7 @@
 
 #import "RSCCControlCellView.h"
 
-#import <ITPullToRefreshScrollView.h>
+#import "ITPullToRefreshScrollView.h"
 
 #import <CoreFoundation/CFNotificationCenter.h>
 

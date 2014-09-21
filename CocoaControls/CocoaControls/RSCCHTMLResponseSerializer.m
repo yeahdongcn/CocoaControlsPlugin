@@ -8,7 +8,7 @@
 
 #import "RSCCHTMLResponseSerializer.h"
 
-#import <TFHpple.h>
+#import "TFHpple.h"
 
 @implementation RSCCHTMLResponseSerializer
 

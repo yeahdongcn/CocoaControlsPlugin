@@ -16,10 +16,36 @@
 		D0108A621913CCD500912C70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0108A611913CCD500912C70 /* Images.xcassets */; };
 		D01BB5D71918831D001DA429 /* RSCCImageResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */; };
 		D053F848191A096A00B1A7BA /* RSCCImageRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */; };
+		D084BDC419CF1F5200E3E2EE /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD8A19CF1F5200E3E2EE /* AFHTTPRequestOperation.m */; };
+		D084BDC519CF1F5200E3E2EE /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD8C19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.m */; };
+		D084BDC619CF1F5200E3E2EE /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD8E19CF1F5200E3E2EE /* AFHTTPSessionManager.m */; };
+		D084BDC719CF1F5200E3E2EE /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9119CF1F5200E3E2EE /* AFNetworkReachabilityManager.m */; };
+		D084BDC819CF1F5200E3E2EE /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9319CF1F5200E3E2EE /* AFSecurityPolicy.m */; };
+		D084BDC919CF1F5200E3E2EE /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9519CF1F5200E3E2EE /* AFURLConnectionOperation.m */; };
+		D084BDCA19CF1F5200E3E2EE /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9719CF1F5200E3E2EE /* AFURLRequestSerialization.m */; };
+		D084BDCB19CF1F5200E3E2EE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9919CF1F5200E3E2EE /* AFURLResponseSerialization.m */; };
+		D084BDCC19CF1F5200E3E2EE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9B19CF1F5200E3E2EE /* AFURLSessionManager.m */; };
+		D084BDCD19CF1F5200E3E2EE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D084BD9C19CF1F5200E3E2EE /* LICENSE */; };
+		D084BDCE19CF1F5200E3E2EE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9D19CF1F5200E3E2EE /* README.md */; };
+		D084BDCF19CF1F5200E3E2EE /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D084BD9F19CF1F5200E3E2EE /* LICENSE.txt */; };
+		D084BDD019CF1F5200E3E2EE /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = D084BDA019CF1F5200E3E2EE /* README.markdown */; };
+		D084BDD119CF1F5200E3E2EE /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDA219CF1F5200E3E2EE /* TFHpple.m */; };
+		D084BDD219CF1F5200E3E2EE /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDA419CF1F5200E3E2EE /* TFHppleElement.m */; };
+		D084BDD319CF1F5200E3E2EE /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDA619CF1F5200E3E2EE /* XPathQuery.m */; };
+		D084BDD419CF1F5200E3E2EE /* DuxScrollViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDAB19CF1F5200E3E2EE /* DuxScrollViewAnimation.m */; };
+		D084BDD519CF1F5200E3E2EE /* ITPullToRefreshClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDAD19CF1F5200E3E2EE /* ITPullToRefreshClipView.m */; };
+		D084BDD619CF1F5200E3E2EE /* ITPullToRefreshEdgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDAF19CF1F5200E3E2EE /* ITPullToRefreshEdgeView.m */; };
+		D084BDD719CF1F5200E3E2EE /* ITPullToRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDB119CF1F5200E3E2EE /* ITPullToRefreshScrollView.m */; };
+		D084BDD819CF1F5200E3E2EE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D084BDB219CF1F5200E3E2EE /* LICENSE */; };
+		D084BDD919CF1F5200E3E2EE /* ITProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDB819CF1F5200E3E2EE /* ITProgressIndicator.m */; };
+		D084BDDA19CF1F5200E3E2EE /* NSBezierPath+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDBA19CF1F5200E3E2EE /* NSBezierPath+Geometry.m */; };
+		D084BDDB19CF1F5200E3E2EE /* NSBKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDC019CF1F5200E3E2EE /* NSBKeyframeAnimation.m */; };
+		D084BDDC19CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = D084BDC119CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c */; };
+		D084BDDD19CF1F5200E3E2EE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D084BDC319CF1F5200E3E2EE /* README.md */; };
+		D084BDDF19CF1F8500E3E2EE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D084BDDE19CF1F8500E3E2EE /* libxml2.dylib */; };
 		D09E9E021914CA25000CD972 /* RSCCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E011914CA25000CD972 /* RSCCControl.m */; };
 		D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E041914CEF8000CD972 /* RSCCCore.m */; };
 		D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E071917C77F000CD972 /* RSCCControlCellView.m */; };
-		D0A2E6F26A5D45B0B116AC49 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E92A450DF424598A6DF0DA3 /* libPods.a */; };
 		D0A99F4519174D3000DB2906 /* RSCCAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A99F4419174D3000DB2906 /* RSCCAPI.m */; };
 		D0A99F4819174E6800DB2906 /* RSCCHTMLResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */; };
 /* End PBXBuildFile section */
@@ -42,8 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8E92A450DF424598A6DF0DA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C76BFD5363424CE69E6B75A5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D0108A461913CCD500912C70 /* CocoaControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0108A491913CCD500912C70 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D0108A4C1913CCD500912C70 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -63,6 +87,54 @@
 		D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageRequestSerializer.h; sourceTree = "<group>"; };
 		D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageRequestSerializer.m; sourceTree = "<group>"; };
 		D06B2307191C619B0097B523 /* CocoaControlsPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaControlsPlugin.xcodeproj; path = ../../CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj; sourceTree = "<group>"; };
+		D084BD8919CF1F5200E3E2EE /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		D084BD8A19CF1F5200E3E2EE /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		D084BD8B19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		D084BD8C19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		D084BD8D19CF1F5200E3E2EE /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		D084BD8E19CF1F5200E3E2EE /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		D084BD8F19CF1F5200E3E2EE /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		D084BD9019CF1F5200E3E2EE /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		D084BD9119CF1F5200E3E2EE /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		D084BD9219CF1F5200E3E2EE /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		D084BD9319CF1F5200E3E2EE /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		D084BD9419CF1F5200E3E2EE /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		D084BD9519CF1F5200E3E2EE /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		D084BD9619CF1F5200E3E2EE /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		D084BD9719CF1F5200E3E2EE /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		D084BD9819CF1F5200E3E2EE /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		D084BD9919CF1F5200E3E2EE /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		D084BD9A19CF1F5200E3E2EE /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		D084BD9B19CF1F5200E3E2EE /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		D084BD9C19CF1F5200E3E2EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D084BD9D19CF1F5200E3E2EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D084BD9F19CF1F5200E3E2EE /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		D084BDA019CF1F5200E3E2EE /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		D084BDA119CF1F5200E3E2EE /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		D084BDA219CF1F5200E3E2EE /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		D084BDA319CF1F5200E3E2EE /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		D084BDA419CF1F5200E3E2EE /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		D084BDA519CF1F5200E3E2EE /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		D084BDA619CF1F5200E3E2EE /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		D084BDAA19CF1F5200E3E2EE /* DuxScrollViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuxScrollViewAnimation.h; sourceTree = "<group>"; };
+		D084BDAB19CF1F5200E3E2EE /* DuxScrollViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuxScrollViewAnimation.m; sourceTree = "<group>"; };
+		D084BDAC19CF1F5200E3E2EE /* ITPullToRefreshClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPullToRefreshClipView.h; sourceTree = "<group>"; };
+		D084BDAD19CF1F5200E3E2EE /* ITPullToRefreshClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPullToRefreshClipView.m; sourceTree = "<group>"; };
+		D084BDAE19CF1F5200E3E2EE /* ITPullToRefreshEdgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPullToRefreshEdgeView.h; sourceTree = "<group>"; };
+		D084BDAF19CF1F5200E3E2EE /* ITPullToRefreshEdgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPullToRefreshEdgeView.m; sourceTree = "<group>"; };
+		D084BDB019CF1F5200E3E2EE /* ITPullToRefreshScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPullToRefreshScrollView.h; sourceTree = "<group>"; };
+		D084BDB119CF1F5200E3E2EE /* ITPullToRefreshScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPullToRefreshScrollView.m; sourceTree = "<group>"; };
+		D084BDB219CF1F5200E3E2EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D084BDB719CF1F5200E3E2EE /* ITProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITProgressIndicator.h; sourceTree = "<group>"; };
+		D084BDB819CF1F5200E3E2EE /* ITProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITProgressIndicator.m; sourceTree = "<group>"; };
+		D084BDB919CF1F5200E3E2EE /* NSBezierPath+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+Geometry.h"; sourceTree = "<group>"; };
+		D084BDBA19CF1F5200E3E2EE /* NSBezierPath+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+Geometry.m"; sourceTree = "<group>"; };
+		D084BDBF19CF1F5200E3E2EE /* NSBKeyframeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimation.h; sourceTree = "<group>"; };
+		D084BDC019CF1F5200E3E2EE /* NSBKeyframeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBKeyframeAnimation.m; sourceTree = "<group>"; };
+		D084BDC119CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NSBKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
+		D084BDC219CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
+		D084BDC319CF1F5200E3E2EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D084BDDE19CF1F8500E3E2EE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D09E9E001914CA25000CD972 /* RSCCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCControl.h; sourceTree = "<group>"; };
 		D09E9E011914CA25000CD972 /* RSCCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControl.m; sourceTree = "<group>"; };
 		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCCore.h; sourceTree = "<group>"; };
@@ -80,8 +152,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D084BDDF19CF1F8500E3E2EE /* libxml2.dylib in Frameworks */,
 				D0108A4A1913CCD500912C70 /* Cocoa.framework in Frameworks */,
-				D0A2E6F26A5D45B0B116AC49 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +166,6 @@
 				D0108A4F1913CCD500912C70 /* CocoaControls */,
 				D0108A481913CCD500912C70 /* Frameworks */,
 				D0108A471913CCD500912C70 /* Products */,
-				C76BFD5363424CE69E6B75A5 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,9 +180,9 @@
 		D0108A481913CCD500912C70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D084BDDE19CF1F8500E3E2EE /* libxml2.dylib */,
 				D0108A491913CCD500912C70 /* Cocoa.framework */,
 				D0108A4B1913CCD500912C70 /* Other Frameworks */,
-				8E92A450DF424598A6DF0DA3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,6 +227,9 @@
 		D0108A501913CCD500912C70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D084BD8719CF1F5200E3E2EE /* AFNetworking */,
+				D084BD9E19CF1F5200E3E2EE /* hpple */,
+				D084BDA719CF1F5200E3E2EE /* ITPullToRefreshScrollView */,
 				D0108A511913CCD500912C70 /* CocoaControls-Info.plist */,
 				D0108A521913CCD500912C70 /* InfoPlist.strings */,
 				D0108A551913CCD500912C70 /* main.m */,
@@ -173,6 +247,162 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D084BD8719CF1F5200E3E2EE /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D084BD8819CF1F5200E3E2EE /* AFNetworking */,
+				D084BD9C19CF1F5200E3E2EE /* LICENSE */,
+				D084BD9D19CF1F5200E3E2EE /* README.md */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		D084BD8819CF1F5200E3E2EE /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D084BD8919CF1F5200E3E2EE /* AFHTTPRequestOperation.h */,
+				D084BD8A19CF1F5200E3E2EE /* AFHTTPRequestOperation.m */,
+				D084BD8B19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.h */,
+				D084BD8C19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.m */,
+				D084BD8D19CF1F5200E3E2EE /* AFHTTPSessionManager.h */,
+				D084BD8E19CF1F5200E3E2EE /* AFHTTPSessionManager.m */,
+				D084BD8F19CF1F5200E3E2EE /* AFNetworking.h */,
+				D084BD9019CF1F5200E3E2EE /* AFNetworkReachabilityManager.h */,
+				D084BD9119CF1F5200E3E2EE /* AFNetworkReachabilityManager.m */,
+				D084BD9219CF1F5200E3E2EE /* AFSecurityPolicy.h */,
+				D084BD9319CF1F5200E3E2EE /* AFSecurityPolicy.m */,
+				D084BD9419CF1F5200E3E2EE /* AFURLConnectionOperation.h */,
+				D084BD9519CF1F5200E3E2EE /* AFURLConnectionOperation.m */,
+				D084BD9619CF1F5200E3E2EE /* AFURLRequestSerialization.h */,
+				D084BD9719CF1F5200E3E2EE /* AFURLRequestSerialization.m */,
+				D084BD9819CF1F5200E3E2EE /* AFURLResponseSerialization.h */,
+				D084BD9919CF1F5200E3E2EE /* AFURLResponseSerialization.m */,
+				D084BD9A19CF1F5200E3E2EE /* AFURLSessionManager.h */,
+				D084BD9B19CF1F5200E3E2EE /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		D084BD9E19CF1F5200E3E2EE /* hpple */ = {
+			isa = PBXGroup;
+			children = (
+				D084BD9F19CF1F5200E3E2EE /* LICENSE.txt */,
+				D084BDA019CF1F5200E3E2EE /* README.markdown */,
+				D084BDA119CF1F5200E3E2EE /* TFHpple.h */,
+				D084BDA219CF1F5200E3E2EE /* TFHpple.m */,
+				D084BDA319CF1F5200E3E2EE /* TFHppleElement.h */,
+				D084BDA419CF1F5200E3E2EE /* TFHppleElement.m */,
+				D084BDA519CF1F5200E3E2EE /* XPathQuery.h */,
+				D084BDA619CF1F5200E3E2EE /* XPathQuery.m */,
+			);
+			path = hpple;
+			sourceTree = "<group>";
+		};
+		D084BDA719CF1F5200E3E2EE /* ITPullToRefreshScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDA819CF1F5200E3E2EE /* ITPullToRefreshScrollView */,
+				D084BDB219CF1F5200E3E2EE /* LICENSE */,
+				D084BDB319CF1F5200E3E2EE /* Modules */,
+				D084BDC319CF1F5200E3E2EE /* README.md */,
+			);
+			path = ITPullToRefreshScrollView;
+			sourceTree = "<group>";
+		};
+		D084BDA819CF1F5200E3E2EE /* ITPullToRefreshScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDA919CF1F5200E3E2EE /* Classes */,
+			);
+			path = ITPullToRefreshScrollView;
+			sourceTree = "<group>";
+		};
+		D084BDA919CF1F5200E3E2EE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDAA19CF1F5200E3E2EE /* DuxScrollViewAnimation.h */,
+				D084BDAB19CF1F5200E3E2EE /* DuxScrollViewAnimation.m */,
+				D084BDAC19CF1F5200E3E2EE /* ITPullToRefreshClipView.h */,
+				D084BDAD19CF1F5200E3E2EE /* ITPullToRefreshClipView.m */,
+				D084BDAE19CF1F5200E3E2EE /* ITPullToRefreshEdgeView.h */,
+				D084BDAF19CF1F5200E3E2EE /* ITPullToRefreshEdgeView.m */,
+				D084BDB019CF1F5200E3E2EE /* ITPullToRefreshScrollView.h */,
+				D084BDB119CF1F5200E3E2EE /* ITPullToRefreshScrollView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D084BDB319CF1F5200E3E2EE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDB419CF1F5200E3E2EE /* ITProgressIndicator */,
+				D084BDBB19CF1F5200E3E2EE /* NSBKeyframeAnimation */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D084BDB419CF1F5200E3E2EE /* ITProgressIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDB519CF1F5200E3E2EE /* ITProgressIndicator */,
+			);
+			path = ITProgressIndicator;
+			sourceTree = "<group>";
+		};
+		D084BDB519CF1F5200E3E2EE /* ITProgressIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDB619CF1F5200E3E2EE /* Classes */,
+			);
+			path = ITProgressIndicator;
+			sourceTree = "<group>";
+		};
+		D084BDB619CF1F5200E3E2EE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDB719CF1F5200E3E2EE /* ITProgressIndicator.h */,
+				D084BDB819CF1F5200E3E2EE /* ITProgressIndicator.m */,
+				D084BDB919CF1F5200E3E2EE /* NSBezierPath+Geometry.h */,
+				D084BDBA19CF1F5200E3E2EE /* NSBezierPath+Geometry.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D084BDBB19CF1F5200E3E2EE /* NSBKeyframeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDBC19CF1F5200E3E2EE /* NSBKeyframeAnimation */,
+			);
+			path = NSBKeyframeAnimation;
+			sourceTree = "<group>";
+		};
+		D084BDBC19CF1F5200E3E2EE /* NSBKeyframeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDBD19CF1F5200E3E2EE /* Classes */,
+			);
+			path = NSBKeyframeAnimation;
+			sourceTree = "<group>";
+		};
+		D084BDBD19CF1F5200E3E2EE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDBE19CF1F5200E3E2EE /* NSBKeyframeAnimation */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D084BDBE19CF1F5200E3E2EE /* NSBKeyframeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				D084BDBF19CF1F5200E3E2EE /* NSBKeyframeAnimation.h */,
+				D084BDC019CF1F5200E3E2EE /* NSBKeyframeAnimation.m */,
+				D084BDC119CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c */,
+				D084BDC219CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.h */,
+			);
+			path = NSBKeyframeAnimation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,12 +410,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0108A771913CCD500912C70 /* Build configuration list for PBXNativeTarget "CocoaControls" */;
 			buildPhases = (
-				E3C44B8F592D4DBA8D8DAF66 /* Check Pods Manifest.lock */,
-				D0C0DBA71921BC2900D46E04 /* ShellScript */,
 				D0108A421913CCD500912C70 /* Sources */,
 				D0108A431913CCD500912C70 /* Frameworks */,
 				D0108A441913CCD500912C70 /* Resources */,
-				D947634BDD8049989B0E2DE9 /* Copy Pods Resources */,
 				D03568CE191C6F2400BE89BA /* ShellScript */,
 			);
 			buildRules = (
@@ -247,10 +474,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D084BDCF19CF1F5200E3E2EE /* LICENSE.txt in Resources */,
 				D0108A541913CCD500912C70 /* InfoPlist.strings in Resources */,
 				D0108A621913CCD500912C70 /* Images.xcassets in Resources */,
+				D084BDD819CF1F5200E3E2EE /* LICENSE in Resources */,
 				D0108A5A1913CCD500912C70 /* Credits.rtf in Resources */,
 				D0108A601913CCD500912C70 /* MainMenu.xib in Resources */,
+				D084BDCD19CF1F5200E3E2EE /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,49 +500,6 @@
 			shellPath = /bin/sh;
 			shellScript = "target_name=$TARGET_NAME\ncp -r \"$TARGET_BUILD_DIR/$TARGET_NAME.app\" \"$TARGET_BUILD_DIR/${target_name}Plugin.xcplugin/\"";
 		};
-		D0C0DBA71921BC2900D46E04 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pre-build.sh\"";
-		};
-		D947634BDD8049989B0E2DE9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E3C44B8F592D4DBA8D8DAF66 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -320,14 +507,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D084BDC819CF1F5200E3E2EE /* AFSecurityPolicy.m in Sources */,
 				D01BB5D71918831D001DA429 /* RSCCImageResponseSerializer.m in Sources */,
+				D084BDD619CF1F5200E3E2EE /* ITPullToRefreshEdgeView.m in Sources */,
+				D084BDD319CF1F5200E3E2EE /* XPathQuery.m in Sources */,
+				D084BDC719CF1F5200E3E2EE /* AFNetworkReachabilityManager.m in Sources */,
 				D0A99F4819174E6800DB2906 /* RSCCHTMLResponseSerializer.m in Sources */,
+				D084BDC919CF1F5200E3E2EE /* AFURLConnectionOperation.m in Sources */,
+				D084BDC419CF1F5200E3E2EE /* AFHTTPRequestOperation.m in Sources */,
+				D084BDD719CF1F5200E3E2EE /* ITPullToRefreshScrollView.m in Sources */,
+				D084BDD019CF1F5200E3E2EE /* README.markdown in Sources */,
+				D084BDC619CF1F5200E3E2EE /* AFHTTPSessionManager.m in Sources */,
+				D084BDCA19CF1F5200E3E2EE /* AFURLRequestSerialization.m in Sources */,
 				D0108A561913CCD500912C70 /* main.m in Sources */,
+				D084BDD219CF1F5200E3E2EE /* TFHppleElement.m in Sources */,
+				D084BDD119CF1F5200E3E2EE /* TFHpple.m in Sources */,
+				D084BDCC19CF1F5200E3E2EE /* AFURLSessionManager.m in Sources */,
+				D084BDDB19CF1F5200E3E2EE /* NSBKeyframeAnimation.m in Sources */,
 				D053F848191A096A00B1A7BA /* RSCCImageRequestSerializer.m in Sources */,
+				D084BDC519CF1F5200E3E2EE /* AFHTTPRequestOperationManager.m in Sources */,
+				D084BDDA19CF1F5200E3E2EE /* NSBezierPath+Geometry.m in Sources */,
 				D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */,
+				D084BDDC19CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c in Sources */,
+				D084BDDD19CF1F5200E3E2EE /* README.md in Sources */,
+				D084BDD919CF1F5200E3E2EE /* ITProgressIndicator.m in Sources */,
+				D084BDCE19CF1F5200E3E2EE /* README.md in Sources */,
+				D084BDCB19CF1F5200E3E2EE /* AFURLResponseSerialization.m in Sources */,
 				D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */,
+				D084BDD519CF1F5200E3E2EE /* ITPullToRefreshClipView.m in Sources */,
 				D0A99F4519174D3000DB2906 /* RSCCAPI.m in Sources */,
 				D09E9E021914CA25000CD972 /* RSCCControl.m in Sources */,
+				D084BDD419CF1F5200E3E2EE /* DuxScrollViewAnimation.m in Sources */,
 				D0108A5D1913CCD500912C70 /* RSCCAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,12 +652,16 @@
 		};
 		D0108A781913CCD500912C70 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C76BFD5363424CE69E6B75A5 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaControls/CocoaControls-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/include/libxml2/**",
+				);
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -456,12 +670,16 @@
 		};
 		D0108A791913CCD500912C70 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C76BFD5363424CE69E6B75A5 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaControls/CocoaControls-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/include/libxml2/**",
+				);
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

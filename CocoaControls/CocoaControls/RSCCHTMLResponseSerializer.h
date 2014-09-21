@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 P.D.Q. All rights reserved.
 //
 
-#import <AFURLResponseSerialization.h>
+#import "AFURLResponseSerialization.h"
 
 @interface RSCCHTMLResponseSerializer : AFHTTPResponseSerializer
 
