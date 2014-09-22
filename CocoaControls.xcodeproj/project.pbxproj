@@ -407,7 +407,6 @@
 				D0108A421913CCD500912C70 /* Sources */,
 				D0108A431913CCD500912C70 /* Frameworks */,
 				D0108A441913CCD500912C70 /* Resources */,
-				D03568CE191C6F2400BE89BA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -476,22 +475,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		D03568CE191C6F2400BE89BA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "target_name=$TARGET_NAME\ncp -r \"$TARGET_BUILD_DIR/$TARGET_NAME.app\" \"$TARGET_BUILD_DIR/${target_name}Plugin.xcplugin/\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0108A421913CCD500912C70 /* Sources */ = {
@@ -643,6 +626,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaControls/CocoaControls-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -651,6 +636,7 @@
 					"/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -661,6 +647,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaControls/CocoaControls-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -669,6 +657,7 @@
 					"/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
