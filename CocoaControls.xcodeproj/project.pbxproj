@@ -25,10 +25,6 @@
 		D084BDCA19CF1F5200E3E2EE /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9719CF1F5200E3E2EE /* AFURLRequestSerialization.m */; };
 		D084BDCB19CF1F5200E3E2EE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9919CF1F5200E3E2EE /* AFURLResponseSerialization.m */; };
 		D084BDCC19CF1F5200E3E2EE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9B19CF1F5200E3E2EE /* AFURLSessionManager.m */; };
-		D084BDCD19CF1F5200E3E2EE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D084BD9C19CF1F5200E3E2EE /* LICENSE */; };
-		D084BDCE19CF1F5200E3E2EE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D084BD9D19CF1F5200E3E2EE /* README.md */; };
-		D084BDCF19CF1F5200E3E2EE /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D084BD9F19CF1F5200E3E2EE /* LICENSE.txt */; };
-		D084BDD019CF1F5200E3E2EE /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = D084BDA019CF1F5200E3E2EE /* README.markdown */; };
 		D084BDD119CF1F5200E3E2EE /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDA219CF1F5200E3E2EE /* TFHpple.m */; };
 		D084BDD219CF1F5200E3E2EE /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDA419CF1F5200E3E2EE /* TFHppleElement.m */; };
 		D084BDD319CF1F5200E3E2EE /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDA619CF1F5200E3E2EE /* XPathQuery.m */; };
@@ -36,12 +32,10 @@
 		D084BDD519CF1F5200E3E2EE /* ITPullToRefreshClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDAD19CF1F5200E3E2EE /* ITPullToRefreshClipView.m */; };
 		D084BDD619CF1F5200E3E2EE /* ITPullToRefreshEdgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDAF19CF1F5200E3E2EE /* ITPullToRefreshEdgeView.m */; };
 		D084BDD719CF1F5200E3E2EE /* ITPullToRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDB119CF1F5200E3E2EE /* ITPullToRefreshScrollView.m */; };
-		D084BDD819CF1F5200E3E2EE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D084BDB219CF1F5200E3E2EE /* LICENSE */; };
 		D084BDD919CF1F5200E3E2EE /* ITProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDB819CF1F5200E3E2EE /* ITProgressIndicator.m */; };
 		D084BDDA19CF1F5200E3E2EE /* NSBezierPath+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDBA19CF1F5200E3E2EE /* NSBezierPath+Geometry.m */; };
 		D084BDDB19CF1F5200E3E2EE /* NSBKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BDC019CF1F5200E3E2EE /* NSBKeyframeAnimation.m */; };
 		D084BDDC19CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = D084BDC119CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c */; };
-		D084BDDD19CF1F5200E3E2EE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D084BDC319CF1F5200E3E2EE /* README.md */; };
 		D084BDDF19CF1F8500E3E2EE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D084BDDE19CF1F8500E3E2EE /* libxml2.dylib */; };
 		D09E9E021914CA25000CD972 /* RSCCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E011914CA25000CD972 /* RSCCControl.m */; };
 		D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E9E041914CEF8000CD972 /* RSCCCore.m */; };
@@ -474,13 +468,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D084BDCF19CF1F5200E3E2EE /* LICENSE.txt in Resources */,
 				D0108A541913CCD500912C70 /* InfoPlist.strings in Resources */,
 				D0108A621913CCD500912C70 /* Images.xcassets in Resources */,
-				D084BDD819CF1F5200E3E2EE /* LICENSE in Resources */,
 				D0108A5A1913CCD500912C70 /* Credits.rtf in Resources */,
 				D0108A601913CCD500912C70 /* MainMenu.xib in Resources */,
-				D084BDCD19CF1F5200E3E2EE /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +507,6 @@
 				D084BDC919CF1F5200E3E2EE /* AFURLConnectionOperation.m in Sources */,
 				D084BDC419CF1F5200E3E2EE /* AFHTTPRequestOperation.m in Sources */,
 				D084BDD719CF1F5200E3E2EE /* ITPullToRefreshScrollView.m in Sources */,
-				D084BDD019CF1F5200E3E2EE /* README.markdown in Sources */,
 				D084BDC619CF1F5200E3E2EE /* AFHTTPSessionManager.m in Sources */,
 				D084BDCA19CF1F5200E3E2EE /* AFURLRequestSerialization.m in Sources */,
 				D0108A561913CCD500912C70 /* main.m in Sources */,
@@ -529,9 +519,7 @@
 				D084BDDA19CF1F5200E3E2EE /* NSBezierPath+Geometry.m in Sources */,
 				D09E9E081917C77F000CD972 /* RSCCControlCellView.m in Sources */,
 				D084BDDC19CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c in Sources */,
-				D084BDDD19CF1F5200E3E2EE /* README.md in Sources */,
 				D084BDD919CF1F5200E3E2EE /* ITProgressIndicator.m in Sources */,
-				D084BDCE19CF1F5200E3E2EE /* README.md in Sources */,
 				D084BDCB19CF1F5200E3E2EE /* AFURLResponseSerialization.m in Sources */,
 				D09E9E051914CEF8000CD972 /* RSCCCore.m in Sources */,
 				D084BDD519CF1F5200E3E2EE /* ITPullToRefreshClipView.m in Sources */,

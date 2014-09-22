@@ -1153,7 +1153,7 @@
         <button focusRingType="none" id="Msx-wO-eQf">
             <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="refresh" imagePosition="overlaps" alignment="center" focusRingType="none" inset="2" id="ZaH-RM-bwq">
+            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="refresh" imagePosition="overlaps" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="ZaH-RM-bwq">
                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                 <font key="font" metaFont="system"/>
             </buttonCell>
@@ -1161,7 +1161,7 @@
         <button focusRingType="none" id="RzP-AX-gc7">
             <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="more" imagePosition="overlaps" alignment="center" focusRingType="none" inset="2" id="iEg-cc-xqG">
+            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="more" imagePosition="overlaps" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="iEg-cc-xqG">
                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                 <font key="font" metaFont="system"/>
             </buttonCell>
