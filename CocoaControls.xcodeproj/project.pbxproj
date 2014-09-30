@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D0108A4A1913CCD500912C70 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0108A491913CCD500912C70 /* Cocoa.framework */; };
-		D0108A541913CCD500912C70 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0108A521913CCD500912C70 /* InfoPlist.strings */; };
-		D0108A561913CCD500912C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0108A551913CCD500912C70 /* main.m */; };
 		D0108A5A1913CCD500912C70 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D0108A581913CCD500912C70 /* Credits.rtf */; };
 		D0108A5D1913CCD500912C70 /* RSCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */; };
 		D0108A601913CCD500912C70 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0108A5E1913CCD500912C70 /* MainMenu.xib */; };
@@ -64,23 +61,17 @@
 /* Begin PBXFileReference section */
 		D0079D1519CF237F009A7BB9 /* CocoaControlsPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaControlsPlugin.xcodeproj; path = CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D0108A461913CCD500912C70 /* CocoaControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0108A491913CCD500912C70 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		D0108A4C1913CCD500912C70 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		D0108A4D1913CCD500912C70 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		D0108A4E1913CCD500912C70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D0108A511913CCD500912C70 /* CocoaControls-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaControls-Info.plist"; sourceTree = "<group>"; };
-		D0108A531913CCD500912C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D0108A551913CCD500912C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0108A571913CCD500912C70 /* CocoaControls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaControls-Prefix.pch"; sourceTree = "<group>"; };
 		D0108A591913CCD500912C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		D0108A5B1913CCD500912C70 /* RSCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSCCAppDelegate.h; sourceTree = "<group>"; };
-		D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCCAppDelegate.m; sourceTree = "<group>"; };
+		D0108A5B1913CCD500912C70 /* RSCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RSCCAppDelegate.h; path = CocoaControls/RSCCAppDelegate.h; sourceTree = "<group>"; };
+		D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RSCCAppDelegate.m; path = CocoaControls/RSCCAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D0108A5F1913CCD500912C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D0108A611913CCD500912C70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D01BB5D51918831D001DA429 /* RSCCImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageResponseSerializer.h; sourceTree = "<group>"; };
-		D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageResponseSerializer.m; sourceTree = "<group>"; };
-		D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCImageRequestSerializer.h; sourceTree = "<group>"; };
-		D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCImageRequestSerializer.m; sourceTree = "<group>"; };
+		D0108A611913CCD500912C70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CocoaControls/Images.xcassets; sourceTree = "<group>"; };
+		D01BB5D51918831D001DA429 /* RSCCImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCImageResponseSerializer.h; path = CocoaControls/RSCCImageResponseSerializer.h; sourceTree = "<group>"; };
+		D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCImageResponseSerializer.m; path = CocoaControls/RSCCImageResponseSerializer.m; sourceTree = "<group>"; };
+		D053F846191A096A00B1A7BA /* RSCCImageRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCImageRequestSerializer.h; path = CocoaControls/RSCCImageRequestSerializer.h; sourceTree = "<group>"; };
+		D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCImageRequestSerializer.m; path = CocoaControls/RSCCImageRequestSerializer.m; sourceTree = "<group>"; };
 		D084BD8919CF1F5200E3E2EE /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		D084BD8A19CF1F5200E3E2EE /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		D084BD8B19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -100,8 +91,8 @@
 		D084BD9919CF1F5200E3E2EE /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		D084BD9A19CF1F5200E3E2EE /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		D084BD9B19CF1F5200E3E2EE /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		D084BD9C19CF1F5200E3E2EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D084BD9D19CF1F5200E3E2EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D084BD9C19CF1F5200E3E2EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D084BD9D19CF1F5200E3E2EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D084BD9F19CF1F5200E3E2EE /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		D084BDA019CF1F5200E3E2EE /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		D084BDA119CF1F5200E3E2EE /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
@@ -118,7 +109,7 @@
 		D084BDAF19CF1F5200E3E2EE /* ITPullToRefreshEdgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPullToRefreshEdgeView.m; sourceTree = "<group>"; };
 		D084BDB019CF1F5200E3E2EE /* ITPullToRefreshScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPullToRefreshScrollView.h; sourceTree = "<group>"; };
 		D084BDB119CF1F5200E3E2EE /* ITPullToRefreshScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPullToRefreshScrollView.m; sourceTree = "<group>"; };
-		D084BDB219CF1F5200E3E2EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D084BDB219CF1F5200E3E2EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D084BDB719CF1F5200E3E2EE /* ITProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITProgressIndicator.h; sourceTree = "<group>"; };
 		D084BDB819CF1F5200E3E2EE /* ITProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITProgressIndicator.m; sourceTree = "<group>"; };
 		D084BDB919CF1F5200E3E2EE /* NSBezierPath+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+Geometry.h"; sourceTree = "<group>"; };
@@ -127,18 +118,18 @@
 		D084BDC019CF1F5200E3E2EE /* NSBKeyframeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBKeyframeAnimation.m; sourceTree = "<group>"; };
 		D084BDC119CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NSBKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
 		D084BDC219CF1F5200E3E2EE /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
-		D084BDC319CF1F5200E3E2EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D084BDC319CF1F5200E3E2EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D084BDDE19CF1F8500E3E2EE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		D09E9E001914CA25000CD972 /* RSCCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCControl.h; sourceTree = "<group>"; };
-		D09E9E011914CA25000CD972 /* RSCCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControl.m; sourceTree = "<group>"; };
-		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCCore.h; sourceTree = "<group>"; };
-		D09E9E041914CEF8000CD972 /* RSCCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCCore.m; sourceTree = "<group>"; };
-		D09E9E061917C77F000CD972 /* RSCCControlCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCControlCellView.h; sourceTree = "<group>"; };
-		D09E9E071917C77F000CD972 /* RSCCControlCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCControlCellView.m; sourceTree = "<group>"; };
-		D0A99F4319174D3000DB2906 /* RSCCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCAPI.h; sourceTree = "<group>"; };
-		D0A99F4419174D3000DB2906 /* RSCCAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCAPI.m; sourceTree = "<group>"; };
-		D0A99F4619174E6800DB2906 /* RSCCHTMLResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCCHTMLResponseSerializer.h; sourceTree = "<group>"; };
-		D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCCHTMLResponseSerializer.m; sourceTree = "<group>"; };
+		D09E9E001914CA25000CD972 /* RSCCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCControl.h; path = CocoaControls/RSCCControl.h; sourceTree = "<group>"; };
+		D09E9E011914CA25000CD972 /* RSCCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCControl.m; path = CocoaControls/RSCCControl.m; sourceTree = "<group>"; };
+		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = RSCCCore.h; path = CocoaControls/RSCCCore.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D09E9E041914CEF8000CD972 /* RSCCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RSCCCore.m; path = CocoaControls/RSCCCore.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D09E9E061917C77F000CD972 /* RSCCControlCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCControlCellView.h; path = CocoaControls/RSCCControlCellView.h; sourceTree = "<group>"; };
+		D09E9E071917C77F000CD972 /* RSCCControlCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RSCCControlCellView.m; path = CocoaControls/RSCCControlCellView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D0A99F4319174D3000DB2906 /* RSCCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCAPI.h; path = CocoaControls/RSCCAPI.h; sourceTree = "<group>"; };
+		D0A99F4419174D3000DB2906 /* RSCCAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCAPI.m; path = CocoaControls/RSCCAPI.m; sourceTree = "<group>"; };
+		D0A99F4619174E6800DB2906 /* RSCCHTMLResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCHTMLResponseSerializer.h; path = CocoaControls/RSCCHTMLResponseSerializer.h; sourceTree = "<group>"; };
+		D0A99F4719174E6800DB2906 /* RSCCHTMLResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCHTMLResponseSerializer.m; path = CocoaControls/RSCCHTMLResponseSerializer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D084BDDF19CF1F8500E3E2EE /* libxml2.dylib in Frameworks */,
-				D0108A4A1913CCD500912C70 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,43 +153,6 @@
 			sourceTree = "<group>";
 		};
 		D0108A3D1913CCD500912C70 = {
-			isa = PBXGroup;
-			children = (
-				D0108A4F1913CCD500912C70 /* CocoaControls */,
-				D0108A481913CCD500912C70 /* Frameworks */,
-				D0108A471913CCD500912C70 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		D0108A471913CCD500912C70 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D0108A461913CCD500912C70 /* CocoaControls.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D0108A481913CCD500912C70 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D084BDDE19CF1F8500E3E2EE /* libxml2.dylib */,
-				D0108A491913CCD500912C70 /* Cocoa.framework */,
-				D0108A4B1913CCD500912C70 /* Other Frameworks */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D0108A4B1913CCD500912C70 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D0108A4C1913CCD500912C70 /* AppKit.framework */,
-				D0108A4D1913CCD500912C70 /* CoreData.framework */,
-				D0108A4E1913CCD500912C70 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		D0108A4F1913CCD500912C70 /* CocoaControls */ = {
 			isa = PBXGroup;
 			children = (
 				D0079D1519CF237F009A7BB9 /* CocoaControlsPlugin.xcodeproj */,
@@ -223,37 +176,29 @@
 				D0108A611913CCD500912C70 /* Images.xcassets */,
 				D0108A501913CCD500912C70 /* Supporting Files */,
 			);
-			path = CocoaControls;
 			sourceTree = "<group>";
 		};
 		D0108A501913CCD500912C70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D084BD8719CF1F5200E3E2EE /* AFNetworking */,
-				D084BD9E19CF1F5200E3E2EE /* hpple */,
-				D084BDA719CF1F5200E3E2EE /* ITPullToRefreshScrollView */,
+				D084BD8819CF1F5200E3E2EE /* AFNetworking */,
 				D0108A511913CCD500912C70 /* CocoaControls-Info.plist */,
-				D0108A521913CCD500912C70 /* InfoPlist.strings */,
-				D0108A551913CCD500912C70 /* main.m */,
 				D0108A571913CCD500912C70 /* CocoaControls-Prefix.pch */,
+				D0108A461913CCD500912C70 /* CocoaControls.app */,
 				D0108A581913CCD500912C70 /* Credits.rtf */,
+				D084BDDE19CF1F8500E3E2EE /* libxml2.dylib */,
+				D084BD9E19CF1F5200E3E2EE /* hpple */,
+				D084BDA819CF1F5200E3E2EE /* ITPullToRefreshScrollView */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D084BD8719CF1F5200E3E2EE /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				D084BD8819CF1F5200E3E2EE /* AFNetworking */,
-				D084BD9C19CF1F5200E3E2EE /* LICENSE */,
-				D084BD9D19CF1F5200E3E2EE /* README.md */,
-			);
-			path = AFNetworking;
+			path = CocoaControls;
 			sourceTree = "<group>";
 		};
 		D084BD8819CF1F5200E3E2EE /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				D084BD9C19CF1F5200E3E2EE /* LICENSE */,
+				D084BD9D19CF1F5200E3E2EE /* README.md */,
 				D084BD8919CF1F5200E3E2EE /* AFHTTPRequestOperation.h */,
 				D084BD8A19CF1F5200E3E2EE /* AFHTTPRequestOperation.m */,
 				D084BD8B19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.h */,
@@ -274,7 +219,8 @@
 				D084BD9A19CF1F5200E3E2EE /* AFURLSessionManager.h */,
 				D084BD9B19CF1F5200E3E2EE /* AFURLSessionManager.m */,
 			);
-			path = AFNetworking;
+			name = AFNetworking;
+			path = AFNetworking/AFNetworking;
 			sourceTree = "<group>";
 		};
 		D084BD9E19CF1F5200E3E2EE /* hpple */ = {
@@ -292,23 +238,18 @@
 			path = hpple;
 			sourceTree = "<group>";
 		};
-		D084BDA719CF1F5200E3E2EE /* ITPullToRefreshScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				D084BDA819CF1F5200E3E2EE /* ITPullToRefreshScrollView */,
-				D084BDB219CF1F5200E3E2EE /* LICENSE */,
-				D084BDB319CF1F5200E3E2EE /* Modules */,
-				D084BDC319CF1F5200E3E2EE /* README.md */,
-			);
-			path = ITPullToRefreshScrollView;
-			sourceTree = "<group>";
-		};
 		D084BDA819CF1F5200E3E2EE /* ITPullToRefreshScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				D084BDB219CF1F5200E3E2EE /* LICENSE */,
+				D084BDB319CF1F5200E3E2EE /* Modules */,
+				D084BDB419CF1F5200E3E2EE /* ITProgressIndicator */,
+				D084BDBB19CF1F5200E3E2EE /* NSBKeyframeAnimation */,
+				D084BDC319CF1F5200E3E2EE /* README.md */,
 				D084BDA919CF1F5200E3E2EE /* Classes */,
 			);
-			path = ITPullToRefreshScrollView;
+			name = ITPullToRefreshScrollView;
+			path = ITPullToRefreshScrollView/ITPullToRefreshScrollView;
 			sourceTree = "<group>";
 		};
 		D084BDA919CF1F5200E3E2EE /* Classes */ = {
@@ -329,10 +270,9 @@
 		D084BDB319CF1F5200E3E2EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D084BDB419CF1F5200E3E2EE /* ITProgressIndicator */,
-				D084BDBB19CF1F5200E3E2EE /* NSBKeyframeAnimation */,
 			);
-			path = Modules;
+			name = Modules;
+			path = ../Modules;
 			sourceTree = "<group>";
 		};
 		D084BDB419CF1F5200E3E2EE /* ITProgressIndicator */ = {
@@ -340,7 +280,8 @@
 			children = (
 				D084BDB519CF1F5200E3E2EE /* ITProgressIndicator */,
 			);
-			path = ITProgressIndicator;
+			name = ITProgressIndicator;
+			path = ../Modules/ITProgressIndicator;
 			sourceTree = "<group>";
 		};
 		D084BDB519CF1F5200E3E2EE /* ITProgressIndicator */ = {
@@ -367,7 +308,8 @@
 			children = (
 				D084BDBC19CF1F5200E3E2EE /* NSBKeyframeAnimation */,
 			);
-			path = NSBKeyframeAnimation;
+			name = NSBKeyframeAnimation;
+			path = ../Modules/NSBKeyframeAnimation;
 			sourceTree = "<group>";
 		};
 		D084BDBC19CF1F5200E3E2EE /* NSBKeyframeAnimation */ = {
@@ -437,7 +379,7 @@
 				Base,
 			);
 			mainGroup = D0108A3D1913CCD500912C70;
-			productRefGroup = D0108A471913CCD500912C70 /* Products */;
+			productRefGroup = D0108A3D1913CCD500912C70;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -467,7 +409,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0108A541913CCD500912C70 /* InfoPlist.strings in Resources */,
 				D0108A621913CCD500912C70 /* Images.xcassets in Resources */,
 				D0108A5A1913CCD500912C70 /* Credits.rtf in Resources */,
 				D0108A601913CCD500912C70 /* MainMenu.xib in Resources */,
@@ -492,7 +433,6 @@
 				D084BDD719CF1F5200E3E2EE /* ITPullToRefreshScrollView.m in Sources */,
 				D084BDC619CF1F5200E3E2EE /* AFHTTPSessionManager.m in Sources */,
 				D084BDCA19CF1F5200E3E2EE /* AFURLRequestSerialization.m in Sources */,
-				D0108A561913CCD500912C70 /* main.m in Sources */,
 				D084BDD219CF1F5200E3E2EE /* TFHppleElement.m in Sources */,
 				D084BDD119CF1F5200E3E2EE /* TFHpple.m in Sources */,
 				D084BDCC19CF1F5200E3E2EE /* AFURLSessionManager.m in Sources */,
@@ -524,14 +464,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D0108A521913CCD500912C70 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0108A531913CCD500912C70 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		D0108A581913CCD500912C70 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -546,6 +478,7 @@
 				D0108A5F1913CCD500912C70 /* Base */,
 			);
 			name = MainMenu.xib;
+			path = CocoaControls;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -630,6 +563,7 @@
 				DSTROOT = "$(HOME)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaControls/CocoaControls-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -638,6 +572,7 @@
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -651,6 +586,7 @@
 				DSTROOT = "$(HOME)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaControls/CocoaControls-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -659,6 +595,7 @@
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

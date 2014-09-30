@@ -10,19 +10,7 @@
 
 @interface RSCCControl : NSObject
 
-@property (nonatomic, copy) NSString *title;
-
-@property (nonatomic, copy) NSString *license;
-
-@property (nonatomic, copy) NSString *date;
-
-@property (nonatomic, copy) NSString *image;
-
-@property (nonatomic, copy) NSString *link;
-
-@property (nonatomic, copy) NSString *pod;
-
-@property (nonatomic, copy) NSString *source;
+@property (copy) NSString *title, *license, *date, *image, *link, *pod, *source;
 
 @property (nonatomic) BOOL isOnCocoaPods;
 
@@ -30,6 +18,6 @@
 
 @property (nonatomic) int appsUsingThisControl;
 
-- (instancetype)initWithAssignment:(void (^)(RSCCControl *))assignment;
+- initWithAssignment:(void (^)(RSCCControl *))assignment;
 
 @end

@@ -6,20 +6,14 @@
 //  Copyright (c) 2014 P.D.Q. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
-extern NSString *const RSCCAPIRoot;
 
-extern NSString *const RSCCAPISearchFormat;
-
-extern NSString *const RSCCAPIAllPlatform;
-
-extern NSString *const RSCCAPISinglePlatformFormat;
-
-extern NSString *const RSCCAPISortFormat;
-
-extern NSString *const RSCCAPICocoaPodsFormat;
-
-extern NSString *const RSCCAPILicenseFormat;
-
-extern NSString *const RSCCAPIPageFormat;
+extern NSString *const RSCCAPIRoot,
+                *const RSCCAPISearchFormat,
+                *const RSCCAPIAllPlatform,
+                *const RSCCAPISinglePlatformFormat,
+                *const RSCCAPISortFormat,
+                *const RSCCAPICocoaPodsFormat,
+                *const RSCCAPILicenseFormat,
+                *const RSCCAPIPageFormat;

@@ -6,31 +6,27 @@
 //  Copyright (c) 2014年 P.D.Q. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #import "AFNetworking.h"
-
 #import "RSCCAPI.h"
-
 #import "RSCCControl.h"
 
-extern NSString *const RSCCCoreControlsDidLoadNotification;
-extern NSString *const RSCCCoreDetailDidLoadNotification;
+extern NSString *const RSCCCoreControlsDidLoadNotification,
+                *const RSCCCoreDetailDidLoadNotification;
 
 @interface RSCCCore : NSObject
 
-@property (nonatomic, copy) NSString *filter;
+@property (copy) NSString *filter;
 
-@property (nonatomic, readonly) AFHTTPRequestOperationManager *imageManager;
+@property (readonly) AFHTTPRequestOperationManager *imageManager;
 
-+ (instancetype)sharedCore;
++ (instancetype) sharedCore;
 
-- (void)refreshControls;
+- (void) refreshControls;
 
-- (void)moreControls;
+- (void) moreControls;
 
-- (void)detailForControl:(RSCCControl *)control withSender:(NSButton *)sender;
+- (void) detailForControl:(RSCCControl*) control withSender:(NSButton*)_;
 
-- (void)searchControlsWithKey:(NSString *)key;
+- (void) searchControlsWithKey:(NSString*) key;
 
 @end

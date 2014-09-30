@@ -7,31 +7,24 @@
 //
 
 #import "RSCCCore.h"
-
 #import "RSCCHTMLResponseSerializer.h"
-
 #import "RSCCImageRequestSerializer.h"
 #import "RSCCImageResponseSerializer.h"
-
 #import "TFHpple.h"
 
-NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.did.load";
-NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.detail.did.load";
+NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.did.load",
+         *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.detail.did.load";
 
 @interface RSCCCore ()
 
-@property (nonatomic, strong) AFHTTPRequestOperationManager *requestManager;
-
-@property (nonatomic, strong) AFHTTPRequestOperationManager *imageManager;
-
+@property (nonatomic) AFHTTPRequestOperationManager *requestManager, *imageManager;
 @property (nonatomic) int page;
 
 @end
 
 @implementation RSCCCore
 
-- (void)RSCC_parseControlsWithDoc:(TFHpple *)doc
-{
+- (void) RSCC_parseControlsWithDoc:(TFHpple *)doc  {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableArray *cs = [@[] mutableCopy];
         NSArray *elements  = [doc searchWithXPathQuery:@"//div[@class='control-grid-item']"];
@@ -83,8 +76,7 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
     });
 }
 
-- (void)RSCC_loadControlsWithURLString:(NSString *)URLString
-{
+- (void) RSCC_loadControlsWithURLString:(NSString *)URLString {
     [self.requestManager.operationQueue cancelAllOperations];
     [self.imageManager.operationQueue cancelAllOperations];
     
@@ -97,8 +89,7 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
     }];
 }
 
-- (id)init
-{
+- init {
     self = [super init];
     if (self) {
         self.requestManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:RSCCAPIRoot]];
@@ -115,8 +106,7 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
     return self;
 }
 
-+ (instancetype)sharedCore
-{
++ (instancetype) sharedCore {
     static RSCCCore *sharedCore = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -125,8 +115,7 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
     return sharedCore;
 }
 
-- (void)refreshControls
-{
+- (void) refreshControls {
     self.page = 1;
     
     NSString *URLString = self.filter ? [NSString stringWithFormat:@"%@&%@", self.filter, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]] : [NSString stringWithFormat:@"%@?%@", RSCCAPIAllPlatform, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]];
@@ -134,8 +123,7 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
     [self RSCC_loadControlsWithURLString:URLString];
 }
 
-- (void)moreControls
-{
+- (void) moreControls {
     self.page += 1;
     
     NSString *URLString = self.filter ? [NSString stringWithFormat:@"%@&%@", self.filter, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]] : [NSString stringWithFormat:@"%@?%@", RSCCAPIAllPlatform, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]];
@@ -143,15 +131,13 @@ NSString *const RSCCCoreDetailDidLoadNotification   = @"com.pdq.core.control.det
     [self RSCC_loadControlsWithURLString:URLString];
 }
 
-- (void)searchControlsWithKey:(NSString *)key
-{
+- (void) searchControlsWithKey:(NSString*)key {
     self.page = 0;
     
     [self RSCC_loadControlsWithURLString:[[NSString stringWithFormat:RSCCAPISearchFormat, key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
-- (void)detailForControl:(RSCCControl *)control withSender:(NSButton *)sender
-{
+- (void) detailForControl:(RSCCControl*)control withSender:(NSButton*)sender {
     [self.requestManager.operationQueue cancelAllOperations];
     
     [self.requestManager GET:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, control.link] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		D078F69B191C5B820018B62E /* CCPProject.m in Sources */ = {isa = PBXBuildFile; fileRef = D078F691191C5B820018B62E /* CCPProject.m */; };
 		D078F69E191C5B820018B62E /* CCPWorkspaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D078F697191C5B820018B62E /* CCPWorkspaceManager.m */; };
-		D0DA0AD2191B859300221981 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DA0AD1191B859300221981 /* AppKit.framework */; };
-		D0DA0AD4191B859300221981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DA0AD3191B859300221981 /* Foundation.framework */; };
-		D0DA0ADA191B859300221981 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0DA0AD8191B859300221981 /* InfoPlist.strings */; };
 		D0DA0ADD191B859300221981 /* RSCCPCocoaControlsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +18,9 @@
 		D078F696191C5B820018B62E /* CCPWorkspaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPWorkspaceManager.h; sourceTree = "<group>"; };
 		D078F697191C5B820018B62E /* CCPWorkspaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPWorkspaceManager.m; sourceTree = "<group>"; };
 		D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaControlsPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0DA0AD1191B859300221981 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		D0DA0AD3191B859300221981 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D0DA0AD7191B859300221981 /* CocoaControlsPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaControlsPlugin-Info.plist"; sourceTree = "<group>"; };
-		D0DA0AD9191B859300221981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D0DA0ADB191B859300221981 /* RSCCPCocoaControlsPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSCCPCocoaControlsPlugin.h; sourceTree = "<group>"; };
-		D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCCPCocoaControlsPlugin.m; sourceTree = "<group>"; };
+		D0DA0ADB191B859300221981 /* RSCCPCocoaControlsPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RSCCPCocoaControlsPlugin.h; path = CocoaControlsPlugin/RSCCPCocoaControlsPlugin.h; sourceTree = "<group>"; };
+		D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RSCCPCocoaControlsPlugin.m; path = CocoaControlsPlugin/RSCCPCocoaControlsPlugin.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D0DA0ADE191B859300221981 /* CocoaControlsPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaControlsPlugin-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,8 +29,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0DA0AD2191B859300221981 /* AppKit.framework in Frameworks */,
-				D0DA0AD4191B859300221981 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,48 +49,22 @@
 		D0DA0AC5191B859300221981 = {
 			isa = PBXGroup;
 			children = (
-				D0DA0AD5191B859300221981 /* CocoaControlsPlugin */,
-				D0DA0AD0191B859300221981 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		D0DA0ACF191B859300221981 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D0DA0AD0191B859300221981 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D0DA0ACF191B859300221981 /* Products */,
-				D0DA0AD1191B859300221981 /* AppKit.framework */,
-				D0DA0AD3191B859300221981 /* Foundation.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D0DA0AD5191B859300221981 /* CocoaControlsPlugin */ = {
-			isa = PBXGroup;
-			children = (
-				D078F68D191C5B820018B62E /* Helpers */,
 				D0DA0ADB191B859300221981 /* RSCCPCocoaControlsPlugin.h */,
 				D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */,
 				D0DA0AD6191B859300221981 /* Supporting Files */,
 			);
-			path = CocoaControlsPlugin;
 			sourceTree = "<group>";
 		};
 		D0DA0AD6191B859300221981 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D078F68D191C5B820018B62E /* Helpers */,
+				D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */,
 				D0DA0AD7191B859300221981 /* CocoaControlsPlugin-Info.plist */,
-				D0DA0AD8191B859300221981 /* InfoPlist.strings */,
 				D0DA0ADE191B859300221981 /* CocoaControlsPlugin-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = CocoaControlsPlugin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +105,7 @@
 				en,
 			);
 			mainGroup = D0DA0AC5191B859300221981;
-			productRefGroup = D0DA0ACF191B859300221981 /* Products */;
+			productRefGroup = D0DA0AC5191B859300221981;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -153,7 +119,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0DA0ADA191B859300221981 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,17 +136,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D0DA0AD8191B859300221981 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0DA0AD9191B859300221981 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D0DA0ADF191B859300221981 /* Debug */ = {

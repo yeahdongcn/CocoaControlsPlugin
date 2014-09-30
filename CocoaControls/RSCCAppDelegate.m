@@ -7,11 +7,8 @@
 //
 
 #import "RSCCAppDelegate.h"
-
 #import "RSCCCore.h"
-
 #import "RSCCControlCellView.h"
-
 #import "ITPullToRefreshScrollView.h"
 
 #import <CoreFoundation/CFNotificationCenter.h>
@@ -22,23 +19,9 @@
 
 @property (nonatomic, strong) NSMutableArray *controls;
 
-@property (nonatomic, copy) NSString *sort;
+@property (nonatomic,copy) NSString *sort, *platform, *filterCocoaPods, *license, *oldSort, *oldPlatform, *oldFilterCocoaPods, *oldLicense;
 
-@property (nonatomic, copy) NSString *platform;
-
-@property (nonatomic, copy) NSString *filterCocoaPods;
-
-@property (nonatomic, copy) NSString *license;
-
-@property (nonatomic, copy) NSString *oldSort;
-
-@property (nonatomic, copy) NSString *oldPlatform;
-
-@property (nonatomic, copy) NSString *oldFilterCocoaPods;
-
-@property (nonatomic, copy) NSString *oldLicense;
-
-@property (nonatomic, assign) ITPullToRefreshEdge edge;
+@property (nonatomic) ITPullToRefreshEdge edge;
 
 #pragma mark - Controls
 
@@ -56,27 +39,11 @@
 
 @property (assign) IBOutlet NSImageView *imageView;
 
-@property (assign) IBOutlet NSButton *filterButton;
+@property (assign) IBOutlet NSPopover *popover, *refreshPopover, *morePopover;
 
-@property (assign) IBOutlet NSPopover *popover;
-
-@property (assign) IBOutlet NSButton *sortButton;
-
-@property (assign) IBOutlet NSButton *platformButton;
-
-@property (assign) IBOutlet NSButton *filterCocoaPodsButton;
-
-@property (assign) IBOutlet NSButton *licenseButton;
+@property (assign) IBOutlet NSButton *filterButton, *sortButton, *platformButton, *filterCocoaPodsButton, *licenseButton, *refreshButton, *moreButton;
 
 @property (assign) IBOutlet NSTextField *label;
-
-@property (assign) IBOutlet NSPopover *refreshPopover;
-
-@property (assign) IBOutlet NSPopover *morePopover;
-
-@property (assign) IBOutlet NSButton *refreshButton;
-
-@property (assign) IBOutlet NSButton *moreButton;
 
 @end
 
@@ -84,8 +51,8 @@
 
 #pragma mark - Refresh & more actions
 
-- (void)RSCC_refresh
-{
+- (void) RSCC_refresh {
+
     self.searchField.stringValue = @"";
     
     [self.controls removeAllObjects];
@@ -97,8 +64,8 @@
     [CORE refreshControls];
 }
 
-- (void)RSCC_more
-{
+- (void) RSCC_more {
+
     [self.progressIndicator startAnimation:self];
     
     [CORE moreControls];
@@ -106,22 +73,22 @@
 
 #pragma mark - Refresh & more button click event handler
 
-- (void)RSCC_handleRefreshButtonClicked:(NSButton *)sender
-{
+- (void) RSCC_handleRefreshButtonClicked:(NSButton *)sender {
+
     [self RSCC_refresh];
     [self.refreshPopover close];
 }
 
-- (void)RSCC_handleMoreButtonClicked:(NSButton *)sender
-{
+- (void) RSCC_handleMoreButtonClicked:(NSButton *)sender {
+
     [self RSCC_more];
     [self.morePopover close];
 }
 
 #pragma mark - Filter changed handler
 
-- (void)RSCC_handleFilterDidChange
-{
+- (void) RSCC_handleFilterDidChange {
+
     [self.controls removeAllObjects];
     
     [self.tableView reloadData];
@@ -163,26 +130,21 @@
 
 #pragma mark - Search handler
 
-- (void)RSCC_handleSearch:(NSSearchField *)searchField
-{
+- (void) RSCC_handleSearch:(NSSearchField *)searchField {
+
     [self.controls removeAllObjects];
-    
     [self.tableView reloadData];
-    
     [self.progressIndicator startAnimation:self];
     
     NSString *key = searchField.stringValue;
-    if ([key isEqualToString:@""]) {
-        [CORE refreshControls];
-    } else {
-        [CORE searchControlsWithKey:key];
-    }
+
+    [key isEqualToString:@""] ? [CORE refreshControls] :  [CORE searchControlsWithKey:key];
 }
 
 #pragma mark - CORE notification handlers
 
-- (void)RSCC_handleControlsDidLoad:(NSNotification *)aNotification
-{
+- (void) RSCC_handleControlsDidLoad:(NSNotification *)aNotification {
+
     [self.progressIndicator stopAnimation:self];
     
     NSArray *controls = aNotification.object;
@@ -204,8 +166,8 @@
     }
 }
 
-- (void)RSCC_handleDetailDidLoad:(NSNotification *)aNotification
-{
+- (void) RSCC_handleDetailDidLoad:(NSNotification *)aNotification {
+
     [self.progressIndicator stopAnimation:self];
     
     RSCCControl *c = aNotification.object;
@@ -232,13 +194,13 @@
 
 #pragma mark - Popover buttons click event handlers
 
-- (void)RSCC_handleSortButtonClicked:(NSButton *)sender
-{
+- (void) RSCC_handleSortButtonClicked:(NSButton *)sender {
+
     self.sort = sender.title;
 }
 
-- (void)RSCC_handlePlatformButtonClicked:(NSButton *)sender
-{
+- (void) RSCC_handlePlatformButtonClicked:(NSButton *)sender {
+
     NSString *title = sender.title;
     if ([title isEqualToString:@"OS X"]) {
         title = @"mac-os-x";
@@ -255,13 +217,13 @@
     self.platform = title;
 }
 
-- (void)RSCC_handleFilterCocoaPodsButtonClicked:(NSButton *)sender
-{
+- (void) RSCC_handleFilterCocoaPodsButtonClicked:(NSButton *)sender {
+
     self.filterCocoaPods = sender.title;
 }
 
-- (void)RSCC_handleLicenseButtonClicked:(NSButton *)sender
-{
+- (void) RSCC_handleLicenseButtonClicked:(NSButton *)sender {
+
     self.license = sender.title;
 }
 
@@ -269,8 +231,8 @@
 
 static int const RSCCADPreviewImageViewTagBase = 10000;
 
-- (void)RSCC_handleButtonClick:(NSButton *)sender
-{
+- (void) RSCC_handleButtonClick:(NSButton *)sender {
+
     if (sender.tag >= RSCCControlCellViewCloneButtonTagBase) {
         NSInteger row = sender.tag - RSCCControlCellViewCloneButtonTagBase;
         RSCCControl *c = self.controls[row];
@@ -325,16 +287,16 @@ static int const RSCCADPreviewImageViewTagBase = 10000;
     }
 }
 
-- (void)RSCC_handleCellDoubleClick:(id)sender
-{
+- (void) RSCC_handleCellDoubleClick:(id)sender {
+
     RSCCControl *c = self.controls[self.tableView.clickedRow];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, c.link]]];
 }
 
 #pragma mark - Getters
 
-- (NSMutableArray *)controls
-{
+- (NSMutableArray *) controls {
+
     if (!_controls) {
         _controls = [@[] mutableCopy];
     }
@@ -348,32 +310,32 @@ static NSString *const RSCCADPlatformDefault        = @"All";
 static NSString *const RSCCADFilterCocoaPodsDefault = @"No";
 static NSString *const RSCCADLicenseDefault         = @"All";
 
-- (NSString *)sort
-{
+- (NSString *) sort {
+
     if (!_sort) {
         _sort = RSCCADSortDefault;
     }
     return _sort;
 }
 
-- (NSString *)platform
-{
+- (NSString *) platform {
+
     if (!_platform) {
         _platform = RSCCADPlatformDefault;
     }
     return _platform;
 }
 
-- (NSString *)filterCocoaPods
-{
+- (NSString *) filterCocoaPods {
+
     if (!_filterCocoaPods) {
         _filterCocoaPods = RSCCADFilterCocoaPodsDefault;
     }
     return _filterCocoaPods;
 }
 
-- (NSString *)license
-{
+- (NSString *) license {
+
     if (!_license) {
         _license = RSCCADLicenseDefault;
     }
@@ -382,15 +344,15 @@ static NSString *const RSCCADLicenseDefault         = @"All";
 
 #pragma mark - NSApplication
 
-- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
-{
+- (BOOL) applicationShouldOpenUntitledFile:(NSApplication *)sender {
+
     [self.window makeKeyAndOrderFront:self];
     
     return NO;
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
+
     // Insert code here to initialize your application
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handleControlsDidLoad:) name:RSCCCoreControlsDidLoadNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handleDetailDidLoad:) name:RSCCCoreDetailDidLoadNotification object:nil];
@@ -432,8 +394,8 @@ static NSString *const RSCCADLicenseDefault         = @"All";
 
 #pragma mark - ITPullToRefreshScrollViewDelegate
 
-- (void)pullToRefreshView:(ITPullToRefreshScrollView *)scrollView didReachRefreshingEdge:(ITPullToRefreshEdge)edge
-{
+- (void) pullToRefreshView:(ITPullToRefreshScrollView *)scrollView didReachRefreshingEdge:(ITPullToRefreshEdge)edge {
+
     switch (edge) {
         case ITPullToRefreshEdgeNone:
             if (self.refreshPopover.isShown) {
@@ -462,9 +424,9 @@ static NSString *const RSCCADLicenseDefault         = @"All";
     }
 }
 
-- (void)pullToRefreshView:(ITPullToRefreshScrollView *)scrollView
-   didStartRefreshingEdge:(ITPullToRefreshEdge)edge
-{
+- (void) pullToRefreshView:(ITPullToRefreshScrollView *)scrollView
+   didStartRefreshingEdge:(ITPullToRefreshEdge)edge {
+
     if (edge & ITPullToRefreshEdgeTop) {
         [self RSCC_refresh];
     } else if ([self.searchField.stringValue length] == 0) {
@@ -475,13 +437,13 @@ static NSString *const RSCCADLicenseDefault         = @"All";
 
 #pragma mark - NSTableViewDataSource
 
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
-{
+- (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
+
     return [self.controls count];
 }
 
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-{
+- (NSView *) tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+
     NSString *identifier = tableColumn.identifier;
     if ([identifier isEqualToString:@"ControlCell"]) {
         RSCCControlCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
@@ -537,3 +499,10 @@ static NSString *const RSCCADLicenseDefault         = @"All";
 }
 
 @end
+
+
+int main(int argc, const char * argv[]) {
+
+    CORE;
+    return NSApplicationMain(argc, argv);
+}

@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>69291726009AC4C9A421F4E062E482087A00300B</key>
-		<string>https://github.com/yeahdongcn/CocoaControlsPlugin.git</string>
+		<string>https://github.com/mralexgray/CocoaControlsPlugin.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CocoaControls/CocoaControls.xcodeproj/project.xcworkspace</string>
+	<string>CocoaControls.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>69291726009AC4C9A421F4E062E482087A00300B</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/yeahdongcn/CocoaControlsPlugin.git</string>
+	<string>https://github.com/mralexgray/CocoaControlsPlugin.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

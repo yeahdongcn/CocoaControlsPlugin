@@ -23,12 +23,12 @@
 
 @interface CCPWorkspaceManager : NSObject
 
-+ (id)workspaceForKeyWindow;
-+ (id)workspaceForWindow:(NSWindow *)window;
++ workspaceForKeyWindow;
++ workspaceForWindow:(NSWindow*)window;
 
-+ (NSArray *)installedPodNamesInCurrentWorkspace;
++ (NSArray*) installedPodNamesInCurrentWorkspace;
 
-+ (NSString *)currentWorkspaceDirectoryPath;
-+ (NSString *)directoryPathForWorkspace:(id)workspace;
++ (NSString*) currentWorkspaceDirectoryPath;
++ (NSString*) directoryPathForWorkspace:workspace;
 
 @end

@@ -10,13 +10,6 @@
 
 @implementation RSCCImageRequestSerializer
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
-    }
-    return self;
-}
+- init { return super.init ? self.cachePolicy = NSURLRequestReturnCacheDataElseLoad, self : nil; }
 
 @end
