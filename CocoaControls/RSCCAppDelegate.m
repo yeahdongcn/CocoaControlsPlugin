@@ -17,33 +17,31 @@
 
 #pragma mark - Data
 
-@property (nonatomic, strong) NSMutableArray *controls;
-
+@property (nonatomic,) NSMutableArray *controls;
 @property (nonatomic,copy) NSString *sort, *platform, *filterCocoaPods, *license, *oldSort, *oldPlatform, *oldFilterCocoaPods, *oldLicense;
 
 @property (nonatomic) ITPullToRefreshEdge edge;
 
 #pragma mark - Controls
 
-@property (assign) IBOutlet NSWindow *window;
-
-@property (assign) IBOutlet ITPullToRefreshScrollView *scrollView;
-
-@property (assign) IBOutlet NSSearchField *searchField;
-
-@property (assign) IBOutlet NSTableView *tableView;
-
-@property (assign) IBOutlet NSProgressIndicator *progressIndicator;
-
-@property (assign) IBOutlet NSPanel *imagePanel;
-
-@property (assign) IBOutlet NSImageView *imageView;
-
-@property (assign) IBOutlet NSPopover *popover, *refreshPopover, *morePopover;
-
-@property (assign) IBOutlet NSButton *filterButton, *sortButton, *platformButton, *filterCocoaPodsButton, *licenseButton, *refreshButton, *moreButton;
-
-@property (assign) IBOutlet NSTextField *label;
+@property (assign) IBOutlet ITPullToRefreshScrollView * scrollView;
+@property (assign) IBOutlet NSImageView               * imageView;
+@property (assign) IBOutlet NSPanel                   * imagePanel;
+@property (assign) IBOutlet NSProgressIndicator       * progressIndicator;
+@property (assign) IBOutlet NSSearchField             * searchField;
+@property (assign) IBOutlet NSTableView               * tableView;
+@property (assign) IBOutlet NSTextField               * label;
+@property (assign) IBOutlet NSWindow                  * window;
+@property (assign) IBOutlet NSPopover                 * popover,
+                                                      * refreshPopover,
+                                                      * morePopover;
+@property (assign) IBOutlet NSButton                  * filterButton,
+                                                      * sortButton,
+                                                      * platformButton,
+                                                      * filterCocoaPodsButton,
+                                                      * licenseButton,
+                                                      * refreshButton,
+                                                      * moreButton;
 
 @end
 
@@ -54,20 +52,18 @@
 - (void) RSCC_refresh {
 
     self.searchField.stringValue = @"";
-    
     [self.controls removeAllObjects];
-    
-    [self.tableView reloadData];
+    [self.tableView      reloadData];
     
     [self.progressIndicator startAnimation:self];
-    
+
     [CORE refreshControls];
 }
 
 - (void) RSCC_more {
 
     [self.progressIndicator startAnimation:self];
-    
+
     [CORE moreControls];
 }
 
@@ -95,35 +91,32 @@
     
     [self.progressIndicator startAnimation:self];
     
-    NSMutableString *mutableFilter = [@"" mutableCopy];
-    if ([self.platform isEqualToString:RSCCADPlatformDefault]) {
+    NSMutableString *mutableFilter = @"".mutableCopy;
+
+    [self.platform isEqualToString:RSCCADPlatformDefault] ? ({
         [mutableFilter appendString:RSCCAPIAllPlatform];
         [mutableFilter appendString:@"?"];
-    } else {
+    }) : ({
         [mutableFilter appendString:[NSString stringWithFormat:RSCCAPISinglePlatformFormat, [self.platform lowercaseString]]];
         [mutableFilter appendString:@"?"];
-    }
-    if (![self.sort isEqualToString:RSCCADSortDefault]) {
+    });
+    [self.sort isEqualToString:RSCCADSortDefault] ?: ({
         [mutableFilter appendString:[NSString stringWithFormat:RSCCAPISortFormat, [self.sort lowercaseString]]];
         [mutableFilter appendString:@"&"];
-    }
-    if (![self.filterCocoaPods isEqualToString:RSCCADFilterCocoaPodsDefault]) {
+    });
+    [self.filterCocoaPods isEqualToString:RSCCADFilterCocoaPodsDefault] ?: ({
         [mutableFilter appendString:[NSString stringWithFormat:RSCCAPICocoaPodsFormat, @"t"]];
         [mutableFilter appendString:@"&"];
-    }
-    if (![self.license isEqualToString:RSCCADLicenseDefault]) {
+    });
+    [self.license isEqualToString:RSCCADLicenseDefault] ?: ({
         [mutableFilter appendString:[NSString stringWithFormat:RSCCAPILicenseFormat, [self.license stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
         [mutableFilter appendString:@"&"];
-    }
+    });
+
     NSString *lastCharacter = [mutableFilter substringWithRange:NSMakeRange(mutableFilter.length - 1, 1)];
-    NSString *filter;
-    if ([lastCharacter isEqualToString:@"&"]) {
-        filter = [mutableFilter substringWithRange:NSMakeRange(0, mutableFilter.length - 1)];
-    } else {
-        filter = [NSString stringWithString:mutableFilter];
-    }
-    
-    [CORE setFilter:filter];
+
+    CORE.filter = [lastCharacter isEqualToString:@"&"] ? [mutableFilter substringWithRange:NSMakeRange(0, mutableFilter.length - 1)]
+                                                       : [NSString stringWithString:mutableFilter];
     
     [CORE refreshControls];
 }
@@ -295,97 +288,53 @@ static int const RSCCADPreviewImageViewTagBase = 10000;
 
 #pragma mark - Getters
 
-- (NSMutableArray *) controls {
-
-    if (!_controls) {
-        _controls = [@[] mutableCopy];
-    }
-    return _controls;
-}
+- (NSMutableArray *) controls { return _controls = _controls ?: @[].mutableCopy; }
 
 #pragma mark - Getters for assigning default value
 
-static NSString *const RSCCADSortDefault            = @"Date";
-static NSString *const RSCCADPlatformDefault        = @"All";
-static NSString *const RSCCADFilterCocoaPodsDefault = @"No";
-static NSString *const RSCCADLicenseDefault         = @"All";
+static NSString *const RSCCADSortDefault            = @"Date",
+                *const RSCCADPlatformDefault        = @"All",
+                *const RSCCADFilterCocoaPodsDefault = @"No",
+                *const RSCCADLicenseDefault         = @"All";
 
-- (NSString *) sort {
+- (NSString *) sort { return _sort = _sort ?: RSCCADSortDefault; }
 
-    if (!_sort) {
-        _sort = RSCCADSortDefault;
-    }
-    return _sort;
-}
+- (NSString *) platform { return _platform = _platform ?: RSCCADPlatformDefault; }
 
-- (NSString *) platform {
+- (NSString *) filterCocoaPods { return  _filterCocoaPods =  _filterCocoaPods ?: RSCCADFilterCocoaPodsDefault; }
 
-    if (!_platform) {
-        _platform = RSCCADPlatformDefault;
-    }
-    return _platform;
-}
-
-- (NSString *) filterCocoaPods {
-
-    if (!_filterCocoaPods) {
-        _filterCocoaPods = RSCCADFilterCocoaPodsDefault;
-    }
-    return _filterCocoaPods;
-}
-
-- (NSString *) license {
-
-    if (!_license) {
-        _license = RSCCADLicenseDefault;
-    }
-    return _license;
-}
+- (NSString *) license { return  _license = _license ?: RSCCADLicenseDefault; }
 
 #pragma mark - NSApplication
 
 - (BOOL) applicationShouldOpenUntitledFile:(NSApplication *)sender {
 
-    [self.window makeKeyAndOrderFront:self];
-    
-    return NO;
+    return [self.window makeKeyAndOrderFront:self], NO;
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
 
     // Insert code here to initialize your application
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handleControlsDidLoad:) name:RSCCCoreControlsDidLoadNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RSCC_handleDetailDidLoad:) name:RSCCCoreDetailDidLoadNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(RSCC_handleControlsDidLoad:) name:RSCCCoreControlsDidLoadNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(RSCC_handleDetailDidLoad:) name:RSCCCoreDetailDidLoadNotification object:nil];
     
     [self.tableView setDoubleAction:@selector(RSCC_handleCellDoubleClick:)];
     
     [self.progressIndicator setDisplayedWhenStopped:NO];
     [self.progressIndicator startAnimation:self];
     
-    [self.searchField setTarget:self];
-    [self.searchField setAction:@selector(RSCC_handleSearch:)];
-    
-    [self.filterButton setTarget:self];
-    [self.filterButton setAction:@selector(RSCC_handleButtonClick:)];
-    
-    [self.sortButton setTarget:self];
-    [self.sortButton setAction:@selector(RSCC_handleSortButtonClicked:)];
-    
-    [self.platformButton setTarget:self];
-    [self.platformButton setAction:@selector(RSCC_handlePlatformButtonClicked:)];
-    
-    [self.filterCocoaPodsButton setTarget:self];
-    [self.filterCocoaPodsButton setAction:@selector(RSCC_handleFilterCocoaPodsButtonClicked:)];
-    
-    [self.licenseButton setTarget:self];
-    [self.licenseButton setAction:@selector(RSCC_handleLicenseButtonClicked:)];
-    
-    [self.refreshButton setTarget:self];
-    [self.refreshButton setAction:@selector(RSCC_handleRefreshButtonClicked:)];
-    
-    [self.moreButton setTarget:self];
-    [self.moreButton setAction:@selector(RSCC_handleMoreButtonClicked:)];
-    
+    self.searchField.action           = @selector(RSCC_handleSearch:);
+    self.filterButton.action          = @selector(RSCC_handleButtonClick:);
+    self.sortButton.action            = @selector(RSCC_handleSortButtonClicked:);
+    self.platformButton.action        = @selector(RSCC_handlePlatformButtonClicked:);
+    self.filterCocoaPodsButton.action = @selector(RSCC_handleFilterCocoaPodsButtonClicked:);
+    self.licenseButton.action         = @selector(RSCC_handleLicenseButtonClicked:);
+    self.refreshButton.action         = @selector(RSCC_handleRefreshButtonClicked:);
+    self.moreButton.action            = @selector(RSCC_handleMoreButtonClicked:);
+
+    [@[self.searchField, self.filterButton, self.sortButton, self.platformButton, self.filterCocoaPodsButton, self.licenseButton, self.refreshButton, self.moreButton]
+      makeObjectsPerformSelector:@selector(setTarget:) withObject:self];
+
     [self.searchField becomeFirstResponder];
     
     self.scrollView.refreshableEdges = ITPullToRefreshEdgeTop | ITPullToRefreshEdgeBottom;
@@ -468,11 +417,11 @@ static NSString *const RSCCADLicenseDefault         = @"All";
         cellView.licenseField.stringValue = c.license;
         cellView.dateField.stringValue = c.date;
         if (c.isOnCocoaPods) {
-            cellView.cocoaPodsButtonWidth.constant = kCocoaPodsButtonWidthConstant;
-            cellView.buttonsGap.constant = kButtonsGapConstant;
+            cellView.cocoaPodsButtonWidth.constant  = kCocoaPodsButtonWidthConstant;
+            cellView.buttonsGap.constant            = kButtonsGapConstant;
         } else {
-            cellView.cocoaPodsButtonWidth.constant = 0;
-            cellView.buttonsGap.constant = 0;
+            cellView.cocoaPodsButtonWidth.constant  =
+            cellView.buttonsGap.constant            = 0;
         }
         cellView.stars = @[cellView.star0,
                            cellView.star1,
