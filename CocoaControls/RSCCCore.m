@@ -71,7 +71,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
             [cs addObject:c];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:cs] userInfo:@{@"page" : @(self.page)}];
+            [NSNotificationCenter.defaultCenter postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:cs] userInfo:@{@"page" : @(self.page)}];
         });
     });
 }
@@ -84,7 +84,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
         [self RSCC_parseControlsWithDoc:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if ([error code] != NSURLErrorCancelled) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:nil] userInfo:@{@"page" : @(self.page)}];
+            [NSNotificationCenter.defaultCenter postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:nil] userInfo:@{@"page" : @(self.page)}];
         }
     }];
 }
@@ -154,11 +154,11 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
         }
         
         if (control.pod || control.source) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreDetailDidLoadNotification object:control userInfo:@{@"sender" : sender}];
+            [NSNotificationCenter.defaultCenter postNotificationName:RSCCCoreDetailDidLoadNotification object:control userInfo:@{@"sender" : sender}];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if ([error code] != NSURLErrorCancelled) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RSCCCoreDetailDidLoadNotification object:control userInfo:@{@"sender" : sender}];
+            [NSNotificationCenter.defaultCenter postNotificationName:RSCCCoreDetailDidLoadNotification object:control userInfo:@{@"sender" : sender}];
         }
     }];
 }
