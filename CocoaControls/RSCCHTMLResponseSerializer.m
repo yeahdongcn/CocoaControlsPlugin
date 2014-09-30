@@ -12,12 +12,11 @@
 
 @implementation RSCCHTMLResponseSerializer
 
-- (id)responseObjectForResponse:(NSURLResponse *)response
-                           data:(NSData *)data
-                          error:(NSError *__autoreleasing *)error
-{
-    TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
-    return   doc;
+- responseObjectForResponse:(NSURLResponse *)response
+                       data:(NSData *)data
+                      error:(NSError *__autoreleasing *)error {
+
+  return [TFHpple.alloc initWithHTMLData:data];
 }
 
 @end

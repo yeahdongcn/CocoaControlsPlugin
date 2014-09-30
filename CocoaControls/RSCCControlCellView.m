@@ -13,8 +13,8 @@
 
 @implementation RSCCControlCellViewBackgroundView
 
-- (void)drawRect:(NSRect)dirtyRect
-{
+- (void) drawRect:(NSRect)dirtyRect {
+
     CGContextRef context = (CGContextRef) [[NSGraphicsContext currentContext] graphicsPort];
     NSUInteger hexRGBA = 0xeeeeeeee;
     CGContextSetRGBFillColor(context, ((hexRGBA & 0xFF000000) >> 24), ((hexRGBA & 0x00FF0000) >> 16), ((hexRGBA & 0x0000FF00) >> 8), (hexRGBA & 0x000000FF) / 255.0f);
@@ -32,6 +32,6 @@ CGFloat const kCocoaPodsButtonWidthConstant         = 40.0f,
 
 @implementation RSCCControlCellView
 
-- (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle {}
+- (void) setBackgroundStyle:(NSBackgroundStyle)backgroundStyle {}
 
 @end

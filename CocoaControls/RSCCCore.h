@@ -25,8 +25,8 @@ extern NSString *const RSCCCoreControlsDidLoadNotification,
 
 - (void) moreControls;
 
-- (void) detailForControl:(RSCCControl*)control withSender:(NSButton*)_;
+- (void) detailForControl:(RSCCControl*) control withSender:(NSButton*)_;
 
-- (void) searchControlsWithKey:(NSString*)key;
+- (void) searchControlsWithKey:(NSString*) key;
 
 @end

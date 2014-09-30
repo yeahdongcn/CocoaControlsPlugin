@@ -65,7 +65,7 @@
 		D0108A571913CCD500912C70 /* CocoaControls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaControls-Prefix.pch"; sourceTree = "<group>"; };
 		D0108A591913CCD500912C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D0108A5B1913CCD500912C70 /* RSCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RSCCAppDelegate.h; path = CocoaControls/RSCCAppDelegate.h; sourceTree = "<group>"; };
-		D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RSCCAppDelegate.m; path = CocoaControls/RSCCAppDelegate.m; sourceTree = "<group>"; };
+		D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RSCCAppDelegate.m; path = CocoaControls/RSCCAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D0108A5F1913CCD500912C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D0108A611913CCD500912C70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CocoaControls/Images.xcassets; sourceTree = "<group>"; };
 		D01BB5D51918831D001DA429 /* RSCCImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCImageResponseSerializer.h; path = CocoaControls/RSCCImageResponseSerializer.h; sourceTree = "<group>"; };
@@ -122,10 +122,10 @@
 		D084BDDE19CF1F8500E3E2EE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D09E9E001914CA25000CD972 /* RSCCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCControl.h; path = CocoaControls/RSCCControl.h; sourceTree = "<group>"; };
 		D09E9E011914CA25000CD972 /* RSCCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCControl.m; path = CocoaControls/RSCCControl.m; sourceTree = "<group>"; };
-		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCCore.h; path = CocoaControls/RSCCCore.h; sourceTree = "<group>"; };
-		D09E9E041914CEF8000CD972 /* RSCCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCCore.m; path = CocoaControls/RSCCCore.m; sourceTree = "<group>"; };
+		D09E9E031914CEF8000CD972 /* RSCCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = RSCCCore.h; path = CocoaControls/RSCCCore.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D09E9E041914CEF8000CD972 /* RSCCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RSCCCore.m; path = CocoaControls/RSCCCore.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D09E9E061917C77F000CD972 /* RSCCControlCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCControlCellView.h; path = CocoaControls/RSCCControlCellView.h; sourceTree = "<group>"; };
-		D09E9E071917C77F000CD972 /* RSCCControlCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCControlCellView.m; path = CocoaControls/RSCCControlCellView.m; sourceTree = "<group>"; };
+		D09E9E071917C77F000CD972 /* RSCCControlCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RSCCControlCellView.m; path = CocoaControls/RSCCControlCellView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D0A99F4319174D3000DB2906 /* RSCCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCAPI.h; path = CocoaControls/RSCCAPI.h; sourceTree = "<group>"; };
 		D0A99F4419174D3000DB2906 /* RSCCAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCCAPI.m; path = CocoaControls/RSCCAPI.m; sourceTree = "<group>"; };
 		D0A99F4619174E6800DB2906 /* RSCCHTMLResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCCHTMLResponseSerializer.h; path = CocoaControls/RSCCHTMLResponseSerializer.h; sourceTree = "<group>"; };
@@ -563,6 +563,7 @@
 				DSTROOT = "$(HOME)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaControls/CocoaControls-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -571,6 +572,7 @@
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -584,6 +586,7 @@
 				DSTROOT = "$(HOME)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaControls/CocoaControls-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -592,6 +595,7 @@
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -24,7 +24,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
 
 @implementation RSCCCore
 
-- (void)RSCC_parseControlsWithDoc:(TFHpple *)doc  {
+- (void) RSCC_parseControlsWithDoc:(TFHpple *)doc  {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableArray *cs = [@[] mutableCopy];
         NSArray *elements  = [doc searchWithXPathQuery:@"//div[@class='control-grid-item']"];
@@ -76,7 +76,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
     });
 }
 
-- (void)RSCC_loadControlsWithURLString:(NSString *)URLString {
+- (void) RSCC_loadControlsWithURLString:(NSString *)URLString {
     [self.requestManager.operationQueue cancelAllOperations];
     [self.imageManager.operationQueue cancelAllOperations];
     
@@ -123,7 +123,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
     [self RSCC_loadControlsWithURLString:URLString];
 }
 
-- (void)moreControls {
+- (void) moreControls {
     self.page += 1;
     
     NSString *URLString = self.filter ? [NSString stringWithFormat:@"%@&%@", self.filter, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]] : [NSString stringWithFormat:@"%@?%@", RSCCAPIAllPlatform, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]];
@@ -131,13 +131,13 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
     [self RSCC_loadControlsWithURLString:URLString];
 }
 
-- (void)searchControlsWithKey:(NSString*)key {
+- (void) searchControlsWithKey:(NSString*)key {
     self.page = 0;
     
     [self RSCC_loadControlsWithURLString:[[NSString stringWithFormat:RSCCAPISearchFormat, key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
-- (void)detailForControl:(RSCCControl*)control withSender:(NSButton*)sender {
+- (void) detailForControl:(RSCCControl*)control withSender:(NSButton*)sender {
     [self.requestManager.operationQueue cancelAllOperations];
     
     [self.requestManager GET:[NSString stringWithFormat:@"%@%@", RSCCAPIRoot, control.link] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

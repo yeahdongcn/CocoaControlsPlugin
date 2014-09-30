@@ -18,15 +18,11 @@ extern CGFloat const  kCocoaPodsButtonWidthConstant,
 @interface RSCCControlCellView : NSTableCellView
 
 @property (assign) IBOutlet RSCCControlCellViewBackgroundView *backgroundView;
-
 @property (assign) IBOutlet NSTextField *titleField, *dateField, *licenseField;
-
 @property (assign) IBOutlet NSButton *imageButton, *cocoaPodsButton, *cloneButton;
-
 @property (assign) IBOutlet NSImageView *star0, *star1, *star2, *star3, *star4;
+@property (assign) IBOutlet NSLayoutConstraint *cocoaPodsButtonWidth, *buttonsGap;
 
 @property (nonatomic) NSArray *stars;
-
-@property (assign) IBOutlet NSLayoutConstraint *cocoaPodsButtonWidth, *buttonsGap;
 
 @end

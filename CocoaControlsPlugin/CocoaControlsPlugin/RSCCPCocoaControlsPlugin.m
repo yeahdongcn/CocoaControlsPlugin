@@ -22,13 +22,13 @@ static RSCCPCocoaControlsPlugin *sharedPlugin;
 
 @implementation RSCCPCocoaControlsPlugin
 
-- (void)RSCCP_openCocoaControlsApp {
+- (void) RSCCP_openCocoaControlsApp {
     NSString *applicationBundlePathString = [self.bundle pathForAuxiliaryExecutable:@"CocoaControls.app"];
     NSString *executablePathString = [NSString stringWithFormat:@"%@%@", applicationBundlePathString, @"/Contents/MacOS/CocoaControls"];
     [NSTask launchedTaskWithLaunchPath:executablePathString arguments:@[]];
 }
 
-- (void)RSCCP_createPodfile {
+- (void) RSCCP_createPodfile {
     CCPProject *project = [CCPProject projectForWindow:self.keyWindow];
     if (project) {
         NSString *podFilePath = project.podfilePath;
@@ -94,7 +94,7 @@ static void NotificationReceivedCallback(CFNotificationCenterRef center,
     return self;
 }
 
-- (BOOL)validateMenuItem:(NSMenuItem*)menuItem {
+- (BOOL) validateMenuItem:(NSMenuItem*)menuItem {
     if ([CCPProject projectForKeyWindow]) {
         if (!self.keyWindow) {
             self.keyWindow = NSApplication.sharedApplication.keyWindow;

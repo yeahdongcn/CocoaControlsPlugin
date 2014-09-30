@@ -19,8 +19,8 @@
 		D078F697191C5B820018B62E /* CCPWorkspaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPWorkspaceManager.m; sourceTree = "<group>"; };
 		D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaControlsPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DA0AD7191B859300221981 /* CocoaControlsPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaControlsPlugin-Info.plist"; sourceTree = "<group>"; };
-		D0DA0ADB191B859300221981 /* RSCCPCocoaControlsPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSCCPCocoaControlsPlugin.h; sourceTree = "<group>"; };
-		D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCCPCocoaControlsPlugin.m; sourceTree = "<group>"; };
+		D0DA0ADB191B859300221981 /* RSCCPCocoaControlsPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RSCCPCocoaControlsPlugin.h; path = CocoaControlsPlugin/RSCCPCocoaControlsPlugin.h; sourceTree = "<group>"; };
+		D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RSCCPCocoaControlsPlugin.m; path = CocoaControlsPlugin/RSCCPCocoaControlsPlugin.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D0DA0ADE191B859300221981 /* CocoaControlsPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaControlsPlugin-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,29 +49,22 @@
 		D0DA0AC5191B859300221981 = {
 			isa = PBXGroup;
 			children = (
-				D0DA0AD5191B859300221981 /* CocoaControlsPlugin */,
-			);
-			sourceTree = "<group>";
-		};
-		D0DA0AD5191B859300221981 /* CocoaControlsPlugin */ = {
-			isa = PBXGroup;
-			children = (
-				D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */,
-				D078F68D191C5B820018B62E /* Helpers */,
 				D0DA0ADB191B859300221981 /* RSCCPCocoaControlsPlugin.h */,
 				D0DA0ADC191B859300221981 /* RSCCPCocoaControlsPlugin.m */,
 				D0DA0AD6191B859300221981 /* Supporting Files */,
 			);
-			path = CocoaControlsPlugin;
 			sourceTree = "<group>";
 		};
 		D0DA0AD6191B859300221981 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D078F68D191C5B820018B62E /* Helpers */,
+				D0DA0ACE191B859300221981 /* CocoaControlsPlugin.xcplugin */,
 				D0DA0AD7191B859300221981 /* CocoaControlsPlugin-Info.plist */,
 				D0DA0ADE191B859300221981 /* CocoaControlsPlugin-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = CocoaControlsPlugin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
