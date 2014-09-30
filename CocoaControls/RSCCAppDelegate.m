@@ -239,7 +239,11 @@
 
 - (void)RSCC_handlePlatformButtonClicked:(NSButton *)sender
 {
-    if (![self.platform isEqualToString:sender.title]) {
+    NSString *title = sender.title;
+    if ([title isEqualToString:@"OS X"]) {
+        title = @"mac-os-x";
+    }
+    if (![self.platform isEqualToString:title]) {
         self.sort = RSCCADSortDefault;
         self.filterCocoaPods = RSCCADFilterCocoaPodsDefault;
         self.license = RSCCADLicenseDefault;
@@ -248,7 +252,7 @@
         self.filterCocoaPodsButton.title = self.filterCocoaPods;
         self.licenseButton.title = self.license;
     }
-    self.platform = sender.title;
+    self.platform = title;
 }
 
 - (void)RSCC_handleFilterCocoaPodsButtonClicked:(NSButton *)sender
