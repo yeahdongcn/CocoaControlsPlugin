@@ -7,11 +7,8 @@
 //
 
 #import "RSCCAppDelegate.h"
-
 #import "RSCCCore.h"
-
 #import "RSCCControlCellView.h"
-
 #import "ITPullToRefreshScrollView.h"
 
 #import <CoreFoundation/CFNotificationCenter.h>
@@ -22,23 +19,9 @@
 
 @property (nonatomic, strong) NSMutableArray *controls;
 
-@property (nonatomic, copy) NSString *sort;
+@property (copy) NSString *sort, *platform, *filterCocoaPods, *license, *oldSort, *oldPlatform, *oldFilterCocoaPods, *oldLicense;
 
-@property (nonatomic, copy) NSString *platform;
-
-@property (nonatomic, copy) NSString *filterCocoaPods;
-
-@property (nonatomic, copy) NSString *license;
-
-@property (nonatomic, copy) NSString *oldSort;
-
-@property (nonatomic, copy) NSString *oldPlatform;
-
-@property (nonatomic, copy) NSString *oldFilterCocoaPods;
-
-@property (nonatomic, copy) NSString *oldLicense;
-
-@property (nonatomic, assign) ITPullToRefreshEdge edge;
+@property (nonatomic) ITPullToRefreshEdge edge;
 
 #pragma mark - Controls
 
@@ -56,27 +39,11 @@
 
 @property (assign) IBOutlet NSImageView *imageView;
 
-@property (assign) IBOutlet NSButton *filterButton;
+@property (assign) IBOutlet NSPopover *popover, *refreshPopover, *morePopover;
 
-@property (assign) IBOutlet NSPopover *popover;
-
-@property (assign) IBOutlet NSButton *sortButton;
-
-@property (assign) IBOutlet NSButton *platformButton;
-
-@property (assign) IBOutlet NSButton *filterCocoaPodsButton;
-
-@property (assign) IBOutlet NSButton *licenseButton;
+@property (assign) IBOutlet NSButton *filterButton, *sortButton, *platformButton, *filterCocoaPodsButton, *licenseButton, *refreshButton, *moreButton;
 
 @property (assign) IBOutlet NSTextField *label;
-
-@property (assign) IBOutlet NSPopover *refreshPopover;
-
-@property (assign) IBOutlet NSPopover *morePopover;
-
-@property (assign) IBOutlet NSButton *refreshButton;
-
-@property (assign) IBOutlet NSButton *moreButton;
 
 @end
 
@@ -533,3 +500,10 @@ static NSString *const RSCCADLicenseDefault         = @"All";
 }
 
 @end
+
+
+int main(int argc, const char * argv[])
+{
+    CORE;
+    return NSApplicationMain(argc, argv);
+}

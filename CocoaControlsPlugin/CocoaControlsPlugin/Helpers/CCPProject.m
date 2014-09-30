@@ -22,9 +22,7 @@
 //  IN THE SOFTWARE.
 
 #import <objc/runtime.h>
-
 #import "CCPProject.h"
-
 #import "CCPWorkspaceManager.h"
 
 @implementation CCPProject
@@ -61,8 +59,8 @@
 	return nil;
 }
 
-- (id)initWithName:(NSString *)name
-              path:(NSString *)path
+- (id)initWithName:(NSString*)name
+              path:(NSString*)path
 {
 	if (self = [self init]) {
 		_projectName = name;
@@ -88,7 +86,7 @@
 	return [[NSFileManager defaultManager] fileExistsAtPath:self.podfilePath];
 }
 
-- (void)createPodspecFromTemplate:(NSString *)_template
+- (void)createPodspecFromTemplate:(NSString*)_template
 {
 	NSMutableString *podspecFile    = _template.mutableCopy;
 	NSRange range; range.location = 0;
@@ -139,7 +137,7 @@
 	[podspecFile writeToFile:self.podspecPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
-- (BOOL)containsFileWithName:(NSString *)fileName
+- (BOOL)containsFileWithName:(NSString*)fileName
 {
 	NSString *filePath = [self.directoryPath stringByAppendingPathComponent:fileName];
 	return [[NSFileManager defaultManager] fileExistsAtPath:filePath];

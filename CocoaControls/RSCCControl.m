@@ -10,15 +10,9 @@
 
 @implementation RSCCControl
 
-- (instancetype)initWithAssignment:(void (^)(RSCCControl *))assignment
-{
-    self = [super init];
-    if (self) {
-        if (assignment) {
-            assignment(self);
-        }
-    }
-    return self;
+- initWithAssignment:(void (^)(RSCCControl *))assignment {
+
+  return self = super.init ? !assignment ?: assignment(self) , self : nil;
 }
 
 - (NSString *)description

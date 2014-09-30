@@ -29,7 +29,7 @@ static NSString *PODFILE = @"Podfile";
 
 @implementation CCPWorkspaceManager
 
-+ (NSArray *)installedPodNamesInCurrentWorkspace
++ (NSArray*)installedPodNamesInCurrentWorkspace
 {
 	NSMutableArray *names = [NSMutableArray new];
 	id workspace = [self workspaceForKeyWindow];
@@ -44,12 +44,12 @@ static NSString *PODFILE = @"Podfile";
 	return names;
 }
 
-+ (NSString *)currentWorkspaceDirectoryPath
++ (NSString*)currentWorkspaceDirectoryPath
 {
     return [self directoryPathForWorkspace:[self workspaceForKeyWindow]];
 }
 
-+ (NSString *)directoryPathForWorkspace:(id)workspace
++ (NSString*)directoryPathForWorkspace:(id)workspace
 {
     NSString *workspacePath = [[workspace valueForKey:@"representingFilePath"] valueForKey:@"_pathString"];
 	return [workspacePath stringByDeletingLastPathComponent];
@@ -62,7 +62,7 @@ static NSString *PODFILE = @"Podfile";
     return [self workspaceForWindow:[NSApp keyWindow]];
 }
 
-+ (id)workspaceForWindow:(NSWindow *)window
++ (id)workspaceForWindow:(NSWindow*)window
 {
     NSArray *workspaceWindowControllers = [NSClassFromString(@"IDEWorkspaceWindowController") valueForKey:@"workspaceWindowControllers"];
 

@@ -23,28 +23,18 @@
 
 @interface CCPProject : NSObject
 
-@property (nonatomic, strong) NSString *directoryPath;
+@property (nonatomic) NSString *directoryPath, *podspecPath, *podfilePath, *projectName;
+@property (nonatomic) NSDictionary *infoDictionary;
+@property (readonly)  BOOL hasPodfile, hasPodspecFile;
 
-@property (nonatomic, strong) NSString *podspecPath;
-@property (nonatomic, strong) NSString *podfilePath;
++ (instancetype) projectForKeyWindow;
++ (instancetype) projectForWindow:window;
 
-@property (nonatomic, strong) NSString *projectName;
+- initWithName:(NSString*)name
+          path:(NSString*)path;
 
-@property (nonatomic, strong) NSDictionary *infoDictionary;
+- (void) createPodspecFromTemplate:(NSString*)_template;
 
-+ (instancetype)projectForKeyWindow;
-+ (instancetype)projectForWindow:(id)window;
-
-- (id)initWithName:(NSString *)name
-              path:(NSString *)path;
-
-- (void)createPodspecFromTemplate:(NSString *)_template;
-
-- (BOOL)hasPodfile;
-- (BOOL)hasPodspecFile;
-
-- (BOOL)containsFileWithName:(NSString *)fileName;
-
-
+- (BOOL) containsFileWithName:(NSString*)fileName;
 
 @end

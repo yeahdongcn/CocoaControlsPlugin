@@ -6,14 +6,12 @@
 //  Copyright (c) 2014年 P.D.Q. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+extern int const  RSCCControlCellViewImageButtonTagBase,
+                  RSCCControlCellViewCocoaPodsButtonTagBase,
+                  RSCCControlCellViewCloneButtonTagBase;
 
-extern int const RSCCControlCellViewImageButtonTagBase;
-extern int const RSCCControlCellViewCocoaPodsButtonTagBase;
-extern int const RSCCControlCellViewCloneButtonTagBase;
-
-extern CGFloat const kCocoaPodsButtonWidthConstant;
-extern CGFloat const kButtonsGapConstant;
+extern CGFloat const  kCocoaPodsButtonWidthConstant,
+                      kButtonsGapConstant;
 
 @class RSCCControlCellViewBackgroundView;
 
@@ -21,32 +19,14 @@ extern CGFloat const kButtonsGapConstant;
 
 @property (assign) IBOutlet RSCCControlCellViewBackgroundView *backgroundView;
 
-@property (assign) IBOutlet NSButton *imageButton;
+@property (assign) IBOutlet NSTextField *titleField, *dateField, *licenseField;
 
-@property (assign) IBOutlet NSTextField *titleField;
+@property (assign) IBOutlet NSButton *imageButton, *cocoaPodsButton, *cloneButton;
 
-@property (assign) IBOutlet NSTextField *dateField;
+@property (assign) IBOutlet NSImageView *star0, *star1, *star2, *star3, *star4;
 
-@property (assign) IBOutlet NSTextField *licenseField;
+@property (nonatomic) NSArray *stars;
 
-@property (assign) IBOutlet NSButton *cocoaPodsButton;
-
-@property (assign) IBOutlet NSButton *cloneButton;
-
-@property (assign) IBOutlet NSImageView *star0;
-
-@property (assign) IBOutlet NSImageView *star1;
-
-@property (assign) IBOutlet NSImageView *star2;
-
-@property (assign) IBOutlet NSImageView *star3;
-
-@property (assign) IBOutlet NSImageView *star4;
-
-@property (nonatomic, strong) NSArray *stars;
-
-@property (assign) IBOutlet NSLayoutConstraint *cocoaPodsButtonWidth;
-
-@property (assign) IBOutlet NSLayoutConstraint *buttonsGap;
+@property (assign) IBOutlet NSLayoutConstraint *cocoaPodsButtonWidth, *buttonsGap;
 
 @end

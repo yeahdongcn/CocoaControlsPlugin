@@ -9,7 +9,6 @@
 #import "RSCCControlCellView.h"
 
 @interface RSCCControlCellViewBackgroundView : NSView
-
 @end
 
 @implementation RSCCControlCellViewBackgroundView
@@ -24,17 +23,15 @@
 
 @end
 
-int const RSCCControlCellViewImageButtonTagBase     = 1000;
-int const RSCCControlCellViewCocoaPodsButtonTagBase = 2000;
-int const RSCCControlCellViewCloneButtonTagBase     = 3000;
+int const RSCCControlCellViewImageButtonTagBase     = 1000,
+          RSCCControlCellViewCocoaPodsButtonTagBase = 2000,
+          RSCCControlCellViewCloneButtonTagBase     = 3000;
 
-CGFloat const kCocoaPodsButtonWidthConstant         = 40.0f;
-CGFloat const kButtonsGapConstant                   = 10.0f;
+CGFloat const kCocoaPodsButtonWidthConstant         = 40.0f,
+              kButtonsGapConstant                   = 10.0f;
 
 @implementation RSCCControlCellView
 
-- (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle
-{
-}
+- (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle {}
 
 @end

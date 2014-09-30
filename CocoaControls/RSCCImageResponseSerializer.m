@@ -10,12 +10,11 @@
 
 @implementation RSCCImageResponseSerializer
 
-- (id)responseObjectForResponse:(NSURLResponse *)response
-                           data:(NSData *)data
-                          error:(NSError *__autoreleasing *)error
+- responseObjectForResponse:(NSURLResponse *)response
+                       data:(NSData *)data
+                      error:(NSError *__autoreleasing *)error
 {
-    NSImage *image = [[NSImage alloc] initWithData:data];
-    return image;
+    return [NSImage.alloc initWithData:data];
 }
 
 @end
