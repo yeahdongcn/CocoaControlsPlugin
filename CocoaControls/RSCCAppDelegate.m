@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) NSMutableArray *controls;
 
-@property (copy) NSString *sort, *platform, *filterCocoaPods, *license, *oldSort, *oldPlatform, *oldFilterCocoaPods, *oldLicense;
+@property (nonatomic,copy) NSString *sort, *platform, *filterCocoaPods, *license, *oldSort, *oldPlatform, *oldFilterCocoaPods, *oldLicense;
 
 @property (nonatomic) ITPullToRefreshEdge edge;
 
