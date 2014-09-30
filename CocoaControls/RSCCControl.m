@@ -12,7 +12,7 @@
 
 - initWithAssignment:(void (^)(RSCCControl *))assignment {
 
-  return self = super.init ? !assignment ?: assignment(self) , self : nil;
+    return self = super.init ? !assignment ?: assignment(self) , self : nil;
 }
 
 - (NSString*) description {

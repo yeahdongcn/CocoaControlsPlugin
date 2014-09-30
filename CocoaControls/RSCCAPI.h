@@ -8,7 +8,6 @@
 
 @import Foundation;
 
-
 extern NSString *const RSCCAPIRoot,
                 *const RSCCAPISearchFormat,
                 *const RSCCAPIAllPlatform,
