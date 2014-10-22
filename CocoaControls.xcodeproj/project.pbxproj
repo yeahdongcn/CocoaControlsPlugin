@@ -567,7 +567,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SDKROOT)/usr/include/libxml2",
+					"/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
@@ -590,7 +590,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SDKROOT)/usr/include/libxml2",
+					"/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
