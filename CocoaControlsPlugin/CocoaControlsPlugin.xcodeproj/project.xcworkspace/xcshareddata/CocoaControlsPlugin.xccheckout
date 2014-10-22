@@ -14,7 +14,7 @@
 		<string>https://github.com/yeahdongcn/CocoaControlsPlugin.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj/project.xcworkspace</string>
+	<string>CocoaControlsPlugin/CocoaControlsPlugin.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>69291726009AC4C9A421F4E062E482087A00300B</key>
