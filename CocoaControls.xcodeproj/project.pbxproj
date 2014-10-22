@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		D0108A5A1913CCD500912C70 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D0108A581913CCD500912C70 /* Credits.rtf */; };
 		D0108A5D1913CCD500912C70 /* RSCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0108A5C1913CCD500912C70 /* RSCCAppDelegate.m */; };
-		D0108A601913CCD500912C70 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0108A5E1913CCD500912C70 /* MainMenu.xib */; };
 		D0108A621913CCD500912C70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0108A611913CCD500912C70 /* Images.xcassets */; };
 		D01BB5D71918831D001DA429 /* RSCCImageResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D01BB5D61918831D001DA429 /* RSCCImageResponseSerializer.m */; };
+		D04CEB2919F76E8B0004924D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0108A5E1913CCD500912C70 /* MainMenu.xib */; };
 		D053F848191A096A00B1A7BA /* RSCCImageRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F847191A096A00B1A7BA /* RSCCImageRequestSerializer.m */; };
 		D084BDC419CF1F5200E3E2EE /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD8A19CF1F5200E3E2EE /* AFHTTPRequestOperation.m */; };
 		D084BDC519CF1F5200E3E2EE /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D084BD8C19CF1F5200E3E2EE /* AFHTTPRequestOperationManager.m */; };
@@ -409,9 +409,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04CEB2919F76E8B0004924D /* MainMenu.xib in Resources */,
 				D0108A621913CCD500912C70 /* Images.xcassets in Resources */,
 				D0108A5A1913CCD500912C70 /* Credits.rtf in Resources */,
-				D0108A601913CCD500912C70 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
