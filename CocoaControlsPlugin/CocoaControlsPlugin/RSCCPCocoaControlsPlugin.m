@@ -79,17 +79,20 @@ static void NotificationReceivedCallback(CFNotificationCenterRef center,
         
         CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, &NotificationReceivedCallback, CFSTR("com.pdq.rscccocoapods"), NULL, CFNotificationSuspensionBehaviorCoalesce);
         
-        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"View"];
-        if (menuItem) {
-            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            
-            NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Cocoa Controls"
-                                                                    action:@selector(RSCCP_openCocoaControlsApp)
-                                                             keyEquivalent:@"c"];
-            [actionMenuItem setKeyEquivalentModifierMask:NSControlKeyMask];
-            [actionMenuItem setTarget:self];
-            [[menuItem submenu] addItem:actionMenuItem];
-        }
+        __weak __typeof(self)weakself = self;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"View"];
+            if (menuItem) {
+                [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
+                
+                NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Cocoa Controls"
+                                                                        action:@selector(RSCCP_openCocoaControlsApp)
+                                                                 keyEquivalent:@"c"];
+                [actionMenuItem setKeyEquivalentModifierMask:NSControlKeyMask];
+                [actionMenuItem setTarget:weakself];
+                [[menuItem submenu] addItem:actionMenuItem];
+            }
+        }];
     }
     return self;
 }
