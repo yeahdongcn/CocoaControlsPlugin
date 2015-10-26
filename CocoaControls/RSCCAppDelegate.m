@@ -253,6 +253,7 @@ static int const RSCCADPreviewImageViewTagBase = 10000;
             [CORE.imageManager GET:c.image parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 self.imageView.image = responseObject;
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"%@", error);
             }];
             [self.imagePanel orderFront:self];
         }
@@ -433,6 +434,7 @@ static NSString *const RSCCADSortDefault            = @"Date",
             [cellView.imageButton setImage:responseObject];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [cellView.imageButton setImage:[NSImage imageNamed:@"placeholder"]];
+            NSLog(@"%@", error);
         }];
         for (int i = 0; i < (int)c.rating; i++) {
             NSImageView *iv = cellView.stars[i];

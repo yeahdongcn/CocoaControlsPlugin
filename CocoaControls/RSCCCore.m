@@ -27,32 +27,33 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
 - (void) RSCC_parseControlsWithDoc:(TFHpple *)doc  {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableArray *cs = [@[] mutableCopy];
-        NSArray *elements  = [doc searchWithXPathQuery:@"//div[@class='control-grid-item']"];
+        NSArray *elements  = [doc searchWithXPathQuery:@"//*[@class=\"block-grid-item\"]"];
         for (TFHppleElement *element in elements) {
             RSCCControl *c = [[RSCCControl alloc] initWithAssignment:^(RSCCControl *c) {
-                TFHppleElement *img = [[element firstChildWithTagName:@"a"] firstChildWithTagName:@"img"];
-                c.image = [img attributes][@"src"];
-                
-                NSArray *is = [[element firstChildWithTagName:@"div"] childrenWithTagName:@"i"];
-                for (TFHppleElement *i in is) {
-                    NSString *class = [i attributes][@"class"];
-                    if ([class isEqualToString:@"icon-star"]) {
-                        c.rating += 1;
-                    } else if ([class isEqualToString:@"icon-star-half-full"]) {
-                        c.rating += 0.5;
-                    }
-                }
-                
-                NSArray *spans = [element childrenWithTagName:@"span"];
-                [spans enumerateObjectsUsingBlock:^(TFHppleElement *span, NSUInteger idx, BOOL *stop) {
-                    switch (idx) {
-                        case 0: {
-                            TFHppleElement *a = [span firstChildWithTagName:@"a"];
+                NSArray *ps = [element childrenWithTagName:@"p"];
+                for (TFHppleElement *p in ps) {
+                    TFHppleElement *a = [p firstChildWithTagName:@"a"];
+                    if (a) {
+                        TFHppleElement *img = [a firstChildWithTagName:@"img"];
+                        if (img) {
+                            c.image = [img attributes][@"src"];
+                        } else {
                             c.title = a.text;
                             c.link = [a attributes][@"href"];
-                        } break;
-                        case 1: {
-                            NSArray *components = [span.text componentsSeparatedByString:@" • "];
+                        }
+                    } else {
+                        NSArray *is = [p childrenWithTagName:@"i"];
+                        if ([is count] > 0) {
+                            for (TFHppleElement *i in is) {
+                                NSString *class = [i attributes][@"class"];
+                                if ([class isEqualToString:@"icon-star"]) {
+                                    c.rating += 1;
+                                } else if ([class isEqualToString:@"icon-star-half-full"]) {
+                                    c.rating += 0.5;
+                                }
+                            }
+                        } else {
+                            NSArray *components = [p.text componentsSeparatedByString:@" • "];
                             for (NSString *component in components) {
                                 if ([component rangeOfString:@"CocoaPod"].length > 0) {
                                     c.isOnCocoaPods = YES;
@@ -64,9 +65,9 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
                                     c.date = component;
                                 }
                             }
-                        } break;
+                        }
                     }
-                }];
+                }
             }];
             [cs addObject:c];
         }
@@ -84,7 +85,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
         [self RSCC_parseControlsWithDoc:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if ([error code] != NSURLErrorCancelled) {
-            [NSNotificationCenter.defaultCenter postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray arrayWithArray:nil] userInfo:@{@"page" : @(self.page)}];
+            [NSNotificationCenter.defaultCenter postNotificationName:RSCCCoreControlsDidLoadNotification object:[NSArray array] userInfo:@{@"page" : @(self.page)}];
         }
     }];
 }
@@ -118,8 +119,7 @@ NSString *const RSCCCoreControlsDidLoadNotification = @"com.pdq.core.controls.di
 - (void) refreshControls {
     self.page = 1;
     
-    NSString *URLString = self.filter ? [NSString stringWithFormat:@"%@&%@", self.filter, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]] : [NSString stringWithFormat:@"%@?%@", RSCCAPIAllPlatform, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]];
-    
+    NSString *URLString = (self.filter != nil) ? [NSString stringWithFormat:@"%@&%@", self.filter, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]] : [NSString stringWithFormat:@"%@?%@", RSCCAPIAllPlatform, [NSString stringWithFormat:RSCCAPIPageFormat, self.page]];
     [self RSCC_loadControlsWithURLString:URLString];
 }
 

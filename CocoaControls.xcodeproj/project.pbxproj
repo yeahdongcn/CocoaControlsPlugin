@@ -367,7 +367,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RS;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = P.D.Q.;
 			};
 			buildConfigurationList = D0108A411913CCD500912C70 /* Build configuration list for PBXProject "CocoaControls" */;
@@ -501,6 +501,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -571,6 +572,7 @@
 				);
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pdq.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -594,6 +596,7 @@
 				);
 				INFOPLIST_FILE = "CocoaControls/CocoaControls-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins/CocoaControlsPlugin.xcplugin";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pdq.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
